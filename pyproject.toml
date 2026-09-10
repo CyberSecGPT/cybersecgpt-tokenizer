@@ -1,0 +1,72 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cybersecgpt-tokenizer"
+version = "0.1.0"
+description = "Native, deterministic tokenizer contracts and implementation for CyberSecGPT."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "CyberSecGPT Team" }]
+keywords = ["cybersecurity", "tokenizer", "AI", "offline"]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<9",
+  "pytest-cov>=6,<7",
+  "ruff>=0.9,<1",
+  "mypy>=1.13,<2",
+  "black>=24.10,<26",
+  "build>=1.2,<2",
+]
+
+[tool.hatch.build]
+dev-mode-dirs = ["src"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cybersecgpt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["--strict-config", "--strict-markers"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unreachable = true
+show_error_codes = true
+pretty = true
+namespace_packages = true
+explicit_package_bases = true
+mypy_path = "src"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+src = ["src", "tests"]
+exclude = ["install_cybersecgpt_agent_directives.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+extend-exclude = "install_cybersecgpt_agent_directives.py"
+
+[tool.coverage.run]
+branch = true
+source = ["src/cybersecgpt/tokenizer"]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
