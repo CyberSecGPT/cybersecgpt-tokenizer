@@ -10,6 +10,7 @@ def test_public_api_is_explicit() -> None:
         "MAX_TEXT_BYTES",
         "MAX_TOKEN_COUNT",
         "MAX_VOCABULARY_SIZE",
+        "UTF8_BYTE_REFERENCE_FINGERPRINT",
         "DecodeRequest",
         "DecodeResult",
         "EncodeRequest",
@@ -18,7 +19,10 @@ def test_public_api_is_explicit() -> None:
         "EvaluationManifest",
         "EvaluationSample",
         "FinishStatus",
+        "ReferenceSampleMetrics",
         "SpecialToken",
         "TokenizerContractError",
         "TokenizerDescriptor",
+        "Utf8ByteReferenceTokenizer",
+        "evaluate_utf8_byte_reference",
     ]

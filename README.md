@@ -16,10 +16,12 @@ AI APIs or external-provider tokenizers.
 
 ## Current implementation
 
-P6 is in progress. The first executable slice exposes immutable, bounded
-descriptor, special-token, encode-request/result, and decode-request/result
-contracts. It does not yet implement an encoding algorithm, normalization,
-pretokenization, vocabulary, artifact loader, training, or production tokenizer.
+P6 is in progress. Immutable, bounded contracts now include a fixed 256-token
+UTF-8 byte reference candidate and deterministic structural evaluation metrics.
+The reference exists only to establish a reproducible comparison baseline; it is
+not the selected Tokenizer v1 algorithm, vocabulary, invalid-input policy, or
+production tokenizer. Artifact loading, streaming, training, and final semantic
+decisions remain unimplemented.
 
 Tokenizer input, artifacts, metadata, and output are untrusted data. Tokenizer
 behavior and output never create an authorization grant, lower classification,
@@ -32,3 +34,5 @@ See [P6 acceptance gates](P6_ACCEPTANCE.md) and
 The evaluation layer also provides bounded, immutable corpus manifests with
 explicit domain, source, license identifier, and canonical UTF-8 content digest.
 It records no implicit license approval and exposes no raw-content logging path.
+Reference metrics retain sample identity, domain, digest, counts, status, and
+reversibility only; they do not copy sample text into reports.
