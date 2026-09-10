@@ -23,9 +23,11 @@ REQUIRED_FILES = frozenset(
         "scripts/verify_distribution.py",
         "src/cybersecgpt/tokenizer/__init__.py",
         "src/cybersecgpt/tokenizer/contracts.py",
+        "src/cybersecgpt/tokenizer/evaluation.py",
         "src/cybersecgpt/tokenizer/py.typed",
         "tests/__init__.py",
         "tests/test_contracts.py",
+        "tests/test_evaluation.py",
         "tests/test_public_api.py",
     }
 )
