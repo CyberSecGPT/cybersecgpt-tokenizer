@@ -9,3 +9,8 @@ data and never authorization. Artifacts must be non-executable and validated for
 schema, hashes, sizes, counts, IDs, and integer bounds before allocation or use.
 Unknown special-token roles are data, not instructions. Core behavior must remain
 offline and independent of proprietary remote AI APIs and provider tokenizers.
+
+The UTF-8 byte reference has no special-token roles, rejects requested insertion,
+range-checks every ID against 0..255, and decodes with strict UTF-8 validation and
+no replacement. Its evaluation metrics contain digests and counts, not raw sample
+text. These reference semantics do not approve the eventual Tokenizer v1 policy.

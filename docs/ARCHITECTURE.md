@@ -13,11 +13,17 @@ datasets, product surfaces, or authorization.
 
 ## Current boundary
 
-The first executable slice provides immutable and bounded public contracts only.
-It deliberately does not select or implement a tokenizer algorithm, normalization
-or pretokenization behavior, vocabulary, artifact encoding, special-token
-allocation, or training corpus. Those decisions remain gated by
-`P6_ACCEPTANCE.md`.
+The repository provides immutable bounded public contracts, provenance-bearing
+evaluation manifests, and a fixed UTF-8 byte reference candidate. The reference
+maps strict UTF-8 bytes directly to IDs 0..255, performs no normalization, has no
+special-token allocation, fails explicitly on invalid decode sequences, and
+records deterministic content-minimizing structural metrics.
+
+This reference is benchmark infrastructure, not selection of the Tokenizer v1
+algorithm or its production invalid-input policy. BPE and Unigram candidates,
+normalization, pretokenization, offsets, artifact encoding, special-token
+allocation, streaming, corpus approval, and training remain gated by
+`P6_ACCEPTANCE.md` and `docs/P6_1_ALGORITHM_EVALUATION.md`.
 
 All tokenizer data is untrusted. Results may describe tokenization behavior but
 cannot grant permissions, change classification, widen target scope, weaken

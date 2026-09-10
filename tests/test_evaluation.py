@@ -4,12 +4,17 @@ from dataclasses import FrozenInstanceError
 
 import pytest
 
-from cybersecgpt.tokenizer import MAX_TEXT_BYTES, TokenizerContractError
+from cybersecgpt.tokenizer import (
+    MAX_TEXT_BYTES,
+    FinishStatus,
+    TokenizerContractError,
+)
 from cybersecgpt.tokenizer.evaluation import (
     MAX_EVALUATION_SAMPLES,
     EvaluationDomain,
     EvaluationManifest,
     EvaluationSample,
+    evaluate_utf8_byte_reference,
 )
 
 
@@ -89,3 +94,36 @@ def test_manifest_rejects_empty_excess_duplicate_and_oversize_samples() -> None:
     second = _sample("second", "b" * (MAX_TEXT_BYTES // 2 + 1))
     with pytest.raises(TokenizerContractError, match="manifest"):
         EvaluationManifest("manifest", "1", (first, second))
+
+
+def test_reference_measurements_are_deterministic_and_content_minimizing() -> None:
+    manifest = EvaluationManifest(
+        "manifest-v1",
+        "1",
+        (_sample("ascii", "abc"), _sample("unicode", "🔐")),
+    )
+    first = evaluate_utf8_byte_reference(manifest)
+
+    assert first == evaluate_utf8_byte_reference(manifest)
+    assert [metric.token_count for metric in first] == [3, 4]
+    assert [metric.utf8_byte_count for metric in first] == [3, 4]
+    assert [metric.unicode_scalar_count for metric in first] == [3, 1]
+    assert all(metric.finish_status is FinishStatus.COMPLETED for metric in first)
+    assert all(metric.decode_succeeded and metric.reversible for metric in first)
+    assert all(not hasattr(metric, "text") for metric in first)
+
+
+def test_reference_measurements_record_valid_and_invalid_truncation() -> None:
+    manifest = EvaluationManifest(
+        "manifest-v1",
+        "1",
+        (_sample("ascii", "ab"), _sample("unicode", "é")),
+    )
+    metrics = evaluate_utf8_byte_reference(manifest, max_tokens=1)
+
+    assert metrics[0].finish_status is FinishStatus.TRUNCATED
+    assert metrics[0].decode_succeeded is True
+    assert metrics[0].reversible is False
+    assert metrics[1].finish_status is FinishStatus.TRUNCATED
+    assert metrics[1].decode_succeeded is False
+    assert metrics[1].reversible is False

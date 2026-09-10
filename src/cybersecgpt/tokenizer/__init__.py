@@ -19,6 +19,12 @@ from cybersecgpt.tokenizer.evaluation import (
     EvaluationDomain,
     EvaluationManifest,
     EvaluationSample,
+    ReferenceSampleMetrics,
+    evaluate_utf8_byte_reference,
+)
+from cybersecgpt.tokenizer.reference import (
+    UTF8_BYTE_REFERENCE_FINGERPRINT,
+    Utf8ByteReferenceTokenizer,
 )
 
 __all__ = [
@@ -27,6 +33,7 @@ __all__ = [
     "MAX_TEXT_BYTES",
     "MAX_TOKEN_COUNT",
     "MAX_VOCABULARY_SIZE",
+    "UTF8_BYTE_REFERENCE_FINGERPRINT",
     "DecodeRequest",
     "DecodeResult",
     "EncodeRequest",
@@ -35,7 +42,10 @@ __all__ = [
     "EvaluationManifest",
     "EvaluationSample",
     "FinishStatus",
+    "ReferenceSampleMetrics",
     "SpecialToken",
     "TokenizerContractError",
     "TokenizerDescriptor",
+    "Utf8ByteReferenceTokenizer",
+    "evaluate_utf8_byte_reference",
 ]

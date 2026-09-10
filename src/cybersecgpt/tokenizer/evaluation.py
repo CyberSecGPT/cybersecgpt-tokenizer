@@ -6,7 +6,15 @@ from dataclasses import dataclass
 from enum import StrEnum
 from hashlib import sha256
 
-from cybersecgpt.tokenizer.contracts import MAX_TEXT_BYTES, TokenizerContractError
+from cybersecgpt.tokenizer.contracts import (
+    MAX_TEXT_BYTES,
+    MAX_TOKEN_COUNT,
+    DecodeRequest,
+    EncodeRequest,
+    FinishStatus,
+    TokenizerContractError,
+)
+from cybersecgpt.tokenizer.reference import Utf8ByteReferenceTokenizer
 
 MAX_EVALUATION_SAMPLES = 10_000
 
@@ -96,3 +104,61 @@ class EvaluationManifest:
         total_bytes = sum(len(sample.text.encode("utf-8")) for sample in self.samples)
         if total_bytes > MAX_TEXT_BYTES:
             raise TokenizerContractError("evaluation manifest exceeds the byte limit")
+
+
+@dataclass(frozen=True, slots=True)
+class ReferenceSampleMetrics:
+    """Content-minimizing structural measurements for one reference sample."""
+
+    sample_id: str
+    domain: EvaluationDomain
+    content_sha256: str
+    tokenizer_fingerprint: str
+    utf8_byte_count: int
+    unicode_scalar_count: int
+    token_count: int
+    finish_status: FinishStatus
+    decode_succeeded: bool
+    reversible: bool
+
+
+def evaluate_utf8_byte_reference(
+    manifest: EvaluationManifest,
+    *,
+    max_tokens: int = MAX_TOKEN_COUNT,
+) -> tuple[ReferenceSampleMetrics, ...]:
+    """Measure the fixed byte baseline without retaining text in the result."""
+
+    measurements: list[ReferenceSampleMetrics] = []
+    for sample in manifest.samples:
+        encoded_text = sample.text.encode("utf-8")
+        encoded = Utf8ByteReferenceTokenizer.encode(
+            EncodeRequest(sample.text, max_tokens=max_tokens)
+        )
+        decode_succeeded = True
+        reversible = False
+        try:
+            decoded = Utf8ByteReferenceTokenizer.decode(
+                DecodeRequest(encoded.token_ids)
+            )
+            reversible = (
+                encoded.finish_status is FinishStatus.COMPLETED
+                and decoded.text == sample.text
+            )
+        except TokenizerContractError:
+            decode_succeeded = False
+        measurements.append(
+            ReferenceSampleMetrics(
+                sample_id=sample.sample_id,
+                domain=sample.domain,
+                content_sha256=sample.content_sha256,
+                tokenizer_fingerprint=encoded.tokenizer_fingerprint,
+                utf8_byte_count=len(encoded_text),
+                unicode_scalar_count=len(sample.text),
+                token_count=len(encoded.token_ids),
+                finish_status=encoded.finish_status,
+                decode_succeeded=decode_succeeded,
+                reversible=reversible,
+            )
+        )
+    return tuple(measurements)
