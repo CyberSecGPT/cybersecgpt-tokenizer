@@ -1,0 +1,39 @@
+{
+  "schema": 3,
+  "policy_version": "2.1",
+  "generated_at_utc": "2026-09-10T12:40:52.232015+00:00",
+  "read_order": [
+    "CYBERSECGPT_MASTER_SYSTEM_INSTRUCTIONS.md",
+    "CYBERSECGPT_MASTER_AUTONOMOUS_AI_BRAIN_SPECIFICATION.md",
+    "CYBERSECGPT_DEEP_REASONING_BRAIN_IMPLEMENTATION_DIRECTIVE.md"
+  ],
+  "canonical_docs_location": "cybersecgpt-docs/engineering/",
+  "master_system": {
+    "path": "CYBERSECGPT_MASTER_SYSTEM_INSTRUCTIONS.md",
+    "sha256": "dc79774afe6741bf654325844591110186bbbde53ceb74b7aec51c1b1aae311c"
+  },
+  "master_brain": {
+    "path": "CYBERSECGPT_MASTER_AUTONOMOUS_AI_BRAIN_SPECIFICATION.md",
+    "sha256": "e25c0c5ecc7abf0077ec0df365fb2614c4d47f0838020a143a5b406858cd673d"
+  },
+  "deep_reasoning_directive": {
+    "path": "CYBERSECGPT_DEEP_REASONING_BRAIN_IMPLEMENTATION_DIRECTIVE.md",
+    "sha256": "2be82872e97d6e5aafc341b97abd03d9860905a6decba323fa74d334db1bb3c8"
+  },
+  "agents": {
+    "path": "AGENTS.md",
+    "sha256": "a2b0d16b22061ad93ff6c559a4be4cef5c4b76e2f8f47a4ab3e2aa6b57ae31b1"
+  },
+  "copilot_instructions": {
+    "path": ".github/copilot-instructions.md",
+    "sha256": "0fbcfc1a25c12c537c9b1f40c88789f73b3bbe432d2ccd00400cb98130698921"
+  },
+  "policy_workflow": {
+    "path": ".github/workflows/cybersecgpt-agent-policy.yml",
+    "sha256": "fb580d66ad1aee19fb15f138084c40ba3404d3c386bfd2870194c9d066f93325"
+  },
+  "installer": {
+    "path": "install_cybersecgpt_agent_directives.py",
+    "sha256": "62a16c506d9b6d57c9c4166e2d029645f53b984b704558b262f5730700e59ebb"
+  }
+}
