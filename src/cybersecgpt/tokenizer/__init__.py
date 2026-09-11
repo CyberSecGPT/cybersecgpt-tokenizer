@@ -1,5 +1,13 @@
 """Public API for the CyberSecGPT native tokenizer."""
 
+from cybersecgpt.tokenizer.byte_bpe import (
+    BpeMerge,
+    BpeTrainingFinishStatus,
+    ByteBpeCandidate,
+    ByteBpeTrainingConfig,
+    ByteBpeTrainingResult,
+    train_byte_bpe_candidate,
+)
 from cybersecgpt.tokenizer.contracts import (
     MAX_IDENTIFIER_LENGTH,
     MAX_TEXT_BYTES,
@@ -28,6 +36,11 @@ from cybersecgpt.tokenizer.reference import (
 )
 
 __all__ = [
+    "BpeMerge",
+    "BpeTrainingFinishStatus",
+    "ByteBpeCandidate",
+    "ByteBpeTrainingConfig",
+    "ByteBpeTrainingResult",
     "MAX_IDENTIFIER_LENGTH",
     "MAX_EVALUATION_SAMPLES",
     "MAX_TEXT_BYTES",
@@ -48,4 +61,5 @@ __all__ = [
     "TokenizerDescriptor",
     "Utf8ByteReferenceTokenizer",
     "evaluate_utf8_byte_reference",
+    "train_byte_bpe_candidate",
 ]

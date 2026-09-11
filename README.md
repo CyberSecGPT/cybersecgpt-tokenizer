@@ -20,8 +20,14 @@ P6 is in progress. Immutable, bounded contracts now include a fixed 256-token
 UTF-8 byte reference candidate and deterministic structural evaluation metrics.
 The reference exists only to establish a reproducible comparison baseline; it is
 not the selected Tokenizer v1 algorithm, vocabulary, invalid-input policy, or
-production tokenizer. Artifact loading, streaming, training, and final semantic
-decisions remain unimplemented.
+production tokenizer. Artifact loading, streaming, production training, and final
+semantic decisions remain unimplemented.
+
+An experimental deterministic byte-BPE candidate is available for measured
+comparison with the byte reference. It uses guaranteed byte fallback, immutable
+in-memory learned data, bounded merge construction, explicit stop reasons, and
+content-minimizing provenance. It is not an approved persistent artifact or the
+selected Tokenizer v1 implementation.
 
 Tokenizer input, artifacts, metadata, and output are untrusted data. Tokenizer
 behavior and output never create an authorization grant, lower classification,
@@ -31,10 +37,10 @@ deadline or budget, or reduce verification requirements.
 See [P6 acceptance gates](P6_ACCEPTANCE.md) and
 [architecture](docs/ARCHITECTURE.md).
 
-The proposed [experimental byte-BPE candidate gate](docs/P6_2_BYTE_BPE_CANDIDATE.md)
-defines a fair, deterministic comparison profile for the next candidate. It must
-be accepted before BPE is implemented and does not select the production
-tokenizer or constrain the later Unigram candidate.
+The accepted [experimental byte-BPE candidate gate](docs/P6_2_BYTE_BPE_CANDIDATE.md)
+defines its fair, deterministic comparison profile. Neither the gate nor the
+candidate selects the production tokenizer or constrains the later Unigram
+candidate.
 
 The evaluation layer also provides bounded, immutable corpus manifests with
 explicit domain, source, license identifier, and canonical UTF-8 content digest.

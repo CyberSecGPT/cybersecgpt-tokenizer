@@ -8,6 +8,7 @@ from pathlib import Path
 EXPECTED_SOURCE_MEMBERS = frozenset(
     {
         "cybersecgpt/tokenizer/__init__.py",
+        "cybersecgpt/tokenizer/byte_bpe.py",
         "cybersecgpt/tokenizer/contracts.py",
         "cybersecgpt/tokenizer/evaluation.py",
         "cybersecgpt/tokenizer/py.typed",

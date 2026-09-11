@@ -5,6 +5,11 @@ import cybersecgpt.tokenizer as tokenizer
 
 def test_public_api_is_explicit() -> None:
     assert tokenizer.__all__ == [
+        "BpeMerge",
+        "BpeTrainingFinishStatus",
+        "ByteBpeCandidate",
+        "ByteBpeTrainingConfig",
+        "ByteBpeTrainingResult",
         "MAX_IDENTIFIER_LENGTH",
         "MAX_EVALUATION_SAMPLES",
         "MAX_TEXT_BYTES",
@@ -25,4 +30,5 @@ def test_public_api_is_explicit() -> None:
         "TokenizerDescriptor",
         "Utf8ByteReferenceTokenizer",
         "evaluate_utf8_byte_reference",
+        "train_byte_bpe_candidate",
     ]
