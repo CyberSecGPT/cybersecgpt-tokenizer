@@ -14,3 +14,9 @@ The UTF-8 byte reference has no special-token roles, rejects requested insertion
 range-checks every ID against 0..255, and decodes with strict UTF-8 validation and
 no replacement. Its evaluation metrics contain digests and counts, not raw sample
 text. These reference semantics do not approve the eventual Tokenizer v1 policy.
+
+The proposed byte-BPE candidate must use fixed evaluation-only semantics,
+immutable in-memory learned data, bounded deterministic construction, guaranteed
+byte fallback, and explicit failure. Persistent artifact loading remains
+prohibited until a separate non-executable schema and fingerprint gate is
+accepted.
