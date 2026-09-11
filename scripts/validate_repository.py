@@ -19,6 +19,7 @@ REQUIRED_FILES = frozenset(
         "SECURITY.md",
         "docs/ARCHITECTURE.md",
         "docs/P6_2_BYTE_BPE_CANDIDATE.md",
+        "docs/P6_3_UNIGRAM_CANDIDATE.md",
         "pyproject.toml",
         "scripts/validate_repository.py",
         "scripts/verify_distribution.py",
