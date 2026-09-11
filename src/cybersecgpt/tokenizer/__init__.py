@@ -38,6 +38,13 @@ from cybersecgpt.tokenizer.reference import (
     UTF8_BYTE_REFERENCE_FINGERPRINT,
     Utf8ByteReferenceTokenizer,
 )
+from cybersecgpt.tokenizer.unigram import (
+    ByteUnigramCandidate,
+    ByteUnigramTrainingConfig,
+    ByteUnigramTrainingResult,
+    UnigramTrainingFinishStatus,
+    train_byte_unigram_candidate,
+)
 
 __all__ = [
     "BpeMerge",
@@ -45,6 +52,9 @@ __all__ = [
     "ByteBpeCandidate",
     "ByteBpeTrainingConfig",
     "ByteBpeTrainingResult",
+    "ByteUnigramCandidate",
+    "ByteUnigramTrainingConfig",
+    "ByteUnigramTrainingResult",
     "CandidateEvaluationReport",
     "CandidateSampleMetrics",
     "MAX_IDENTIFIER_LENGTH",
@@ -67,7 +77,9 @@ __all__ = [
     "TokenizerContractError",
     "TokenizerDescriptor",
     "Utf8ByteReferenceTokenizer",
+    "UnigramTrainingFinishStatus",
     "evaluate_candidate",
     "evaluate_utf8_byte_reference",
     "train_byte_bpe_candidate",
+    "train_byte_unigram_candidate",
 ]
