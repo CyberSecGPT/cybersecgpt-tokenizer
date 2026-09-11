@@ -71,6 +71,11 @@ Any change to repository ownership, dependency direction, public contract
 compatibility, trust boundaries, or persistent artifact format follows the
 architecture change gate and requires the applicable ADR/review.
 
+The experimental behavior proposed for the required byte-BPE candidate is
+recorded in `docs/P6_2_BYTE_BPE_CANDIDATE.md`. BPE implementation remains blocked
+until that exact revision receives project-owner architecture/security
+acceptance. Unigram numeric and training semantics require a separate gate.
+
 ## Initial completion evidence
 
 P6 is complete only when the selected Tokenizer v1 implementation, artifacts,

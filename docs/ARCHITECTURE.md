@@ -25,6 +25,11 @@ normalization, pretokenization, offsets, artifact encoding, special-token
 allocation, streaming, corpus approval, and training remain gated by
 `P6_ACCEPTANCE.md` and `docs/P6_1_ALGORITHM_EVALUATION.md`.
 
+`docs/P6_2_BYTE_BPE_CANDIDATE.md` proposes evaluation-only semantics and
+deterministic training rules for byte-BPE. It deliberately blocks BPE code until
+exact-revision architecture/security acceptance and leaves Unigram numeric
+behavior, persistent artifacts, and production Tokenizer v1 behavior unresolved.
+
 All tokenizer data is untrusted. Results may describe tokenization behavior but
 cannot grant permissions, change classification, widen target scope, weaken
 provider/network or offline policy, extend deadlines or budgets, or reduce

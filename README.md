@@ -31,6 +31,11 @@ deadline or budget, or reduce verification requirements.
 See [P6 acceptance gates](P6_ACCEPTANCE.md) and
 [architecture](docs/ARCHITECTURE.md).
 
+The proposed [experimental byte-BPE candidate gate](docs/P6_2_BYTE_BPE_CANDIDATE.md)
+defines a fair, deterministic comparison profile for the next candidate. It must
+be accepted before BPE is implemented and does not select the production
+tokenizer or constrain the later Unigram candidate.
+
 The evaluation layer also provides bounded, immutable corpus manifests with
 explicit domain, source, license identifier, and canonical UTF-8 content digest.
 It records no implicit license approval and exposes no raw-content logging path.
