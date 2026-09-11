@@ -14,5 +14,8 @@
   boundaries for byte-BPE candidate evaluation.
 - Deterministic, bounded, in-memory experimental byte-BPE construction, encoding,
   decoding, fingerprinting, provenance evidence, and explicit stop outcomes.
+- Candidate-neutral deterministic structural evaluation reports with exact
+  reduced ratios, manifest/candidate identity binding, explicit truncation and
+  decode outcomes, and no raw-text or timing fields.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.

@@ -24,10 +24,14 @@ from cybersecgpt.tokenizer.contracts import (
 )
 from cybersecgpt.tokenizer.evaluation import (
     MAX_EVALUATION_SAMPLES,
+    CandidateEvaluationReport,
+    CandidateSampleMetrics,
     EvaluationDomain,
     EvaluationManifest,
     EvaluationSample,
+    ExactRatio,
     ReferenceSampleMetrics,
+    evaluate_candidate,
     evaluate_utf8_byte_reference,
 )
 from cybersecgpt.tokenizer.reference import (
@@ -41,6 +45,8 @@ __all__ = [
     "ByteBpeCandidate",
     "ByteBpeTrainingConfig",
     "ByteBpeTrainingResult",
+    "CandidateEvaluationReport",
+    "CandidateSampleMetrics",
     "MAX_IDENTIFIER_LENGTH",
     "MAX_EVALUATION_SAMPLES",
     "MAX_TEXT_BYTES",
@@ -54,12 +60,14 @@ __all__ = [
     "EvaluationDomain",
     "EvaluationManifest",
     "EvaluationSample",
+    "ExactRatio",
     "FinishStatus",
     "ReferenceSampleMetrics",
     "SpecialToken",
     "TokenizerContractError",
     "TokenizerDescriptor",
     "Utf8ByteReferenceTokenizer",
+    "evaluate_candidate",
     "evaluate_utf8_byte_reference",
     "train_byte_bpe_candidate",
 ]

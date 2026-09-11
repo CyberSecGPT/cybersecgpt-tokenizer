@@ -17,7 +17,11 @@ AI APIs or external-provider tokenizers.
 ## Current implementation
 
 P6 is in progress. Immutable, bounded contracts now include a fixed 256-token
-UTF-8 byte reference candidate and deterministic structural evaluation metrics.
+UTF-8 byte reference candidate and candidate-neutral deterministic structural
+evaluation reports. Reports bind the manifest identity, candidate algorithm and
+fingerprint, token limit, sample digests, exact reduced count ratios, completion
+status, decode success, and reversibility without retaining raw sample text or
+recording nondeterministic timing.
 The reference exists only to establish a reproducible comparison baseline; it is
 not the selected Tokenizer v1 algorithm, vocabulary, invalid-input policy, or
 production tokenizer. Artifact loading, streaming, production training, and final
@@ -45,5 +49,8 @@ candidate.
 The evaluation layer also provides bounded, immutable corpus manifests with
 explicit domain, source, license identifier, and canonical UTF-8 content digest.
 It records no implicit license approval and exposes no raw-content logging path.
-Reference metrics retain sample identity, domain, digest, counts, status, and
-reversibility only; they do not copy sample text into reports.
+Candidate metrics retain sample identity, domain, digest, counts, exact ratios,
+status, and reversibility only; they do not copy sample text into reports.
+Incomplete encodes do not receive compression ratios, and candidate identity
+mismatches fail evaluation. These reports provide comparison evidence only and
+do not select Tokenizer v1.
