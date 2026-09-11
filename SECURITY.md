@@ -31,3 +31,9 @@ omits ratios when encoding is incomplete. Reports use sample digests and integer
 counts and never retain raw text. Evaluation output is evidence only: it cannot
 approve a tokenizer, grant authorization, alter classification or target scope,
 enable network/provider access, or relax any budget or verification requirement.
+
+The proposed byte-Unigram gate permits no runtime floating-point scoring,
+unbounded substring discovery, external tokenizer state, or persistent artifact.
+Its candidate pool, substring length, training bytes, vocabulary, token IDs, and
+decode output are bounded and validated. The gate is documentation only;
+implementation remains blocked until exact-revision acceptance.

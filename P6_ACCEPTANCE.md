@@ -75,8 +75,10 @@ The accepted experimental behavior for the required byte-BPE candidate is
 recorded in `docs/P6_2_BYTE_BPE_CANDIDATE.md`. Its implementation remains an
 evaluation-only candidate and does not select Tokenizer v1. Candidate-neutral
 structural reports compare bounded implementations using exact count ratios and
-explicit integrity/outcome evidence without timing data. Unigram numeric and
-training semantics require a separate gate.
+explicit integrity/outcome evidence without timing data. The proposed Unigram
+numeric, discovery, segmentation, and reproducibility rules are recorded in
+`docs/P6_3_UNIGRAM_CANDIDATE.md`; implementation remains blocked until that exact
+gate revision is accepted.
 
 ## Initial completion evidence
 

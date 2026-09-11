@@ -17,5 +17,8 @@
 - Candidate-neutral deterministic structural evaluation reports with exact
   reduced ratios, manifest/candidate identity binding, explicit truncation and
   decode outcomes, and no raw-text or timing fields.
+- Proposed deterministic experimental byte-Unigram candidate semantics,
+  integer-only scoring, stable segmentation, resource ceilings, and security
+  boundaries; implementation remains blocked pending acceptance.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.

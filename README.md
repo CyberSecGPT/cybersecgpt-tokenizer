@@ -46,6 +46,12 @@ defines its fair, deterministic comparison profile. Neither the gate nor the
 candidate selects the production tokenizer or constrains the later Unigram
 candidate.
 
+The proposed [experimental byte-Unigram gate](docs/P6_3_UNIGRAM_CANDIDATE.md)
+defines bounded candidate discovery, integer-only scoring, deterministic
+segmentation, byte fallback, and security limits. It contains no implementation,
+and Unigram work remains blocked pending exact-revision architecture/security
+acceptance.
+
 The evaluation layer also provides bounded, immutable corpus manifests with
 explicit domain, source, license identifier, and canonical UTF-8 content digest.
 It records no implicit license approval and exposes no raw-content logging path.
