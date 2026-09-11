@@ -15,8 +15,11 @@ range-checks every ID against 0..255, and decodes with strict UTF-8 validation a
 no replacement. Its evaluation metrics contain digests and counts, not raw sample
 text. These reference semantics do not approve the eventual Tokenizer v1 policy.
 
-The proposed byte-BPE candidate must use fixed evaluation-only semantics,
+The experimental byte-BPE candidate uses fixed evaluation-only semantics,
 immutable in-memory learned data, bounded deterministic construction, guaranteed
-byte fallback, and explicit failure. Persistent artifact loading remains
-prohibited until a separate non-executable schema and fingerprint gate is
-accepted.
+byte fallback, and explicit failure. Construction is bounded to 256 merges and
+1 MiB of manifest content per run. It performs no I/O, networking, dynamic
+loading, subprocess execution, or raw-text logging. Candidate decoding
+range-checks IDs before lookup and rejects malformed UTF-8 without replacement.
+Persistent artifact loading remains prohibited until a separate non-executable
+schema and fingerprint gate is accepted.

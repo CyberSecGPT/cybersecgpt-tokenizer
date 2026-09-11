@@ -12,5 +12,7 @@
   structural metrics for reproducible algorithm comparison.
 - Proposed experimental semantics, deterministic training rules, and security
   boundaries for byte-BPE candidate evaluation.
+- Deterministic, bounded, in-memory experimental byte-BPE construction, encoding,
+  decoding, fingerprinting, provenance evidence, and explicit stop outcomes.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.

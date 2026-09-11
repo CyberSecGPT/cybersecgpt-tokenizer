@@ -2,7 +2,12 @@
 
 ## Status
 
-**Proposed — candidate implementation blocked pending exact-revision acceptance**
+**Accepted for experimental implementation**
+
+Project-owner architecture/security acceptance was recorded on tokenizer PR #5
+for exact head `db026647e4e0ebfa75e77d66c75233ce7fe1ef13`. The gate was squash
+merged as `73b31c9a5cb169b3c66a27aec5f4adfe8eb4fb7d`; post-merge CI and policy run
+10 passed.
 
 This record defines experimental behavior for the byte-level Byte Pair Encoding
 (BPE) candidate required by `P6_1_ALGORITHM_EVALUATION.md`. It does not select
