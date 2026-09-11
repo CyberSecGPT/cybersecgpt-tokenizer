@@ -23,3 +23,11 @@ loading, subprocess execution, or raw-text logging. Candidate decoding
 range-checks IDs before lookup and rejects malformed UTF-8 without replacement.
 Persistent artifact loading remains prohibited until a separate non-executable
 schema and fingerprint gate is accepted.
+
+Candidate-neutral evaluation accepts only the existing bounded tokenizer
+operations. It verifies result fingerprints against the candidate descriptor,
+records decode errors rather than promoting them to reversible outcomes, and
+omits ratios when encoding is incomplete. Reports use sample digests and integer
+counts and never retain raw text. Evaluation output is evidence only: it cannot
+approve a tokenizer, grant authorization, alter classification or target scope,
+enable network/provider access, or relax any budget or verification requirement.

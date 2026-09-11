@@ -32,6 +32,7 @@ REQUIRED_FILES = frozenset(
         "tests/test_byte_bpe.py",
         "tests/test_contracts.py",
         "tests/test_evaluation.py",
+        "tests/test_candidate_evaluation.py",
         "tests/test_public_api.py",
         "tests/test_reference.py",
     }

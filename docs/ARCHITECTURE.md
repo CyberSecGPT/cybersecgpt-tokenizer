@@ -19,6 +19,14 @@ maps strict UTF-8 bytes directly to IDs 0..255, performs no normalization, has n
 special-token allocation, fails explicitly on invalid decode sequences, and
 records deterministic content-minimizing structural metrics.
 
+The candidate-neutral evaluation layer runs any candidate satisfying the bounded
+descriptor/encode/decode protocol against the same validated manifest and token
+limit. Its immutable report binds manifest and candidate identity and uses exact
+reduced integer ratios rather than floating point or timing measurements.
+Compression ratios are omitted for incomplete encodes; decode failures remain
+explicit; and encode/decode fingerprint disagreement aborts evaluation. Reports
+contain digests and measurements, never raw sample content.
+
 This reference is benchmark infrastructure, not selection of the Tokenizer v1
 algorithm or its production invalid-input policy. BPE and Unigram candidates,
 normalization, pretokenization, offsets, artifact encoding, special-token
@@ -33,7 +41,8 @@ in a stable order. A hard merge budget and training-byte ceiling bound candidate
 construction and the result records why construction stopped. Learned state is
 immutable and in-memory only.
 
-Unigram numeric behavior, persistent artifacts, and production Tokenizer v1
+Candidate reports are evidence, not a selection mechanism. Unigram numeric
+behavior, persistent artifacts, algorithm selection, and production Tokenizer v1
 behavior remain unresolved.
 
 All tokenizer data is untrusted. Results may describe tokenization behavior but
