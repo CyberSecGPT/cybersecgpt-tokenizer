@@ -72,6 +72,9 @@ byte-chunk ingestion, strict UTF-8 finalization, deterministic lifecycle failure
 and exact one-shot BPE equivalence. Because no safe progressive BPE emission
 frontier has been proven, the implementation permits output only after successful
 finalization and does not claim incremental token delivery.
+P6.5 is verified complete at merge
+`345846ac0e02b3bd0c265b1d2f4649d0774cade9`; later Tokenizer v1 gates remain
+unimplemented.
 
 The evaluation layer also provides bounded, immutable corpus manifests with
 explicit domain, source, license identifier, and canonical UTF-8 content digest.

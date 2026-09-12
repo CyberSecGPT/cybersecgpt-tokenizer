@@ -68,6 +68,9 @@ aggregate-byte, cancellation, and deadline controls; strict UTF-8 validation and
 the unchanged BPE one-shot encode occur only at finalization. Exact token IDs,
 fingerprint, and finish status must be independent of chunking. Progressive
 emission remains prohibited until a safe merge frontier is separately proven.
+P6.5 is verified complete at merge
+`345846ac0e02b3bd0c265b1d2f4649d0774cade9` with successful exact-head and
+post-merge validation. This does not close any later Tokenizer v1 gate.
 
 All tokenizer data is untrusted. Results may describe tokenization behavior but
 cannot grant permissions, change classification, widen target scope, weaken
