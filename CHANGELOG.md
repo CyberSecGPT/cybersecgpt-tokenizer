@@ -26,5 +26,8 @@
 - Implemented that accepted comparison with disjoint generated CC0 manifests,
   deterministic replay and report identity, fail-closed selection, and evidence
   recommending byte-BPE for the remaining Tokenizer v1 gates.
+- Proposed the P6.5 bounded byte-stream ingestion, lifecycle, cancellation,
+  deadline, strict UTF-8 finalization, and exact BPE chunk-equivalence gate while
+  prohibiting unproven progressive token emission.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.

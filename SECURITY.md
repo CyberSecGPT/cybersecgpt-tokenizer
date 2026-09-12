@@ -49,3 +49,10 @@ Manifest separation and complete domain coverage are validated before
 construction. The report fingerprint binds the fixed settings, manifest/sample
 digests, candidate identities, structural metrics, eligibility, and
 recommendation using length-prefixed UTF-8 fields.
+
+The proposed P6.5 streaming contract treats byte chunks and all terminal output
+as untrusted data. It bounds each chunk, aggregate bytes, admission calls, and
+tokens; checks cancellation and monotonic deadlines; validates strict UTF-8 only
+at finalization; and never emits partial tokens on failure. It permits no I/O,
+network, callback, dynamic loading, subprocess, or raw-content logging. Until a
+safe BPE frontier is proven, progressive token emission is prohibited.

@@ -87,6 +87,14 @@ Its reproducible implementation evidence recommends byte-BPE under the fixed
 generated manifests and equal settings. The recommendation remains insufficient
 for final Tokenizer v1 selection.
 
+The proposed streaming architecture and security decision is recorded in
+`docs/P6_5_STREAMING_CONTRACT.md`. It requires exact one-shot equivalence across
+arbitrary valid UTF-8 byte partitions, bounded buffering, explicit terminal
+cancellation/deadline/resource failures, and no progressive emission without a
+separately proven safe BPE frontier. Implementation remains blocked until the
+exact gate revision receives project-owner acceptance and is merged with passing
+pre- and post-merge CI.
+
 ## Initial completion evidence
 
 P6 is complete only when the selected Tokenizer v1 implementation, artifacts,

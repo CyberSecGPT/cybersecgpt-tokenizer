@@ -24,6 +24,7 @@ REQUIRED_FILES = frozenset(
         "docs/P6_3_UNIGRAM_CANDIDATE.md",
         "docs/P6_4_ALGORITHM_BENCHMARK.md",
         "docs/P6_4_ALGORITHM_BENCHMARK_EVIDENCE.md",
+        "docs/P6_5_STREAMING_CONTRACT.md",
         "pyproject.toml",
         "scripts/validate_repository.py",
         "scripts/run_p6_4_benchmark.py",
