@@ -51,11 +51,14 @@ integer frequency costs, and uses stable dynamic-programming tie-breaking with
 guaranteed byte fallback. Candidate pieces and costs are immutable and in-memory
 only; serialization, algorithm selection, and production approval remain gated.
 
-`docs/P6_4_ALGORITHM_BENCHMARK.md` proposes the controlled comparison boundary.
+`docs/P6_4_ALGORITHM_BENCHMARK.md` defines the accepted controlled comparison
+boundary, and `docs/P6_4_ALGORITHM_BENCHMARK_EVIDENCE.md` records its reproducible
+result.
 Tokenizer-local fixtures and exact structural decision evidence remain here;
 reusable cross-component benchmark suites remain owned by
 `cybersecgpt-benchmarks`. The proposed report can recommend which learned
-candidate advances, but final selection remains blocked on streaming, canonical
+candidate advances. Byte-BPE is recommended by the first fixed comparison, but
+final selection remains blocked on streaming, canonical
 artifact, performance, conformance, and corpus-review evidence.
 
 All tokenizer data is untrusted. Results may describe tokenization behavior but

@@ -2,7 +2,7 @@
 
 ## Status
 
-**Proposed — benchmark implementation blocked pending project-owner architecture/security acceptance**
+**Accepted — gate merged as `dd063926d8a5a2026b1c69dc6926c840038a9345`**
 
 This gate defines the first controlled comparison of the fixed UTF-8 byte
 reference, experimental byte-BPE, and experimental byte-frequency Unigram
@@ -145,3 +145,7 @@ Before the benchmark implementation or evidence may merge:
 
 Benchmark evidence is a recommendation input, not authorization or final
 Tokenizer v1 selection.
+
+The implementation and exact controlled result are recorded in
+`docs/P6_4_ALGORITHM_BENCHMARK_EVIDENCE.md`. That evidence remains subject to its
+own exact-head project-owner acceptance and merge gate.
