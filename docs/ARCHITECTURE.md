@@ -51,6 +51,13 @@ integer frequency costs, and uses stable dynamic-programming tie-breaking with
 guaranteed byte fallback. Candidate pieces and costs are immutable and in-memory
 only; serialization, algorithm selection, and production approval remain gated.
 
+`docs/P6_4_ALGORITHM_BENCHMARK.md` proposes the controlled comparison boundary.
+Tokenizer-local fixtures and exact structural decision evidence remain here;
+reusable cross-component benchmark suites remain owned by
+`cybersecgpt-benchmarks`. The proposed report can recommend which learned
+candidate advances, but final selection remains blocked on streaming, canonical
+artifact, performance, conformance, and corpus-review evidence.
+
 All tokenizer data is untrusted. Results may describe tokenization behavior but
 cannot grant permissions, change classification, widen target scope, weaken
 provider/network or offline policy, extend deadlines or budgets, or reduce

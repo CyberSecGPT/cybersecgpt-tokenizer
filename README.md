@@ -59,6 +59,12 @@ segmentation, byte fallback, and security limits. Its comparison-only
 implementation does not approve production semantics, algorithm selection,
 training data, or artifact serialization.
 
+The proposed [controlled algorithm benchmark gate](docs/P6_4_ALGORITHM_BENCHMARK.md)
+defines separate generated construction/evaluation manifests, equal candidate
+settings, deterministic domain-level structural evidence, and a fail-closed
+recommendation rule. Benchmark implementation remains blocked until the exact
+gate revision is accepted, and its recommendation cannot select Tokenizer v1.
+
 The evaluation layer also provides bounded, immutable corpus manifests with
 explicit domain, source, license identifier, and canonical UTF-8 content digest.
 It records no implicit license approval and exposes no raw-content logging path.
