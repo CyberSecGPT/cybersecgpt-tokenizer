@@ -1,5 +1,20 @@
 """Public API for the CyberSecGPT native tokenizer."""
 
+from cybersecgpt.tokenizer.benchmark import (
+    BENCHMARK_BPE_MERGE_BUDGET,
+    BENCHMARK_MAX_TRAINING_BYTES,
+    BENCHMARK_POLICY_ID,
+    BENCHMARK_SCHEMA_VERSION,
+    BENCHMARK_VOCABULARY_LIMIT,
+    BPE_ALGORITHM_ID,
+    BYTE_REFERENCE_ALGORITHM_ID,
+    UNIGRAM_ALGORITHM_ID,
+    AlgorithmBenchmarkReport,
+    CandidateBenchmarkEvidence,
+    DomainAggregate,
+    run_algorithm_benchmark,
+    select_algorithm,
+)
 from cybersecgpt.tokenizer.byte_bpe import (
     BpeMerge,
     BpeTrainingFinishStatus,
@@ -47,15 +62,24 @@ from cybersecgpt.tokenizer.unigram import (
 )
 
 __all__ = [
+    "AlgorithmBenchmarkReport",
+    "BENCHMARK_BPE_MERGE_BUDGET",
+    "BENCHMARK_MAX_TRAINING_BYTES",
+    "BENCHMARK_POLICY_ID",
+    "BENCHMARK_SCHEMA_VERSION",
+    "BENCHMARK_VOCABULARY_LIMIT",
+    "BPE_ALGORITHM_ID",
     "BpeMerge",
     "BpeTrainingFinishStatus",
     "ByteBpeCandidate",
     "ByteBpeTrainingConfig",
     "ByteBpeTrainingResult",
+    "BYTE_REFERENCE_ALGORITHM_ID",
     "ByteUnigramCandidate",
     "ByteUnigramTrainingConfig",
     "ByteUnigramTrainingResult",
     "CandidateEvaluationReport",
+    "CandidateBenchmarkEvidence",
     "CandidateSampleMetrics",
     "MAX_IDENTIFIER_LENGTH",
     "MAX_EVALUATION_SAMPLES",
@@ -65,6 +89,7 @@ __all__ = [
     "UTF8_BYTE_REFERENCE_FINGERPRINT",
     "DecodeRequest",
     "DecodeResult",
+    "DomainAggregate",
     "EncodeRequest",
     "EncodeResult",
     "EvaluationDomain",
@@ -78,8 +103,11 @@ __all__ = [
     "TokenizerDescriptor",
     "Utf8ByteReferenceTokenizer",
     "UnigramTrainingFinishStatus",
+    "UNIGRAM_ALGORITHM_ID",
     "evaluate_candidate",
     "evaluate_utf8_byte_reference",
+    "run_algorithm_benchmark",
+    "select_algorithm",
     "train_byte_bpe_candidate",
     "train_byte_unigram_candidate",
 ]

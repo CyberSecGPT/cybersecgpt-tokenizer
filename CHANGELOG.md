@@ -23,5 +23,8 @@
 - Proposed controlled BPE-versus-Unigram benchmark and deterministic
   recommendation gate with separate generated construction/evaluation manifests,
   per-domain evidence, and explicit production-selection blockers.
+- Implemented that accepted comparison with disjoint generated CC0 manifests,
+  deterministic replay and report identity, fail-closed selection, and evidence
+  recommending byte-BPE for the remaining Tokenizer v1 gates.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.
