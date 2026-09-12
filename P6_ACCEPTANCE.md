@@ -95,6 +95,12 @@ cancellation/deadline/resource failures, and no progressive emission without a
 separately proven safe BPE frontier. The implementation remains evidence for
 final selection rather than Tokenizer v1 approval.
 
+P6.5 closure is verified at implementation head
+`e40c22969f7c1f81394ae7948aed23d9b05c3b82`, squash merge
+`345846ac0e02b3bd0c265b1d2f4649d0774cade9`, and successful exact-head and
+post-merge runs 25 and 26. This closes only the streaming and chunk-equivalence
+slice; the remaining Tokenizer v1 acceptance requirements stay open.
+
 ## Initial completion evidence
 
 P6 is complete only when the selected Tokenizer v1 implementation, artifacts,

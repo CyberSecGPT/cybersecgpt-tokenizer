@@ -32,5 +32,6 @@
 - Implemented the accepted P6.5 single-consumer byte-stream state machine with
   fail-closed limits, cancellation/deadline propagation, strict finalization,
   exact one-shot equivalence evidence, and no partial token output.
+- Verified P6.5 exact-head acceptance, squash merge, and post-merge validation.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.

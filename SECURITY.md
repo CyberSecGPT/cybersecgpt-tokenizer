@@ -57,3 +57,6 @@ validates strict UTF-8 only at finalization; and never emits partial tokens on
 failure. It permits no I/O, network, callback, dynamic loading, subprocess, or
 raw-content logging. Until a safe BPE frontier is proven, progressive token
 emission is prohibited.
+Exact-head and post-merge validation verify these P6.5 controls at merge
+`345846ac0e02b3bd0c265b1d2f4649d0774cade9`; they do not approve another P6
+security boundary.

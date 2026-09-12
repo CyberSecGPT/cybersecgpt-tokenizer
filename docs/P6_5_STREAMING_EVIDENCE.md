@@ -2,7 +2,13 @@
 
 ## Status
 
-**Implementation evidence proposed — exact-head project-owner acceptance required**
+**Verified complete**
+
+Project-owner acceptance was recorded on implementation PR #13 for exact head
+`e40c22969f7c1f81394ae7948aed23d9b05c3b82`. Exact-head CI and policy run 25
+passed, the PR was squash-merged as
+`345846ac0e02b3bd0c265b1d2f4649d0774cade9`, and post-merge `main` CI and policy
+run 26 passed.
 
 The accepted P6.5 gate was squash-merged to `main` as
 `e678f39864a779de890b145eff13cf8e12a74963` after exact-revision acceptance and
@@ -79,10 +85,12 @@ These constraints prevent chunk-dependent tokenization and premature output.
 Any progressive or concurrent streaming design requires a separate reviewed
 architecture change and evidence; it is not part of P6.5.
 
-## Required closure evidence
+## Closure evidence
 
-P6.5 is not complete until this implementation revision passes unchanged Ruff,
-Black, strict mypy, repository/security validation, dependency consistency,
-split-package import, pytest with 100% coverage on Python 3.11–3.13, package build,
-exact distribution verification, complete security/diff review, exact-head owner
-acceptance, squash merge, and post-merge `main` CI.
+The exact accepted implementation revision passed unchanged Ruff, Black, strict
+mypy, repository/security validation, dependency consistency, split-package
+import, pytest with 100% coverage on Python 3.11–3.13, package build, and exact
+distribution verification. Complete security/diff review found no authorization
+widening, provider/network dependency, executable artifact, unrelated drift, or
+later P6 work. The expected-head squash merge and post-merge `main` validation
+also passed. P6.5 is therefore complete within the limitations recorded above.
