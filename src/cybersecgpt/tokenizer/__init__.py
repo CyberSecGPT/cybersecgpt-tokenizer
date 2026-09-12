@@ -53,6 +53,14 @@ from cybersecgpt.tokenizer.reference import (
     UTF8_BYTE_REFERENCE_FINGERPRINT,
     Utf8ByteReferenceTokenizer,
 )
+from cybersecgpt.tokenizer.streaming import (
+    MAX_STREAM_CHUNK_BYTES,
+    MAX_STREAM_CHUNKS,
+    ByteBpeStreamingEncoder,
+    StreamingDeadlineError,
+    StreamingState,
+    StreamingStateError,
+)
 from cybersecgpt.tokenizer.unigram import (
     ByteUnigramCandidate,
     ByteUnigramTrainingConfig,
@@ -81,7 +89,10 @@ __all__ = [
     "CandidateEvaluationReport",
     "CandidateBenchmarkEvidence",
     "CandidateSampleMetrics",
+    "ByteBpeStreamingEncoder",
     "MAX_IDENTIFIER_LENGTH",
+    "MAX_STREAM_CHUNK_BYTES",
+    "MAX_STREAM_CHUNKS",
     "MAX_EVALUATION_SAMPLES",
     "MAX_TEXT_BYTES",
     "MAX_TOKEN_COUNT",
@@ -99,6 +110,9 @@ __all__ = [
     "FinishStatus",
     "ReferenceSampleMetrics",
     "SpecialToken",
+    "StreamingDeadlineError",
+    "StreamingState",
+    "StreamingStateError",
     "TokenizerContractError",
     "TokenizerDescriptor",
     "Utf8ByteReferenceTokenizer",

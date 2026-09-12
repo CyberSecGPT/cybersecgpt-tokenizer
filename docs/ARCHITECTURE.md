@@ -61,12 +61,13 @@ candidate advances. Byte-BPE is recommended by the first fixed comparison, but
 final selection remains blocked on streaming, canonical
 artifact, performance, conformance, and corpus-review evidence.
 
-`docs/P6_5_STREAMING_CONTRACT.md` proposes the next gate: ordered bounded byte
-chunks are buffered under explicit lifecycle, chunk-count, aggregate-byte,
-cancellation, and deadline controls; strict UTF-8 validation and the unchanged
-BPE one-shot encode occur only at finalization. Exact token IDs, fingerprint, and
-finish status must be independent of chunking. Progressive emission remains
-prohibited until a safe merge frontier is separately proven.
+`docs/P6_5_STREAMING_CONTRACT.md` defines the accepted gate and
+`docs/P6_5_STREAMING_EVIDENCE.md` records its implementation evidence. Ordered
+bounded byte chunks are buffered under explicit lifecycle, chunk-count,
+aggregate-byte, cancellation, and deadline controls; strict UTF-8 validation and
+the unchanged BPE one-shot encode occur only at finalization. Exact token IDs,
+fingerprint, and finish status must be independent of chunking. Progressive
+emission remains prohibited until a safe merge frontier is separately proven.
 
 All tokenizer data is untrusted. Results may describe tokenization behavior but
 cannot grant permissions, change classification, widen target scope, weaken

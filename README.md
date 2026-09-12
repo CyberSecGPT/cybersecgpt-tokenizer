@@ -66,11 +66,12 @@ deterministic domain-level structural evidence, and a fail-closed recommendation
 rule. The controlled result recommends experimental byte-BPE for the remaining
 gates; it does not select Tokenizer v1.
 
-The proposed [streaming contract gate](docs/P6_5_STREAMING_CONTRACT.md) defines
-bounded byte-chunk ingestion, strict UTF-8 finalization, deterministic lifecycle
-failures, and exact one-shot BPE equivalence. Because no safe progressive BPE
-emission frontier has been proven, it deliberately permits output only after
-successful finalization and does not claim incremental token delivery.
+The accepted [streaming contract gate](docs/P6_5_STREAMING_CONTRACT.md) and
+[implementation evidence](docs/P6_5_STREAMING_EVIDENCE.md) define bounded
+byte-chunk ingestion, strict UTF-8 finalization, deterministic lifecycle failures,
+and exact one-shot BPE equivalence. Because no safe progressive BPE emission
+frontier has been proven, the implementation permits output only after successful
+finalization and does not claim incremental token delivery.
 
 The evaluation layer also provides bounded, immutable corpus manifests with
 explicit domain, source, license identifier, and canonical UTF-8 content digest.
