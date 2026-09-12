@@ -80,6 +80,12 @@ numeric, discovery, segmentation, and reproducibility rules are recorded in
 `docs/P6_3_UNIGRAM_CANDIDATE.md`. Its implementation remains evaluation-only and
 does not select Tokenizer v1 or approve a persistent artifact.
 
+The proposed controlled comparison and recommendation policy is recorded in
+`docs/P6_4_ALGORITHM_BENCHMARK.md`. It keeps tokenizer-local decision evidence in
+this repository while reserving reusable suites for `cybersecgpt-benchmarks`.
+Implementation is blocked until exact-revision acceptance, and any recommendation
+remains insufficient for final Tokenizer v1 selection.
+
 ## Initial completion evidence
 
 P6 is complete only when the selected Tokenizer v1 implementation, artifacts,

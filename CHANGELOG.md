@@ -20,5 +20,8 @@
 - Accepted deterministic experimental byte-Unigram candidate semantics plus
   bounded in-memory construction, exact integer scoring, stable segmentation,
   byte fallback, provenance evidence, and explicit resource failures.
+- Proposed controlled BPE-versus-Unigram benchmark and deterministic
+  recommendation gate with separate generated construction/evaluation manifests,
+  per-domain evidence, and explicit production-selection blockers.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.

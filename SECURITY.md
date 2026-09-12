@@ -38,3 +38,10 @@ artifact. Its candidate pool, substring length, training bytes, vocabulary,
 token IDs, and decode output are bounded and validated. Construction and
 execution are local and deterministic; failures remain explicit, and candidate
 or evaluation output grants no approval or authority.
+
+The proposed controlled benchmark uses only inert generated CC0 fixtures with
+separate construction and evaluation manifests. Deterministic reports contain
+digests and counts rather than sample text, and recommendation requires complete,
+reversible, fingerprint-consistent evidence. Recommendation is never
+authorization, artifact approval, model compatibility, or final algorithm
+selection.
