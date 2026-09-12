@@ -25,6 +25,7 @@ REQUIRED_FILES = frozenset(
         "docs/P6_4_ALGORITHM_BENCHMARK.md",
         "docs/P6_4_ALGORITHM_BENCHMARK_EVIDENCE.md",
         "docs/P6_5_STREAMING_CONTRACT.md",
+        "docs/P6_5_STREAMING_EVIDENCE.md",
         "pyproject.toml",
         "scripts/validate_repository.py",
         "scripts/run_p6_4_benchmark.py",
@@ -36,6 +37,7 @@ REQUIRED_FILES = frozenset(
         "src/cybersecgpt/tokenizer/evaluation.py",
         "src/cybersecgpt/tokenizer/py.typed",
         "src/cybersecgpt/tokenizer/reference.py",
+        "src/cybersecgpt/tokenizer/streaming.py",
         "src/cybersecgpt/tokenizer/unigram.py",
         "tests/__init__.py",
         "tests/test_byte_bpe.py",
@@ -45,6 +47,7 @@ REQUIRED_FILES = frozenset(
         "tests/test_candidate_evaluation.py",
         "tests/test_public_api.py",
         "tests/test_reference.py",
+        "tests/test_streaming.py",
         "tests/test_unigram.py",
     }
 )

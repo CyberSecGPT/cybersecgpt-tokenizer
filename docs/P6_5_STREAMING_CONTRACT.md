@@ -2,7 +2,11 @@
 
 ## Status
 
-**Proposed — implementation blocked pending exact-revision project-owner acceptance**
+**Accepted — gate merged as `e678f39864a779de890b145eff13cf8e12a74963`**
+
+Project-owner architecture/security acceptance was recorded on PR #12 for exact
+head `56cbdf1898e5548873046ec2ebceee9b69de0ea3`. The gate was squash-merged;
+post-merge CI and policy run 24 passed.
 
 This gate defines streaming semantics for the experimental byte-BPE candidate
 recommended by the accepted P6.4 comparison. It does not finally select
@@ -63,7 +67,8 @@ bounded memory, not a claim of incremental token delivery or latency improvement
 - The existing `MAX_TOKEN_COUNT` and caller `max_tokens` bounds remain unchanged.
 - Bounds are checked before extending the aggregate buffer or invoking BPE.
 - The caller may cancel explicitly. An optional absolute monotonic deadline is
-  checked at construction, before every chunk admission, and before finalization.
+  checked at construction, before every chunk admission, before finalization,
+  and before publishing the final result.
 - Cancellation and deadline expiry are terminal failures, produce no partial
   tokens, and cannot be converted to `completed` or `truncated`.
 - The implementation uses the standard library only and performs no I/O,
@@ -77,8 +82,8 @@ wall-clock or timing measurement enters canonical evidence.
 ## Exact chunk-equivalence rule
 
 For any byte sequence `B` that is the strict UTF-8 encoding of text `T`, any
-ordered chunk partition whose concatenation is exactly `B`, and identical
-`max_tokens` and special-token settings:
+ordered chunk partition within the admitted resource limits whose concatenation
+is exactly `B`, and identical `max_tokens` and special-token settings:
 
 ```text
 stream.finish() == candidate.encode(EncodeRequest(T, ...))
@@ -108,6 +113,7 @@ The implementation PR must demonstrate:
 - per-chunk, aggregate-byte, chunk-count, and output-token boundaries;
 - cancellation before input, after partial input, and after terminal states;
 - deadline expiry at construction, chunk admission, and finalization; and
+- deadline expiry during finalization before result publication; and
 - fail-closed state transitions with buffer disposal and no token output.
 
 Tests must independently construct expected one-shot results through the existing

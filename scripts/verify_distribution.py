@@ -14,6 +14,7 @@ EXPECTED_SOURCE_MEMBERS = frozenset(
         "cybersecgpt/tokenizer/evaluation.py",
         "cybersecgpt/tokenizer/py.typed",
         "cybersecgpt/tokenizer/reference.py",
+        "cybersecgpt/tokenizer/streaming.py",
         "cybersecgpt/tokenizer/unigram.py",
     }
 )
