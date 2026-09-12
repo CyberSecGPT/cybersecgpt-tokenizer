@@ -13,6 +13,7 @@ EXPECTED_SOURCE_MEMBERS = frozenset(
         "cybersecgpt/tokenizer/evaluation.py",
         "cybersecgpt/tokenizer/py.typed",
         "cybersecgpt/tokenizer/reference.py",
+        "cybersecgpt/tokenizer/unigram.py",
     }
 )
 PROVIDER_MARKERS = (

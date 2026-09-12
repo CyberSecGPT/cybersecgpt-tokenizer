@@ -33,6 +33,13 @@ in-memory learned data, bounded merge construction, explicit stop reasons, and
 content-minimizing provenance. It is not an approved persistent artifact or the
 selected Tokenizer v1 implementation.
 
+An experimental deterministic byte-frequency Unigram candidate is also
+available for candidate-neutral comparison. It discovers overlapping byte
+pieces within fixed resource ceilings, derives exact integer costs, uses stable
+dynamic-programming segmentation with byte fallback, and retains only immutable
+in-memory state and content-minimizing provenance. It does not select Tokenizer
+v1 or approve a persistent artifact.
+
 Tokenizer input, artifacts, metadata, and output are untrusted data. Tokenizer
 behavior and output never create an authorization grant, lower classification,
 widen target scope or provider/network access, relax offline operation, extend a
@@ -46,11 +53,11 @@ defines its fair, deterministic comparison profile. Neither the gate nor the
 candidate selects the production tokenizer or constrains the later Unigram
 candidate.
 
-The proposed [experimental byte-Unigram gate](docs/P6_3_UNIGRAM_CANDIDATE.md)
+The accepted [experimental byte-Unigram gate](docs/P6_3_UNIGRAM_CANDIDATE.md)
 defines bounded candidate discovery, integer-only scoring, deterministic
-segmentation, byte fallback, and security limits. It contains no implementation,
-and Unigram work remains blocked pending exact-revision architecture/security
-acceptance.
+segmentation, byte fallback, and security limits. Its comparison-only
+implementation does not approve production semantics, algorithm selection,
+training data, or artifact serialization.
 
 The evaluation layer also provides bounded, immutable corpus manifests with
 explicit domain, source, license identifier, and canonical UTF-8 content digest.

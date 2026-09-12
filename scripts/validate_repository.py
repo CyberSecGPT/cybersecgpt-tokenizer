@@ -29,6 +29,7 @@ REQUIRED_FILES = frozenset(
         "src/cybersecgpt/tokenizer/evaluation.py",
         "src/cybersecgpt/tokenizer/py.typed",
         "src/cybersecgpt/tokenizer/reference.py",
+        "src/cybersecgpt/tokenizer/unigram.py",
         "tests/__init__.py",
         "tests/test_byte_bpe.py",
         "tests/test_contracts.py",
@@ -36,6 +37,7 @@ REQUIRED_FILES = frozenset(
         "tests/test_candidate_evaluation.py",
         "tests/test_public_api.py",
         "tests/test_reference.py",
+        "tests/test_unigram.py",
     }
 )
 SECRET_PATTERNS = (

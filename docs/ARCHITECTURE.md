@@ -41,15 +41,15 @@ in a stable order. A hard merge budget and training-byte ceiling bound candidate
 construction and the result records why construction stopped. Learned state is
 immutable and in-memory only.
 
-Candidate reports are evidence, not a selection mechanism. Unigram numeric
-behavior, persistent artifacts, algorithm selection, and production Tokenizer v1
-behavior remain unresolved.
+Candidate reports are evidence, not a selection mechanism. Persistent artifacts,
+algorithm selection, and production Tokenizer v1 behavior remain unresolved.
 
-`docs/P6_3_UNIGRAM_CANDIDATE.md` proposes a comparison-only byte-Unigram profile
-with bounded substring discovery, integer-only frequency costs, stable dynamic
-programming tie-breaking, and guaranteed byte fallback. It is an architecture
-gate only; no Unigram implementation is approved until the exact gate revision
-receives project-owner architecture/security acceptance.
+`docs/P6_3_UNIGRAM_CANDIDATE.md` defines the accepted comparison-only
+byte-Unigram profile. Its implementation validates bounded manifest content,
+discovers overlapping pieces without crossing sample boundaries, derives exact
+integer frequency costs, and uses stable dynamic-programming tie-breaking with
+guaranteed byte fallback. Candidate pieces and costs are immutable and in-memory
+only; serialization, algorithm selection, and production approval remain gated.
 
 All tokenizer data is untrusted. Results may describe tokenization behavior but
 cannot grant permissions, change classification, widen target scope, weaken

@@ -2,7 +2,13 @@
 
 ## Status
 
-**Proposed — implementation blocked pending project-owner architecture/security acceptance**
+**Accepted for comparison-only implementation**
+
+Project-owner architecture/security acceptance was recorded for PR #8 at exact
+head `a8cc1f6a2e6a8f4af184fe7a2ca1711f8b59c8f2`. The gate was squash-merged as
+`1a1c9ece79e07df5eeaa607c597ea7002e60b899`; post-merge CI and policy run 16
+passed. Acceptance authorizes only the bounded evaluation candidate defined
+here, not Tokenizer v1 selection, corpus approval, or persistent artifacts.
 
 This record defines experimental behavior for the Unigram candidate required by
 `P6_1_ALGORITHM_EVALUATION.md`. It does not implement Unigram, select Tokenizer
