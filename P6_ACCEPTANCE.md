@@ -101,6 +101,13 @@ P6.5 closure is verified at implementation head
 post-merge runs 25 and 26. This closes only the streaming and chunk-equivalence
 slice; the remaining Tokenizer v1 acceptance requirements stay open.
 
+The proposed canonical experimental BPE artifact and fingerprint decision is
+recorded in `docs/P6_6_CANONICAL_ARTIFACT.md`. It defines a fixed bounded binary
+encoding, strict pre-allocation validation, exact provenance binding, canonical
+round trips, and distinct behavior/artifact identities. Implementation remains
+blocked until exact-revision project-owner acceptance and passing pre- and
+post-merge CI.
+
 ## Initial completion evidence
 
 P6 is complete only when the selected Tokenizer v1 implementation, artifacts,

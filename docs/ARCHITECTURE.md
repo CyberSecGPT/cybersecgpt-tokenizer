@@ -72,6 +72,12 @@ P6.5 is verified complete at merge
 `345846ac0e02b3bd0c265b1d2f4649d0774cade9` with successful exact-head and
 post-merge validation. This does not close any later Tokenizer v1 gate.
 
+`docs/P6_6_CANONICAL_ARTIFACT.md` proposes a fixed big-endian binary envelope for
+the experimental P6.4 BPE candidate. It separates behavior fingerprint from the
+digest of provenance-bearing canonical bytes, permits bounded in-memory byte
+serialization/loading only, and rejects malformed data before controlled
+allocation. It does not approve production compatibility or filesystem loading.
+
 All tokenizer data is untrusted. Results may describe tokenization behavior but
 cannot grant permissions, change classification, widen target scope, weaken
 provider/network or offline policy, extend deadlines or budgets, or reduce
