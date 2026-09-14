@@ -67,3 +67,9 @@ before payload counts or lengths are used; descriptor, provenance, token, merge,
 and canonical-byte integrity are then revalidated. It forbids pickle/marshal,
 code execution, paths, external references, I/O, networking, callbacks, dynamic
 loading, subprocesses, providers, fallback, and implicit corpus approval.
+
+The P6.6 implementation preserves that boundary through exact `bytes` admission,
+envelope-first validation, bounded counts and token lengths, reconstructed
+candidate validation, generic content-minimizing failures, and exact canonical
+rebuilding. Artifact validity remains data integrity, never authorization,
+license approval, or model compatibility.

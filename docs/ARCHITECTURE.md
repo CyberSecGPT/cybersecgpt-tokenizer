@@ -78,6 +78,11 @@ digest of provenance-bearing canonical bytes, permits bounded in-memory byte
 serialization/loading only, and rejects malformed data before controlled
 allocation. It does not approve production compatibility or filesystem loading.
 
+The accepted gate is implemented by the bytes-only
+`cybersecgpt.tokenizer.artifact` module. It reconstructs and revalidates the
+existing immutable BPE candidate, binds content-minimizing provenance, and
+requires byte-identical canonical rebuilding; it adds no I/O or execution role.
+
 All tokenizer data is untrusted. Results may describe tokenization behavior but
 cannot grant permissions, change classification, widen target scope, weaken
 provider/network or offline policy, extend deadlines or budgets, or reduce
