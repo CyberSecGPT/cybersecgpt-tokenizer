@@ -2,7 +2,14 @@
 
 ## Status
 
-**Proposed — implementation blocked pending exact-revision project-owner acceptance**
+**Accepted and implemented — verified P6.6 closure**
+
+The gate was accepted at exact head
+`77deb523f8410653e139bb50fd4fba8ee78814d5` and merged as
+`97c09999249214641a8ac79312cef5920f7551cf`. Its implementation was accepted at
+exact head `b4f857687f3e838fcae7b1a7f27f62e52440ea50`, merged as
+`92776213a1e8003682752a268af5e4bc0664457d`, and verified by pre- and post-merge
+CI and policy runs 32 and 33.
 
 This gate defines the first persistent encoding for the experimental byte-BPE
 candidate recommended by P6.4. It does not approve a production Tokenizer v1

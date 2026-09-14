@@ -73,3 +73,8 @@ envelope-first validation, bounded counts and token lengths, reconstructed
 candidate validation, generic content-minimizing failures, and exact canonical
 rebuilding. Artifact validity remains data integrity, never authorization,
 license approval, or model compatibility.
+
+These P6.6 controls are verified at accepted implementation head
+`b4f857687f3e838fcae7b1a7f27f62e52440ea50`, merge
+`92776213a1e8003682752a268af5e4bc0664457d`, and successful exact-head and
+post-merge runs 32 and 33. They grant no later P6 security approval.

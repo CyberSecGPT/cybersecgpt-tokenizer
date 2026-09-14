@@ -37,5 +37,7 @@
   provenance binding, strict loading bounds, and behavior/artifact identity gate.
 - Added the P6.6 bytes-only canonical BPE serializer/loader, fixed known-vector
   identities, fail-closed malformed-input coverage, and implementation evidence.
+- Verified P6.6 exact-head acceptance, squash merge, post-merge validation, and
+  bounded canonical-artifact closure evidence.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.

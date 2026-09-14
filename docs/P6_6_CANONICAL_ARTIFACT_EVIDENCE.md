@@ -2,12 +2,17 @@
 
 ## Status
 
-**Implementation candidate — closure pending exact-head acceptance and merge**
+**Verified complete**
 
 The architecture/security gate was accepted at head
 `77deb523f8410653e139bb50fd4fba8ee78814d5`, squash-merged as
 `97c09999249214641a8ac79312cef5920f7551cf`, and verified by successful
 post-merge `main` CI and policy runs 30 and 31.
+
+The implementation was accepted at exact head
+`b4f857687f3e838fcae7b1a7f27f62e52440ea50`, squash-merged as
+`92776213a1e8003682752a268af5e4bc0664457d`, and verified by successful
+exact-head CI and policy run 32 and post-merge `main` CI and policy run 33.
 
 ## Implemented boundary
 
@@ -51,9 +56,16 @@ return no candidate and expose only a content-minimizing contract error.
 The implementation does not grant authorization, approve a corpus, establish
 model compatibility, add a proprietary provider, or begin a later P6 slice.
 
-## Closure gate
+## Verified closure
 
-P6.6 remains open until the exact implementation head passes unchanged Python
-3.11–3.13 CI, build and exact distribution verification, final security/diff
-review, project-owner exact-head `ACCEPT`, squash merge, and successful
-post-merge `main` CI.
+The exact implementation head passed unchanged Ruff, Black, strict mypy,
+repository/security validation, dependency consistency, split-package import,
+157 tests with 100% source and branch coverage on Python 3.11–3.13, package
+build, exact distribution verification, agent-policy validation, and complete
+security/diff review. The accepted head did not change before squash merge, and
+the resulting `main` commit passed both post-merge workflows.
+
+P6.6 is closed only for canonical experimental BPE artifact serialization,
+loading, identity, provenance, and bounded malformed-input evidence. It does not
+approve a production Tokenizer v1, corpus, model compatibility, filesystem
+loading, signing, performance, or any later P6 gate.
