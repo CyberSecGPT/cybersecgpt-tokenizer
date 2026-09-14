@@ -24,7 +24,7 @@ status, decode success, and reversibility without retaining raw sample text or
 recording nondeterministic timing.
 The reference exists only to establish a reproducible comparison baseline; it is
 not the selected Tokenizer v1 algorithm, vocabulary, invalid-input policy, or
-production tokenizer. Artifact loading, streaming, production training, and final
+production tokenizer. Canonical artifact loading, production training, and final
 semantic decisions remain unimplemented.
 
 An experimental deterministic byte-BPE candidate is available for measured
@@ -75,6 +75,12 @@ finalization and does not claim incremental token delivery.
 P6.5 is verified complete at merge
 `345846ac0e02b3bd0c265b1d2f4649d0774cade9`; later Tokenizer v1 gates remain
 unimplemented.
+
+The proposed [canonical artifact gate](docs/P6_6_CANONICAL_ARTIFACT.md) defines
+a bounded, non-executable binary envelope, separates behavior fingerprint from
+artifact digest, binds content-minimizing provenance, and requires validation
+before allocation. Implementation remains blocked pending exact-revision owner
+acceptance.
 
 The evaluation layer also provides bounded, immutable corpus manifests with
 explicit domain, source, license identifier, and canonical UTF-8 content digest.

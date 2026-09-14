@@ -60,3 +60,10 @@ emission is prohibited.
 Exact-head and post-merge validation verify these P6.5 controls at merge
 `345846ac0e02b3bd0c265b1d2f4649d0774cade9`; they do not approve another P6
 security boundary.
+
+The proposed P6.6 artifact gate permits only a fixed, bounded, non-executable
+binary schema. Envelope size, magic, version, length, and digest are validated
+before payload counts or lengths are used; descriptor, provenance, token, merge,
+and canonical-byte integrity are then revalidated. It forbids pickle/marshal,
+code execution, paths, external references, I/O, networking, callbacks, dynamic
+loading, subprocesses, providers, fallback, and implicit corpus approval.
