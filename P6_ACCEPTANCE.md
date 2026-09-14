@@ -108,6 +108,11 @@ round trips, and distinct behavior/artifact identities. Implementation remains
 blocked until exact-revision project-owner acceptance and passing pre- and
 post-merge CI.
 
+The implementation candidate and its known-vector, identity, round-trip,
+malformed-input, allocation-bound, and content-minimization evidence are recorded
+in `docs/P6_6_CANONICAL_ARTIFACT_EVIDENCE.md`. P6.6 remains open pending its own
+exact-head acceptance, merge, and post-merge validation.
+
 ## Initial completion evidence
 
 P6 is complete only when the selected Tokenizer v1 implementation, artifacts,

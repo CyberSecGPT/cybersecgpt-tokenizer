@@ -76,11 +76,12 @@ P6.5 is verified complete at merge
 `345846ac0e02b3bd0c265b1d2f4649d0774cade9`; later Tokenizer v1 gates remain
 unimplemented.
 
-The proposed [canonical artifact gate](docs/P6_6_CANONICAL_ARTIFACT.md) defines
-a bounded, non-executable binary envelope, separates behavior fingerprint from
-artifact digest, binds content-minimizing provenance, and requires validation
-before allocation. Implementation remains blocked pending exact-revision owner
-acceptance.
+The accepted [canonical artifact gate](docs/P6_6_CANONICAL_ARTIFACT.md) and
+[implementation evidence](docs/P6_6_CANONICAL_ARTIFACT_EVIDENCE.md) define and
+exercise a bounded, non-executable binary envelope. The implementation separates
+behavior fingerprint from artifact digest, binds content-minimizing provenance,
+and validates the envelope before payload-controlled allocation. P6.6 closure
+remains pending exact-head review and acceptance.
 
 The evaluation layer also provides bounded, immutable corpus manifests with
 explicit domain, source, license identifier, and canonical UTF-8 content digest.

@@ -5,7 +5,10 @@ import cybersecgpt.tokenizer as tokenizer
 
 def test_public_api_is_explicit() -> None:
     assert tokenizer.__all__ == [
+        "ARTIFACT_FORMAT_ID",
+        "ARTIFACT_FORMAT_VERSION",
         "AlgorithmBenchmarkReport",
+        "ArtifactSampleProvenance",
         "BENCHMARK_BPE_MERGE_BUDGET",
         "BENCHMARK_MAX_TRAINING_BYTES",
         "BENCHMARK_POLICY_ID",
@@ -26,6 +29,8 @@ def test_public_api_is_explicit() -> None:
         "CandidateSampleMetrics",
         "ByteBpeStreamingEncoder",
         "MAX_IDENTIFIER_LENGTH",
+        "MAX_BPE_ARTIFACT_BYTES",
+        "MAX_BPE_ARTIFACT_TOKEN_BYTES",
         "MAX_STREAM_CHUNK_BYTES",
         "MAX_STREAM_CHUNKS",
         "MAX_EVALUATION_SAMPLES",
@@ -44,6 +49,7 @@ def test_public_api_is_explicit() -> None:
         "ExactRatio",
         "FinishStatus",
         "ReferenceSampleMetrics",
+        "LoadedByteBpeArtifact",
         "SpecialToken",
         "StreamingDeadlineError",
         "StreamingState",
@@ -55,8 +61,10 @@ def test_public_api_is_explicit() -> None:
         "UNIGRAM_ALGORITHM_ID",
         "evaluate_candidate",
         "evaluate_utf8_byte_reference",
+        "load_byte_bpe_artifact",
         "run_algorithm_benchmark",
         "select_algorithm",
+        "serialize_byte_bpe_artifact",
         "train_byte_bpe_candidate",
         "train_byte_unigram_candidate",
     ]

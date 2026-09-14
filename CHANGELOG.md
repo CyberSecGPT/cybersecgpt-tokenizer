@@ -35,5 +35,7 @@
 - Verified P6.5 exact-head acceptance, squash merge, and post-merge validation.
 - Proposed the P6.6 canonical non-executable experimental BPE artifact,
   provenance binding, strict loading bounds, and behavior/artifact identity gate.
+- Added the P6.6 bytes-only canonical BPE serializer/loader, fixed known-vector
+  identities, fail-closed malformed-input coverage, and implementation evidence.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.

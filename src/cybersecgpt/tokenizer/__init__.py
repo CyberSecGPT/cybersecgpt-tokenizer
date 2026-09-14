@@ -1,5 +1,15 @@
 """Public API for the CyberSecGPT native tokenizer."""
 
+from cybersecgpt.tokenizer.artifact import (
+    ARTIFACT_FORMAT_ID,
+    ARTIFACT_FORMAT_VERSION,
+    MAX_BPE_ARTIFACT_BYTES,
+    MAX_BPE_ARTIFACT_TOKEN_BYTES,
+    ArtifactSampleProvenance,
+    LoadedByteBpeArtifact,
+    load_byte_bpe_artifact,
+    serialize_byte_bpe_artifact,
+)
 from cybersecgpt.tokenizer.benchmark import (
     BENCHMARK_BPE_MERGE_BUDGET,
     BENCHMARK_MAX_TRAINING_BYTES,
@@ -70,7 +80,10 @@ from cybersecgpt.tokenizer.unigram import (
 )
 
 __all__ = [
+    "ARTIFACT_FORMAT_ID",
+    "ARTIFACT_FORMAT_VERSION",
     "AlgorithmBenchmarkReport",
+    "ArtifactSampleProvenance",
     "BENCHMARK_BPE_MERGE_BUDGET",
     "BENCHMARK_MAX_TRAINING_BYTES",
     "BENCHMARK_POLICY_ID",
@@ -91,6 +104,8 @@ __all__ = [
     "CandidateSampleMetrics",
     "ByteBpeStreamingEncoder",
     "MAX_IDENTIFIER_LENGTH",
+    "MAX_BPE_ARTIFACT_BYTES",
+    "MAX_BPE_ARTIFACT_TOKEN_BYTES",
     "MAX_STREAM_CHUNK_BYTES",
     "MAX_STREAM_CHUNKS",
     "MAX_EVALUATION_SAMPLES",
@@ -109,6 +124,7 @@ __all__ = [
     "ExactRatio",
     "FinishStatus",
     "ReferenceSampleMetrics",
+    "LoadedByteBpeArtifact",
     "SpecialToken",
     "StreamingDeadlineError",
     "StreamingState",
@@ -120,8 +136,10 @@ __all__ = [
     "UNIGRAM_ALGORITHM_ID",
     "evaluate_candidate",
     "evaluate_utf8_byte_reference",
+    "load_byte_bpe_artifact",
     "run_algorithm_benchmark",
     "select_algorithm",
+    "serialize_byte_bpe_artifact",
     "train_byte_bpe_candidate",
     "train_byte_unigram_candidate",
 ]
