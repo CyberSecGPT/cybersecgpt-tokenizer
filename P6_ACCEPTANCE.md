@@ -101,17 +101,18 @@ P6.5 closure is verified at implementation head
 post-merge runs 25 and 26. This closes only the streaming and chunk-equivalence
 slice; the remaining Tokenizer v1 acceptance requirements stay open.
 
-The proposed canonical experimental BPE artifact and fingerprint decision is
+The accepted canonical experimental BPE artifact and fingerprint decision is
 recorded in `docs/P6_6_CANONICAL_ARTIFACT.md`. It defines a fixed bounded binary
 encoding, strict pre-allocation validation, exact provenance binding, canonical
-round trips, and distinct behavior/artifact identities. Implementation remains
-blocked until exact-revision project-owner acceptance and passing pre- and
-post-merge CI.
+round trips, and distinct behavior/artifact identities.
 
 The implementation candidate and its known-vector, identity, round-trip,
 malformed-input, allocation-bound, and content-minimization evidence are recorded
-in `docs/P6_6_CANONICAL_ARTIFACT_EVIDENCE.md`. P6.6 remains open pending its own
-exact-head acceptance, merge, and post-merge validation.
+in `docs/P6_6_CANONICAL_ARTIFACT_EVIDENCE.md`. P6.6 closure is verified at
+implementation head `b4f857687f3e838fcae7b1a7f27f62e52440ea50`, squash merge
+`92776213a1e8003682752a268af5e4bc0664457d`, and successful exact-head and
+post-merge runs 32 and 33. This closes only the canonical experimental artifact
+slice; the remaining Tokenizer v1 acceptance requirements stay open.
 
 ## Initial completion evidence
 
