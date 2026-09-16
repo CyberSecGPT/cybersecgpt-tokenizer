@@ -96,5 +96,8 @@ encode/decode, BPE streaming, canonical artifact size, and traced Python
 allocation measurements on the fixed generated P6.4 manifests. The runner and
 `docs/P6_7_PERFORMANCE_EVIDENCE.md` are tokenizer-local evidence only; no
 candidate behavior, public contract, deterministic fingerprint, or cross-component
-benchmark suite is changed. P6.7 implementation and closure still require
-exact-head review, merge, and post-merge checks.
+benchmark suite is changed. The accepted implementation merged as
+`32b7aef9bdcac29d66bdf2857ef3f84bc0444853` with successful exact-head and
+post-merge checks. Formal closure awaits acceptance and merge of the closure
+evidence. Model compatibility, corpus approval, and final algorithm selection
+remain outside this performance measurement.

@@ -94,8 +94,11 @@ mismatches fail evaluation. These reports provide comparison evidence only and
 do not select Tokenizer v1.
 
 The [accepted P6.7 performance gate](docs/P6_7_PERFORMANCE_RESOURCE_GATE.md)
-and [proposed observational evidence](docs/P6_7_PERFORMANCE_EVIDENCE.md)
+and [verified implementation evidence](docs/P6_7_PERFORMANCE_EVIDENCE.md)
 measure the fixed generated candidate comparison. Trial times and traced Python
 allocations remain separate from deterministic structural reports and are not
 portable hard limits. They grant no authorization, artifact/corpus approval, or
-production tokenizer selection.
+production tokenizer selection. The implementation merged as
+`32b7aef9bdcac29d66bdf2857ef3f84bc0444853` with successful exact-head and
+post-merge checks; formal closure is pending acceptance and merge of the closure
+record.
