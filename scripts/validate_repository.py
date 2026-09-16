@@ -73,7 +73,7 @@ PROVIDER_MARKERS = (
     "google-generativeai",
     "google-genai",
 )
-TEXT_SUFFIXES = frozenset({".md", ".py", ".toml", ".txt", ".yml", ".yaml"})
+TEXT_SUFFIXES = frozenset({".json", ".md", ".py", ".toml", ".txt", ".yml", ".yaml"})
 TEXT_NAMES = frozenset({".gitattributes", ".gitignore"})
 
 
