@@ -90,3 +90,11 @@ All tokenizer data is untrusted. Results may describe tokenization behavior but
 cannot grant permissions, change classification, widen target scope, weaken
 provider/network or offline policy, extend deadlines or budgets, or reduce
 verification requirements.
+
+The accepted `docs/P6_7_PERFORMANCE_RESOURCE_GATE.md` permits observational
+encode/decode, BPE streaming, canonical artifact size, and traced Python
+allocation measurements on the fixed generated P6.4 manifests. The runner and
+`docs/P6_7_PERFORMANCE_EVIDENCE.md` are tokenizer-local evidence only; no
+candidate behavior, public contract, deterministic fingerprint, or cross-component
+benchmark suite is changed. P6.7 implementation and closure still require
+exact-head review, merge, and post-merge checks.

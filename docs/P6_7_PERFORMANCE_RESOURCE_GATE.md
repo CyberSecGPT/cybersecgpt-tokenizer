@@ -2,7 +2,13 @@
 
 ## Status
 
-**Proposed — architecture/security acceptance required before implementation**
+**Accepted — exact-head PR #18 merged; implementation evidence under review**
+
+The project owner accepted exact PR #18 head
+`057dc3c9e22c6a126f7a5f38fa8d2895b5958ad7`. It was squash-merged as
+`d935664415b690f526832a04e437e5c5be3e34bf`; pre- and post-merge CI and
+agent-policy runs 36 and 37 passed. Observational implementation evidence is
+recorded separately in `P6_7_PERFORMANCE_EVIDENCE.md`.
 
 This gate measures the fixed P6.4 experimental byte-BPE candidate after the
 verified P6.5 streaming and P6.6 canonical artifact gates. It does not select
