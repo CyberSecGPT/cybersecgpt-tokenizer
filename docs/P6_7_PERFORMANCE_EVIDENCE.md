@@ -20,9 +20,9 @@ unchanged. The accepted deterministic P6.4 report fingerprint stays
 
 The complete raw timing observations and per-domain totals are preserved in
 [`evidence/P6_7_performance_observations.json`](evidence/P6_7_performance_observations.json)
-(SHA-256 `b331b9702f3e6b1debd81aad3d905ff61c137c3156184e56357a852b6cc84406`).
+(SHA-256 `b8e4ef5f95e1348a7e54d940a600b55540ed4a1f96936c7e7c436262ea2304db`).
 They were observed from runner code commit
-`1a94b28c9f98aad15f75717b425dce4dd7e3a95b`, using CPython 3.12.14,
+`58156fef95ccfba43ce758302b6a45ab1c9db0c7`, using CPython 3.12.14,
 Linux x86_64, processor identifier `x86_64`, three repetitions per operation,
 and fixed 31-byte streaming chunks. The host's specific CPU model was not
 available to this standard-library-only runner. Trial timings are elapsed
@@ -43,12 +43,12 @@ JSON evidence, so these totals do not conceal domain differences.
 
 | Candidate | Tokens | Encode input bytes/s | Encode tokens/s | Decode tokens/s | Largest traced encode peak |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Byte reference | 1,499 | 12,295,048 | 12,295,048 | 13,356,143 | 1,797 B |
-| Experimental BPE | 928 | 47,836 | 29,614 | 400,578 | 4,061 B |
-| Experimental Unigram | 1,422 | 229,109 | 217,340 | 509,877 | 39,694 B |
+| Byte reference | 1,499 | 12,642,640 | 12,642,640 | 12,944,285 | 1,797 B |
+| Experimental BPE | 928 | 45,738 | 28,315 | 450,969 | 4,061 B |
+| Experimental Unigram | 1,422 | 223,404 | 211,928 | 443,817 | 39,694 B |
 
-For BPE streaming, the sums of per-sample medians were 36,069 ns for ingestion,
-31,875,926 ns for finalization alone, and 33,516,060 ns for full ingestion plus
+For BPE streaming, the sums of per-sample medians were 35,816 ns for ingestion,
+31,451,994 ns for finalization alone, and 31,673,340 ns for full ingestion plus
 finalization. These are separate noisy trial sets and are not additive.
 Streaming buffers bytes and emits tokens only after successful finalization;
 these observations make no progressive-emission claim.
