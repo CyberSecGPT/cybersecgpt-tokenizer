@@ -129,6 +129,10 @@ def test_fixed_fixture_runner_is_complete_and_content_minimizing() -> None:
     report = performance.run(source_commit="0" * 40, repetitions=1)
     assert report["structural_fingerprint"] == performance.STRUCTURAL_FINGERPRINT
     assert report["artifact_bytes"] == 10101
+    assert report["construction_manifest_version"] == "1"
+    assert report["evaluation_manifest_version"] == "1"
+    assert report["vocabulary_limit"] == 512
+    assert report["bpe_merge_budget"] == 256
     assert len(report["observations"]) == 51
     assert len(report["domains"]) == 24
     serialized = json.dumps(report)
