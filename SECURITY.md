@@ -87,6 +87,7 @@ counts, timings, and traced allocations. Cancellation and deadlines block new
 work but cannot forcibly interrupt an active Python call. Observed throughput
 and traced allocations confer no authorization, resource-limit guarantee,
 artifact approval, corpus/license approval, or tokenizer selection.
+
 The P6.7 gate and implementation passed exact-head and post-merge CI and policy
 runs 36/37 and 41/42 respectively. Implementation acceptance was bound to head
 `b40be6923ac7af1dd8b9f385de97f3afca9c3b9b` and merge

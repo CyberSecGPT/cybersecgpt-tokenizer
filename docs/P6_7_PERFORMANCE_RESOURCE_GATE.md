@@ -9,6 +9,7 @@ The project owner accepted exact PR #18 head
 `d935664415b690f526832a04e437e5c5be3e34bf`; pre- and post-merge CI and
 agent-policy runs 36 and 37 passed. Observational implementation evidence is
 recorded separately in `P6_7_PERFORMANCE_EVIDENCE.md`.
+
 The implementation was accepted at PR #19 head
 `b40be6923ac7af1dd8b9f385de97f3afca9c3b9b`, squash-merged as
 `32b7aef9bdcac29d66bdf2857ef3f84bc0444853`, and passed exact-head and
