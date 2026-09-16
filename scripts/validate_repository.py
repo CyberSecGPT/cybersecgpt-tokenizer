@@ -28,9 +28,13 @@ REQUIRED_FILES = frozenset(
         "docs/P6_5_STREAMING_EVIDENCE.md",
         "docs/P6_6_CANONICAL_ARTIFACT.md",
         "docs/P6_6_CANONICAL_ARTIFACT_EVIDENCE.md",
+        "docs/P6_7_PERFORMANCE_RESOURCE_GATE.md",
+        "docs/P6_7_PERFORMANCE_EVIDENCE.md",
+        "docs/evidence/P6_7_performance_observations.json",
         "pyproject.toml",
         "scripts/validate_repository.py",
         "scripts/run_p6_4_benchmark.py",
+        "scripts/run_p6_7_performance.py",
         "scripts/verify_distribution.py",
         "src/cybersecgpt/tokenizer/__init__.py",
         "src/cybersecgpt/tokenizer/artifact.py",
@@ -53,6 +57,7 @@ REQUIRED_FILES = frozenset(
         "tests/test_reference.py",
         "tests/test_streaming.py",
         "tests/test_unigram.py",
+        "tests/test_performance_runner.py",
     }
 )
 SECRET_PATTERNS = (
@@ -68,7 +73,7 @@ PROVIDER_MARKERS = (
     "google-generativeai",
     "google-genai",
 )
-TEXT_SUFFIXES = frozenset({".md", ".py", ".toml", ".txt", ".yml", ".yaml"})
+TEXT_SUFFIXES = frozenset({".json", ".md", ".py", ".toml", ".txt", ".yml", ".yaml"})
 TEXT_NAMES = frozenset({".gitattributes", ".gitignore"})
 
 

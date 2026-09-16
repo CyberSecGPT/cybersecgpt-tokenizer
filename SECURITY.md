@@ -78,3 +78,12 @@ These P6.6 controls are verified at accepted implementation head
 `b4f857687f3e838fcae7b1a7f27f62e52440ea50`, merge
 `92776213a1e8003682752a268af5e4bc0664457d`, and successful exact-head and
 post-merge runs 32 and 33. They grant no later P6 security approval.
+
+The accepted P6.7 gate measures only fixed inert generated fixtures. The
+observational runner checks complete reversible outcomes and exact structural
+identity before reporting, separates times from deterministic fingerprints,
+restricts work and report size, and minimizes output to identities, digests,
+counts, timings, and traced allocations. Cancellation and deadlines block new
+work but cannot forcibly interrupt an active Python call. Observed throughput
+and traced allocations confer no authorization, resource-limit guarantee,
+artifact approval, corpus/license approval, or tokenizer selection.

@@ -114,11 +114,15 @@ implementation head `b4f857687f3e838fcae7b1a7f27f62e52440ea50`, squash merge
 post-merge runs 32 and 33. This closes only the canonical experimental artifact
 slice; the remaining Tokenizer v1 acceptance requirements stay open.
 
-The proposed P6.7 performance/resource gate is specified in
+The accepted P6.7 performance/resource gate is specified in
 `docs/P6_7_PERFORMANCE_RESOURCE_GATE.md`. It requires controlled observational
 timing and traced-allocation evidence for the fixed experimental candidate and
-controls, separate from deterministic structural report identity. No performance
-result or production selection is claimed by this gate proposal.
+controls, separate from deterministic structural report identity. The gate was
+accepted at head `057dc3c9e22c6a126f7a5f38fa8d2895b5958ad7`, merged as
+`d935664415b690f526832a04e437e5c5be3e34bf`, and passed pre- and post-merge
+runs 36 and 37. `docs/P6_7_PERFORMANCE_EVIDENCE.md` records proposed measured
+implementation evidence; it requires its own exact-head acceptance and merge.
+No production selection follows from measured throughput or allocation.
 
 ## Initial completion evidence
 

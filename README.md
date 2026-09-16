@@ -92,3 +92,10 @@ status, and reversibility only; they do not copy sample text into reports.
 Incomplete encodes do not receive compression ratios, and candidate identity
 mismatches fail evaluation. These reports provide comparison evidence only and
 do not select Tokenizer v1.
+
+The [accepted P6.7 performance gate](docs/P6_7_PERFORMANCE_RESOURCE_GATE.md)
+and [proposed observational evidence](docs/P6_7_PERFORMANCE_EVIDENCE.md)
+measure the fixed generated candidate comparison. Trial times and traced Python
+allocations remain separate from deterministic structural reports and are not
+portable hard limits. They grant no authorization, artifact/corpus approval, or
+production tokenizer selection.

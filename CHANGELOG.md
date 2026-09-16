@@ -39,5 +39,8 @@
   identities, fail-closed malformed-input coverage, and implementation evidence.
 - Verified P6.6 exact-head acceptance, squash merge, post-merge validation, and
   bounded canonical-artifact closure evidence.
+- Accepted the P6.7 performance/resource architecture gate and proposed
+  content-minimizing fixed-fixture timing, traced-allocation, streaming, artifact
+  size, and fail-closed implementation evidence.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.
