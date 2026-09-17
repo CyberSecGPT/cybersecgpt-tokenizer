@@ -111,3 +111,8 @@ defines independent known vectors and failure evidence for the existing
 candidates, streaming behavior, and BPE artifact. It awaits exact-head
 architecture/security acceptance before implementation; it does not approve
 production semantics or a training corpus.
+
+The proposed [P6.8 conformance evidence](docs/P6_8_EXPERIMENTAL_CONFORMANCE_EVIDENCE.md)
+replays 20 pinned generated vectors with exact IDs, byte-split BPE streaming,
+artifact identity, and fail-closed negative cases. It awaits exact-head
+implementation review and does not close P6.8 or select Tokenizer v1.

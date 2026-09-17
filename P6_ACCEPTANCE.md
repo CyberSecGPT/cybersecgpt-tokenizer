@@ -138,6 +138,13 @@ failures, and canonical BPE artifacts. P6.8 implementation is blocked pending
 exact-head acceptance, merge, and post-merge checks of that gate. Corpus/license
 approval, production semantics, and Tokenizer v1 selection remain open.
 
+The P6.8 architecture gate was accepted at PR #22 head
+`773ef632bf1201d232a99fa100afa144a3828ee6`, merged as
+`c863af96bfee43889b8c2be8d98e5d9c55868433`, and passed pre- and
+post-merge runs 48 and 49. `docs/P6_8_EXPERIMENTAL_CONFORMANCE_EVIDENCE.md`
+records the proposed fixed-vector implementation. It awaits its own exact-head
+acceptance, merge, and main verification before any P6.8 closure claim.
+
 ## Initial completion evidence
 
 P6 is complete only when the selected Tokenizer v1 implementation, artifacts,

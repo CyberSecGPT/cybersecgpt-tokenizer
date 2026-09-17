@@ -111,3 +111,10 @@ BPE/Unigram comparison candidates, buffered BPE streaming, and canonical BPE
 artifact. Independent expected outputs and negative failure cases are required
 before behavioral conformance can be claimed. The gate is pending exact-head
 acceptance; no production semantics, compatibility, or corpus approval follows.
+
+The gate was accepted at exact PR #22 head
+`773ef632bf1201d232a99fa100afa144a3828ee6`, merged as
+`c863af96bfee43889b8c2be8d98e5d9c55868433`, and passed runs 48/49. The
+proposed vector verifier and `docs/P6_8_EXPERIMENTAL_CONFORMANCE_EVIDENCE.md`
+exercise existing public candidate APIs and canonical bytes without modifying
+candidate behavior, adding production semantics, or changing dependencies.
