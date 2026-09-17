@@ -42,5 +42,7 @@
 - Accepted the P6.7 performance/resource architecture gate and proposed
   content-minimizing fixed-fixture timing, traced-allocation, streaming, artifact
   size, and fail-closed implementation evidence.
+- Verified P6.7 implementation exact-head owner acceptance, squash merge, and
+  post-merge validation; recorded measured evidence for formal closure review.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.

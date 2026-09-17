@@ -120,9 +120,13 @@ timing and traced-allocation evidence for the fixed experimental candidate and
 controls, separate from deterministic structural report identity. The gate was
 accepted at head `057dc3c9e22c6a126f7a5f38fa8d2895b5958ad7`, merged as
 `d935664415b690f526832a04e437e5c5be3e34bf`, and passed pre- and post-merge
-runs 36 and 37. `docs/P6_7_PERFORMANCE_EVIDENCE.md` records proposed measured
-implementation evidence; it requires its own exact-head acceptance and merge.
-No production selection follows from measured throughput or allocation.
+runs 36 and 37. The measured implementation was accepted at exact head
+`b40be6923ac7af1dd8b9f385de97f3afca9c3b9b`, merged as
+`32b7aef9bdcac29d66bdf2857ef3f84bc0444853`, and passed exact-head and
+post-merge runs 41 and 42. `docs/P6_7_PERFORMANCE_EVIDENCE.md` records the
+observations; formal closure remains pending acceptance of that exact closure
+revision, merge, and post-merge checks. No production selection follows from
+measured throughput or allocation.
 
 ## Initial completion evidence
 

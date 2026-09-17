@@ -2,13 +2,22 @@
 
 ## Status
 
-**Implementation evidence proposed — exact-head acceptance and merge pending**
+**Implementation accepted and merged — closure review pending**
 
 The architecture/security gate was accepted at PR #18 head
 `057dc3c9e22c6a126f7a5f38fa8d2895b5958ad7` and squash-merged as
 `d935664415b690f526832a04e437e5c5be3e34bf`. Its exact-head and post-merge
 CI and agent-policy runs 36 and 37 succeeded on Python 3.11–3.13, including the
 build and exact distribution checks.
+
+The project owner accepted the implementation at exact PR #19 head
+`b40be6923ac7af1dd8b9f385de97f3afca9c3b9b`. It was squash-merged as
+`32b7aef9bdcac29d66bdf2857ef3f84bc0444853`. Exact-head CI and agent-policy
+run 41 and post-merge `main` CI and agent-policy run 42 succeeded. Both CI runs
+validated Python 3.11–3.13 with unchanged Ruff, Black, strict mypy, repository
+and security validation, dependency consistency, split-package imports, 164
+tests at 100% tokenizer source and branch coverage, package build, and exact
+distribution verification.
 
 The implementation adds only a tokenizer-local observational runner, its tests,
 and this evidence. Experimental candidate code, fingerprints, streaming behavior,
@@ -70,3 +79,11 @@ hard memory bounds. These measurements do not approve a production tokenizer,
 training corpus, model compatibility, artifact release, or a later P6 gate.
 Conformance vectors, corpus/license review, unresolved normalization, offsets,
 special-token semantics, and final algorithm selection remain open.
+
+## Closure review gate
+
+The accepted gate, exact-head accepted implementation, post-merge `main` checks,
+bounded content-minimizing observations, and complete security/diff review are
+recorded. Formal P6.7 closure remains pending exact-head project-owner acceptance
+of this closure revision, squash merge, and successful post-merge `main` checks.
+This record cannot itself approve later P6 work or production Tokenizer v1.
