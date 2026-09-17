@@ -97,3 +97,10 @@ at exact head `6cb6095e7c932aea300b4d5419573e61460af72f`, squash-merged as
 post-merge CI and agent-policy runs 44/45. The runtime authorization, provider,
 classification, target-scope, offline, deadline, budget, and verification
 boundaries remain unchanged; P6.7 closure grants no later P6 approval.
+
+The proposed P6.8 conformance gate requires independently checked, bounded
+vectors and explicit negative outcomes for malformed inputs and artifacts,
+unknown roles, truncation, cancellation, deadlines, and fingerprint mismatch.
+It treats all fixtures and decoded output as untrusted data; conformance cannot
+grant authorization, relax any policy or resource boundary, approve a corpus,
+or select a production tokenizer. Implementation awaits exact-head gate review.

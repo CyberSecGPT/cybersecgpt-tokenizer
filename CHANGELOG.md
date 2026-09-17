@@ -48,5 +48,8 @@
   `6cb6095e7c932aea300b4d5419573e61460af72f`, squash merge
   `8a8d2cfa40b6b790528292cc492dc79597dc66b1`, and successful exact-head
   and post-merge CI and agent-policy runs 44/45; later P6 gates remain open.
+- Proposed the P6.8 experimental conformance-vector architecture/security gate
+  with independent known-output and negative-case review; implementation awaits
+  exact-head gate acceptance and verified merge.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.

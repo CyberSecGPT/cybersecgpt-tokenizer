@@ -104,3 +104,10 @@ post-merge checks. Closure PR #20 was accepted at exact head
 post-merge CI and agent-policy runs 44 and 45. P6.7 is formally closed. Model
 compatibility, corpus approval, and final algorithm selection remain outside
 this performance measurement.
+
+`docs/P6_8_EXPERIMENTAL_CONFORMANCE_GATE.md` proposes reproducible,
+identity-bound known vectors for the existing byte reference, experimental
+BPE/Unigram comparison candidates, buffered BPE streaming, and canonical BPE
+artifact. Independent expected outputs and negative failure cases are required
+before behavioral conformance can be claimed. The gate is pending exact-head
+acceptance; no production semantics, compatibility, or corpus approval follows.
