@@ -2,7 +2,7 @@
 
 ## Status
 
-**Accepted — exact-head PR #18 merged; implementation verified**
+**Accepted — gate, implementation, and P6.7 closure verified**
 
 The project owner accepted exact PR #18 head
 `057dc3c9e22c6a126f7a5f38fa8d2895b5958ad7`. It was squash-merged as
@@ -13,8 +13,11 @@ recorded separately in `P6_7_PERFORMANCE_EVIDENCE.md`.
 The implementation was accepted at PR #19 head
 `b40be6923ac7af1dd8b9f385de97f3afca9c3b9b`, squash-merged as
 `32b7aef9bdcac29d66bdf2857ef3f84bc0444853`, and passed exact-head and
-post-merge CI and agent-policy runs 41 and 42. Formal closure evidence requires
-its own exact-head review and merge.
+post-merge CI and agent-policy runs 41 and 42. Closure PR #20 was accepted at
+exact head `6cb6095e7c932aea300b4d5419573e61460af72f`, squash-merged as
+`8a8d2cfa40b6b790528292cc492dc79597dc66b1`, and passed exact-head run 44
+and post-merge `main` run 45 for both CI and agent policy. The experimental
+P6.7 performance/resource evidence is formally closed.
 
 This gate measures the fixed P6.4 experimental byte-BPE candidate after the
 verified P6.5 streaming and P6.6 canonical artifact gates. It does not select

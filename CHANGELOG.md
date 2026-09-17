@@ -44,5 +44,9 @@
   size, and fail-closed implementation evidence.
 - Verified P6.7 implementation exact-head owner acceptance, squash merge, and
   post-merge validation; recorded measured evidence for formal closure review.
+- Verified formal P6.7 closure at accepted PR #20 head
+  `6cb6095e7c932aea300b4d5419573e61460af72f`, squash merge
+  `8a8d2cfa40b6b790528292cc492dc79597dc66b1`, and successful exact-head
+  and post-merge CI and agent-policy runs 44/45; later P6 gates remain open.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.

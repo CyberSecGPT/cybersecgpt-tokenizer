@@ -2,7 +2,7 @@
 
 ## Status
 
-**Implementation accepted and merged — closure review pending**
+**P6.7 formally closed — exact-head acceptance, merge, and main checks verified**
 
 The architecture/security gate was accepted at PR #18 head
 `057dc3c9e22c6a126f7a5f38fa8d2895b5958ad7` and squash-merged as
@@ -80,10 +80,14 @@ training corpus, model compatibility, artifact release, or a later P6 gate.
 Conformance vectors, corpus/license review, unresolved normalization, offsets,
 special-token semantics, and final algorithm selection remain open.
 
-## Closure review gate
+## Verified closure
 
-The accepted gate, exact-head accepted implementation, post-merge `main` checks,
-bounded content-minimizing observations, and complete security/diff review are
-recorded. Formal P6.7 closure remains pending exact-head project-owner acceptance
-of this closure revision, squash merge, and successful post-merge `main` checks.
-This record cannot itself approve later P6 work or production Tokenizer v1.
+The project owner accepted closure PR #20 at exact head
+`6cb6095e7c932aea300b4d5419573e61460af72f`. Exact-head CI and agent-policy
+run 44 succeeded. PR #20 was squash-merged as
+`8a8d2cfa40b6b790528292cc492dc79597dc66b1`, and post-merge `main` CI and
+agent-policy run 45 succeeded at that commit, including Python 3.11–3.13 and
+the build and exact distribution checks. The accepted gate, accepted measured
+implementation, bounded observations, and security/diff review establish
+formal P6.7 closure for the experimental performance/resource slice only.
+This record does not approve later P6 work or production Tokenizer v1.
