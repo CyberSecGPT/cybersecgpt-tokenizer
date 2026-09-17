@@ -131,6 +131,13 @@ post-merge CI and agent-policy runs 44 and 45. This closes the experimental
 performance/resource evidence slice only. No production selection follows from
 measured throughput or allocation.
 
+The proposed experimental conformance-vector architecture/security gate is
+recorded in `docs/P6_8_EXPERIMENTAL_CONFORMANCE_GATE.md`. It requires independent,
+identity-bound known vectors for existing candidate behavior, streaming,
+failures, and canonical BPE artifacts. P6.8 implementation is blocked pending
+exact-head acceptance, merge, and post-merge checks of that gate. Corpus/license
+approval, production semantics, and Tokenizer v1 selection remain open.
+
 ## Initial completion evidence
 
 P6 is complete only when the selected Tokenizer v1 implementation, artifacts,

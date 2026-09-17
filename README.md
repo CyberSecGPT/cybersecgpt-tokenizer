@@ -105,3 +105,9 @@ post-merge checks. P6.7 closure PR #20 was accepted at exact head
 `8a8d2cfa40b6b790528292cc492dc79597dc66b1`, and passed exact-head and
 post-merge CI and agent-policy runs 44 and 45. P6.7 is formally closed; later
 Tokenizer v1 gates remain open.
+
+The proposed [P6.8 experimental conformance-vector gate](docs/P6_8_EXPERIMENTAL_CONFORMANCE_GATE.md)
+defines independent known vectors and failure evidence for the existing
+candidates, streaming behavior, and BPE artifact. It awaits exact-head
+architecture/security acceptance before implementation; it does not approve
+production semantics or a training corpus.
