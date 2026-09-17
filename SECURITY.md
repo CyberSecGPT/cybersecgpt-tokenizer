@@ -91,7 +91,9 @@ artifact approval, corpus/license approval, or tokenizer selection.
 The P6.7 gate and implementation passed exact-head and post-merge CI and policy
 runs 36/37 and 41/42 respectively. Implementation acceptance was bound to head
 `b40be6923ac7af1dd8b9f385de97f3afca9c3b9b` and merge
-`32b7aef9bdcac29d66bdf2857ef3f84bc0444853`; formal closure evidence is
-subject to separate exact-head acceptance. The runtime authorization, provider,
+`32b7aef9bdcac29d66bdf2857ef3f84bc0444853`. Closure PR #20 was accepted
+at exact head `6cb6095e7c932aea300b4d5419573e61460af72f`, squash-merged as
+`8a8d2cfa40b6b790528292cc492dc79597dc66b1`, and passed exact-head and
+post-merge CI and agent-policy runs 44/45. The runtime authorization, provider,
 classification, target-scope, offline, deadline, budget, and verification
-boundaries remain unchanged.
+boundaries remain unchanged; P6.7 closure grants no later P6 approval.

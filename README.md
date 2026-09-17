@@ -100,5 +100,8 @@ allocations remain separate from deterministic structural reports and are not
 portable hard limits. They grant no authorization, artifact/corpus approval, or
 production tokenizer selection. The implementation merged as
 `32b7aef9bdcac29d66bdf2857ef3f84bc0444853` with successful exact-head and
-post-merge checks; formal closure is pending acceptance and merge of the closure
-record.
+post-merge checks. P6.7 closure PR #20 was accepted at exact head
+`6cb6095e7c932aea300b4d5419573e61460af72f`, squash-merged as
+`8a8d2cfa40b6b790528292cc492dc79597dc66b1`, and passed exact-head and
+post-merge CI and agent-policy runs 44 and 45. P6.7 is formally closed; later
+Tokenizer v1 gates remain open.
