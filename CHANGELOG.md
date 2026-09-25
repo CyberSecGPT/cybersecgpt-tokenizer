@@ -61,5 +61,8 @@
   `5972c304a37a42d3bc68e84cf7ebef73e28d36cd`, squash merge
   `a15bffed922c8712b8c9ae63869f3561d81ebc21`, and successful exact-head
   and post-merge CI and policy runs 52/53; remaining P6 gates stay open.
+- Proposed the P6.9 Tokenizer v1 semantic and compatibility gate covering strict
+  UTF-8, no normalization, offsets, safe truncation, initial special-token IDs,
+  canonical fingerprint inputs, and exact model compatibility.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.
