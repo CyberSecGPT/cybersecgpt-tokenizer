@@ -121,10 +121,12 @@ post-merge CI and policy runs 50/51. Closure PR #24 was accepted at exact head
 `a15bffed922c8712b8c9ae63869f3561d81ebc21`, and passed exact-head and
 post-merge runs 52/53. P6.8 closure does not relax any existing security boundary.
 
-The proposed P6.9 semantic profile keeps all text, token IDs, offsets, special
-renderings, artifacts, and decoded output untrusted. Literal special-looking text
+The accepted P6.9 semantic profile and proposed implementation keep all text,
+token IDs, offsets, special renderings, artifacts, and decoded output untrusted.
+Literal special-looking text
 cannot create a control ID; special insertion and decode behavior are typed and
 explicit. Invalid UTF-8/IDs, incompatible fingerprints, malformed artifacts,
 limits, cancellation, and deadlines fail closed. The proposal grants no
 authorization, corpus/license approval, model compatibility, or production
-selection and awaits exact-head architecture/security review.
+selection. The gate passed exact-head and post-merge review; the implementation
+remains subject to its own exact-head architecture/security acceptance.

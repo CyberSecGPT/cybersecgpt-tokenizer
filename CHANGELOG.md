@@ -64,5 +64,10 @@
 - Proposed the P6.9 Tokenizer v1 semantic and compatibility gate covering strict
   UTF-8, no normalization, offsets, safe truncation, initial special-token IDs,
   canonical fingerprint inputs, and exact model compatibility.
+- Verified P6.9 gate owner acceptance at PR #26 head
+  `bb3557b5b351ae2471b6107ded617eb15a0cee69`, squash merge
+  `e6234f46ad7e9ceb5d53e33f2a7deba174958db4`, and successful exact-head and
+  post-merge runs 56/57; proposed typed semantics, offsets, safe truncation,
+  exact compatibility, and bounded streaming implementation for separate review.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.

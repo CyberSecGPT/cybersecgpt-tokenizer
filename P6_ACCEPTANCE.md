@@ -151,12 +151,16 @@ exact head `5972c304a37a42d3bc68e84cf7ebef73e28d36cd`, squash-merged as
 post-merge CI and policy runs 52 and 53. This closes only the experimental
 conformance-vector slice; remaining Tokenizer v1 acceptance requirements stay open.
 
-The proposed Tokenizer v1 semantic and compatibility profile is recorded in
+The accepted Tokenizer v1 semantic and compatibility profile is recorded in
 `docs/P6_9_PRODUCTION_SEMANTICS_GATE.md`. It resolves strict UTF-8, no
 normalization, whole-byte-sequence pretokenization, initial `bos`/`eos`/`pad`
 allocation, byte/scalar offset rules, safe truncation, and exact-fingerprint
-compatibility for review. Implementation and production training remain blocked
-until this exact gate is accepted, merged, and verified.
+compatibility. Gate PR #26 was accepted at exact head
+`bb3557b5b351ae2471b6107ded617eb15a0cee69`, squash-merged as
+`e6234f46ad7e9ceb5d53e33f2a7deba174958db4`, and passed exact-head and
+post-merge runs 56/57. `docs/P6_9_PRODUCTION_SEMANTICS_EVIDENCE.md` proposes
+the implementation for separate exact-head review. Production training remains
+blocked.
 
 ## Initial completion evidence
 
