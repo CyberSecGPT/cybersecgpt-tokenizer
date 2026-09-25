@@ -126,3 +126,10 @@ runs 50/51. Closure PR #24 was accepted at exact head
 `a15bffed922c8712b8c9ae63869f3561d81ebc21`, and passed exact-head and
 post-merge runs 52/53. P6.8 is formally closed without approving production
 semantics, compatibility, a corpus, final algorithm selection, or later P6 work.
+
+`docs/P6_9_PRODUCTION_SEMANTICS_GATE.md` proposes the versioned behavior profile
+for a prospective Tokenizer v1 byte-BPE artifact: strict UTF-8, no normalization,
+whole-byte-sequence pretokenization, fixed ordinary/special ID regions, explicit
+special handling, UTF-8-safe truncation, canonical byte offsets, and exact
+fingerprint compatibility. It is pending exact-head acceptance and changes no
+runtime behavior, corpus status, or final selection.
