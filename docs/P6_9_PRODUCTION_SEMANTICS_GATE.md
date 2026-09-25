@@ -2,7 +2,12 @@
 
 ## Status and decision boundary
 
-**Proposed — architecture/security acceptance required before implementation.**
+**Accepted — implementation evidence remains independently gated.**
+
+The project owner accepted this gate at PR #26 head
+`bb3557b5b351ae2471b6107ded617eb15a0cee69`. It was squash-merged as
+`e6234f46ad7e9ceb5d53e33f2a7deba174958db4`; exact-head and post-merge
+Python 3.11–3.13 CI/build/distribution and agent-policy runs 56 and 57 passed.
 
 P6.8 closed experimental conformance-vector evidence. This gate proposes the
 observable semantic profile that a future Tokenizer v1 byte-BPE artifact must
@@ -140,8 +145,7 @@ The initial allocation is deliberately small and model-neutral:
   dependency consistency, split-package imports, pytest at 100% tokenizer source
   coverage on Python 3.11–3.13, package build, and exact distribution checks.
 
-This exact gate revision requires project-owner architecture/security `ACCEPT`,
-successful exact-head CI and policy checks, squash merge, and successful
-post-merge `main` checks before implementation. The implementation requires its
-own exact-head acceptance and verified merge. No production training or later
-P6 work begins through this proposal.
+The gate acceptance permits only the separately reviewed implementation in
+`P6_9_PRODUCTION_SEMANTICS_EVIDENCE.md`. That implementation requires its own
+exact-head acceptance and verified merge. No production training or later P6
+work begins through this acceptance.

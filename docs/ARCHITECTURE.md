@@ -127,9 +127,12 @@ runs 50/51. Closure PR #24 was accepted at exact head
 post-merge runs 52/53. P6.8 is formally closed without approving production
 semantics, compatibility, a corpus, final algorithm selection, or later P6 work.
 
-`docs/P6_9_PRODUCTION_SEMANTICS_GATE.md` proposes the versioned behavior profile
-for a prospective Tokenizer v1 byte-BPE artifact: strict UTF-8, no normalization,
-whole-byte-sequence pretokenization, fixed ordinary/special ID regions, explicit
-special handling, UTF-8-safe truncation, canonical byte offsets, and exact
-fingerprint compatibility. It is pending exact-head acceptance and changes no
-runtime behavior, corpus status, or final selection.
+`docs/P6_9_PRODUCTION_SEMANTICS_GATE.md` defines the accepted versioned behavior
+profile for a prospective Tokenizer v1 byte-BPE artifact: strict UTF-8, no
+normalization, whole-byte-sequence pretokenization, fixed ordinary/special ID
+regions, explicit special handling, UTF-8-safe truncation, canonical byte
+offsets, and exact fingerprint compatibility. Gate PR #26 was accepted and
+verified at exact head, merge, and post-merge main.
+`docs/P6_9_PRODUCTION_SEMANTICS_EVIDENCE.md`
+proposes the bounded runtime implementation for separate exact-head review; no
+corpus status, artifact promotion, or final selection changes.

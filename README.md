@@ -106,11 +106,12 @@ post-merge checks. P6.7 closure PR #20 was accepted at exact head
 post-merge CI and agent-policy runs 44 and 45. P6.7 is formally closed; later
 Tokenizer v1 gates remain open.
 
-The proposed [P6.9 production semantics gate](docs/P6_9_PRODUCTION_SEMANTICS_GATE.md)
+The accepted [P6.9 production semantics gate](docs/P6_9_PRODUCTION_SEMANTICS_GATE.md)
 defines the prospective Tokenizer v1 strict-UTF-8, normalization,
-pretokenization, offset, truncation, special-token, fingerprint, and
-compatibility rules. It awaits exact-head architecture/security acceptance and
-does not approve a corpus, train an artifact, or finally select Tokenizer v1.
+pretokenization, offset, truncation, special-token, fingerprint, and exact
+compatibility rules. Its [implementation evidence](docs/P6_9_PRODUCTION_SEMANTICS_EVIDENCE.md)
+is proposed for separate exact-head acceptance. It does not approve a corpus,
+train an artifact, or finally select Tokenizer v1.
 
 The proposed [P6.8 experimental conformance-vector gate](docs/P6_8_EXPERIMENTAL_CONFORMANCE_GATE.md)
 defines independent known vectors and failure evidence for the existing
