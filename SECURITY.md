@@ -111,10 +111,12 @@ P6.8 gate acceptance is bound to PR #22 head
 runs 48/49. The implementation's bounded, offline known-vector
 verifier fails on changed identities, fixture data, incorrect truncation, invalid
 UTF-8/IDs, cancelled or expired streams, and corrupted canonical artifact data.
-Its formal closure remains subject to separate exact-head closure review.
+Its formal closure does not relax any security boundary.
 
 The P6.8 implementation was accepted at exact PR #23 head
 `d4b4b7826ebbeaeecf5a0ffc4303041f50b9a568`, squash-merged as
 `980ac53493cbef3ba6fad958e5fa78525682b7ab`, and passed exact-head and
-post-merge CI and policy runs 50/51. Formal closure evidence requires separate
-exact-head acceptance and does not relax any existing security boundary.
+post-merge CI and policy runs 50/51. Closure PR #24 was accepted at exact head
+`5972c304a37a42d3bc68e84cf7ebef73e28d36cd`, squash-merged as
+`a15bffed922c8712b8c9ae63869f3561d81ebc21`, and passed exact-head and
+post-merge runs 52/53. P6.8 closure does not relax any existing security boundary.

@@ -57,5 +57,9 @@
 - Verified P6.8 implementation exact-head owner acceptance, squash merge, and
   pre/post-merge CI and policy runs 50/51; recorded evidence for formal closure
   review without approving production tokenizer semantics or later P6 work.
+- Verified formal P6.8 closure at accepted PR #24 head
+  `5972c304a37a42d3bc68e84cf7ebef73e28d36cd`, squash merge
+  `a15bffed922c8712b8c9ae63869f3561d81ebc21`, and successful exact-head
+  and post-merge CI and policy runs 52/53; remaining P6 gates stay open.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.
