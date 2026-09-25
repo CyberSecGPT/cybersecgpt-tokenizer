@@ -2,7 +2,7 @@
 
 ## Status
 
-**Implementation proposed — exact-head owner acceptance and verified merge required.**
+**Implementation verified — formal P6.9 closure acceptance required.**
 
 The accepted architecture/security gate is
 `P6_9_PRODUCTION_SEMANTICS_GATE.md`. It was accepted at PR #26 head
@@ -59,3 +59,23 @@ select Tokenizer v1, or begin a later P6 gate.
 P6.9 is not closed by this proposal. Closure requires exact-head owner
 acceptance, squash merge, successful post-merge `main` checks, a final complete
 diff/security review, and separately accepted closure evidence.
+
+## Verified implementation
+
+The project owner explicitly accepted implementation PR #27 at exact head
+`39c00f56654e20c998541f1269e61739db247a2a`. Exact-head CI and agent-policy
+run 58 succeeded. The PR was squash-merged as
+`2b0776824713db0d47905bc2705a8b1d426d4856`; post-merge `main` CI and
+agent-policy run 59 succeeded at that commit, including Python 3.11–3.13,
+100% source coverage, package build, and exact distribution verification.
+
+The reviewed diff introduced only the accepted typed semantics, bounded
+streaming behavior, public/distribution declarations, tests, and synchronized
+documentation. It introduced no network or provider dependency, executable
+artifact behavior, authorization path, corpus, training data, trained artifact,
+or later P6 implementation.
+
+Formal P6.9 closure remains pending exact-head acceptance and verified merge of
+this evidence revision. That closure cannot approve a production corpus or
+license, train or promote an artifact, finally select Tokenizer v1, or begin a
+later P6 gate.

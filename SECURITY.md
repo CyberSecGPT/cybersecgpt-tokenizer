@@ -128,5 +128,6 @@ cannot create a control ID; special insertion and decode behavior are typed and
 explicit. Invalid UTF-8/IDs, incompatible fingerprints, malformed artifacts,
 limits, cancellation, and deadlines fail closed. The proposal grants no
 authorization, corpus/license approval, model compatibility, or production
-selection. The gate passed exact-head and post-merge review; the implementation
-remains subject to its own exact-head architecture/security acceptance.
+selection. The gate and implementation passed separate exact-head acceptance,
+squash merge, and post-merge review at PRs #26/#27 and runs 56–59. Formal P6.9
+closure remains separately gated and cannot relax any security boundary.

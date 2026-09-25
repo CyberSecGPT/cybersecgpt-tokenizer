@@ -158,9 +158,12 @@ allocation, byte/scalar offset rules, safe truncation, and exact-fingerprint
 compatibility. Gate PR #26 was accepted at exact head
 `bb3557b5b351ae2471b6107ded617eb15a0cee69`, squash-merged as
 `e6234f46ad7e9ceb5d53e33f2a7deba174958db4`, and passed exact-head and
-post-merge runs 56/57. `docs/P6_9_PRODUCTION_SEMANTICS_EVIDENCE.md` proposes
-the implementation for separate exact-head review. Production training remains
-blocked.
+post-merge runs 56/57. `docs/P6_9_PRODUCTION_SEMANTICS_EVIDENCE.md` records the
+implementation accepted at PR #27 exact head
+`39c00f56654e20c998541f1269e61739db247a2a`, squash-merged as
+`2b0776824713db0d47905bc2705a8b1d426d4856`, and verified by exact-head and
+post-merge runs 58/59. Formal P6.9 closure and production training remain
+blocked pending their separate gates.
 
 ## Initial completion evidence
 

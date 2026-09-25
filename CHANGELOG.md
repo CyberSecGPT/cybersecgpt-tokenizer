@@ -69,5 +69,9 @@
   `e6234f46ad7e9ceb5d53e33f2a7deba174958db4`, and successful exact-head and
   post-merge runs 56/57; proposed typed semantics, offsets, safe truncation,
   exact compatibility, and bounded streaming implementation for separate review.
+- Verified P6.9 implementation owner acceptance at PR #27 head
+  `39c00f56654e20c998541f1269e61739db247a2a`, squash merge
+  `2b0776824713db0d47905bc2705a8b1d426d4856`, and successful exact-head and
+  post-merge runs 58/59; formal P6.9 closure remains separately gated.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.
