@@ -2,7 +2,7 @@
 
 ## Status
 
-**Implementation accepted and verified — formal closure review pending.**
+**P6.8 formally closed — exact-head acceptance, merge, and main checks verified.**
 
 The architecture/security gate in `P6_8_EXPERIMENTAL_CONFORMANCE_GATE.md`
 was accepted at PR #22 head `773ef632bf1201d232a99fa100afa144a3828ee6`,
@@ -65,13 +65,16 @@ offset policy, special-token allocation, model compatibility, or the final
 Tokenizer v1 algorithm. Any change to experimental candidate behavior or
 artifact schema needs renewed review and new fingerprint/vector evidence.
 
-## Closure review
+## Verified closure
 
 The accepted gate, exact-head accepted implementation, pinned fixture and
 identities, independent oracle, fail-closed negative evidence, complete diff and
-security review, and successful pre/post-merge checks are recorded. Formal P6.8
-closure remains pending project-owner acceptance of this exact closure revision,
-squash merge, and successful post-merge `main` checks. Closure would apply only
-to the experimental conformance-vector slice and cannot approve a production
+security review, and successful pre/post-merge checks are recorded. The project
+owner accepted closure PR #24 at exact head
+`5972c304a37a42d3bc68e84cf7ebef73e28d36cd`; CI and policy run 52 passed.
+It squash-merged as `a15bffed922c8712b8c9ae63869f3561d81ebc21`, and
+post-merge `main` CI and policy run 53 passed at that exact commit. P6.8 is
+formally closed only for the experimental conformance-vector slice and cannot
+approve a production
 tokenizer, corpus, model compatibility, final algorithm selection, or later P6
 work.

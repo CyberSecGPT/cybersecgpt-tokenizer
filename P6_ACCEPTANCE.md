@@ -145,8 +145,11 @@ post-merge runs 48 and 49. `docs/P6_8_EXPERIMENTAL_CONFORMANCE_EVIDENCE.md`
 records the fixed-vector implementation. The implementation was accepted at PR
 #23 head `d4b4b7826ebbeaeecf5a0ffc4303041f50b9a568`, squash-merged as
 `980ac53493cbef3ba6fad958e5fa78525682b7ab`, and passed pre- and
-post-merge CI and policy runs 50 and 51. Formal P6.8 closure remains pending
-acceptance and verified merge of the exact closure evidence revision.
+post-merge CI and policy runs 50 and 51. Formal closure PR #24 was accepted at
+exact head `5972c304a37a42d3bc68e84cf7ebef73e28d36cd`, squash-merged as
+`a15bffed922c8712b8c9ae63869f3561d81ebc21`, and passed exact-head and
+post-merge CI and policy runs 52 and 53. This closes only the experimental
+conformance-vector slice; remaining Tokenizer v1 acceptance requirements stay open.
 
 ## Initial completion evidence
 
