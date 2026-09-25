@@ -2,14 +2,21 @@
 
 ## Status
 
-**Implementation proposed — exact-head review, acceptance, and merge pending.**
+**Implementation accepted and verified — formal closure review pending.**
 
 The architecture/security gate in `P6_8_EXPERIMENTAL_CONFORMANCE_GATE.md`
 was accepted at PR #22 head `773ef632bf1201d232a99fa100afa144a3828ee6`,
 squash-merged as `c863af96bfee43889b8c2be8d98e5d9c55868433`, and passed
 exact-head and post-merge Python 3.11–3.13 CI/build/distribution and agent-policy
 runs 48 and 49. This evidence is an implementation proposal built from that
-verified main revision. It makes no formal P6.8 closure claim.
+verified main revision.
+
+The project owner accepted implementation PR #23 at exact head
+`d4b4b7826ebbeaeecf5a0ffc4303041f50b9a568`. Exact-head CI and
+agent-policy run 50 succeeded. PR #23 was squash-merged as
+`980ac53493cbef3ba6fad958e5fa78525682b7ab`, and post-merge `main` CI and
+agent-policy run 51 succeeded at that commit, including Python 3.11–3.13,
+100% source coverage, package build, and exact distribution verification.
 
 ## Fixed replay
 
@@ -57,3 +64,14 @@ inputs, portable resource ceilings, accepted corpus licensing, normalization or
 offset policy, special-token allocation, model compatibility, or the final
 Tokenizer v1 algorithm. Any change to experimental candidate behavior or
 artifact schema needs renewed review and new fingerprint/vector evidence.
+
+## Closure review
+
+The accepted gate, exact-head accepted implementation, pinned fixture and
+identities, independent oracle, fail-closed negative evidence, complete diff and
+security review, and successful pre/post-merge checks are recorded. Formal P6.8
+closure remains pending project-owner acceptance of this exact closure revision,
+squash merge, and successful post-merge `main` checks. Closure would apply only
+to the experimental conformance-vector slice and cannot approve a production
+tokenizer, corpus, model compatibility, final algorithm selection, or later P6
+work.

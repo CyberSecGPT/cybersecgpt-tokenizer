@@ -142,8 +142,11 @@ The P6.8 architecture gate was accepted at PR #22 head
 `773ef632bf1201d232a99fa100afa144a3828ee6`, merged as
 `c863af96bfee43889b8c2be8d98e5d9c55868433`, and passed pre- and
 post-merge runs 48 and 49. `docs/P6_8_EXPERIMENTAL_CONFORMANCE_EVIDENCE.md`
-records the proposed fixed-vector implementation. It awaits its own exact-head
-acceptance, merge, and main verification before any P6.8 closure claim.
+records the fixed-vector implementation. The implementation was accepted at PR
+#23 head `d4b4b7826ebbeaeecf5a0ffc4303041f50b9a568`, squash-merged as
+`980ac53493cbef3ba6fad958e5fa78525682b7ab`, and passed pre- and
+post-merge CI and policy runs 50 and 51. Formal P6.8 closure remains pending
+acceptance and verified merge of the exact closure evidence revision.
 
 ## Initial completion evidence
 
