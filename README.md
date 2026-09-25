@@ -114,5 +114,8 @@ production semantics or a training corpus.
 
 The proposed [P6.8 conformance evidence](docs/P6_8_EXPERIMENTAL_CONFORMANCE_EVIDENCE.md)
 replays 20 pinned generated vectors with exact IDs, byte-split BPE streaming,
-artifact identity, and fail-closed negative cases. It awaits exact-head
-implementation review and does not close P6.8 or select Tokenizer v1.
+artifact identity, and fail-closed negative cases. The implementation was
+accepted at PR #23 head `d4b4b7826ebbeaeecf5a0ffc4303041f50b9a568`,
+squash-merged as `980ac53493cbef3ba6fad958e5fa78525682b7ab`, and passed
+pre/post-merge CI and policy runs 50/51. Formal P6.8 closure review remains
+pending; this evidence does not select Tokenizer v1.

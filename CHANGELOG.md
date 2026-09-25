@@ -54,5 +54,8 @@
 - Accepted the P6.8 gate at exact PR #22 head and verified post-merge runs 48/49;
   proposed bounded offline known-vector fixture, independent replay verifier,
   negative-case tests, and implementation evidence for separate review.
+- Verified P6.8 implementation exact-head owner acceptance, squash merge, and
+  pre/post-merge CI and policy runs 50/51; recorded evidence for formal closure
+  review without approving production tokenizer semantics or later P6 work.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.

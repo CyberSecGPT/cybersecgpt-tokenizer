@@ -98,17 +98,23 @@ post-merge CI and agent-policy runs 44/45. The runtime authorization, provider,
 classification, target-scope, offline, deadline, budget, and verification
 boundaries remain unchanged; P6.7 closure grants no later P6 approval.
 
-The proposed P6.8 conformance gate requires independently checked, bounded
+The accepted P6.8 conformance gate requires independently checked, bounded
 vectors and explicit negative outcomes for malformed inputs and artifacts,
 unknown roles, truncation, cancellation, deadlines, and fingerprint mismatch.
 It treats all fixtures and decoded output as untrusted data; conformance cannot
 grant authorization, relax any policy or resource boundary, approve a corpus,
-or select a production tokenizer. Implementation awaits exact-head gate review.
+or select a production tokenizer.
 
 P6.8 gate acceptance is bound to PR #22 head
 `773ef632bf1201d232a99fa100afa144a3828ee6`, merge
 `c863af96bfee43889b8c2be8d98e5d9c55868433`, and green exact-head/main
-runs 48/49. The proposed implementation's bounded, offline known-vector
+runs 48/49. The implementation's bounded, offline known-vector
 verifier fails on changed identities, fixture data, incorrect truncation, invalid
 UTF-8/IDs, cancelled or expired streams, and corrupted canonical artifact data.
-It remains unapproved until its own exact-head review and merge.
+Its formal closure remains subject to separate exact-head closure review.
+
+The P6.8 implementation was accepted at exact PR #23 head
+`d4b4b7826ebbeaeecf5a0ffc4303041f50b9a568`, squash-merged as
+`980ac53493cbef3ba6fad958e5fa78525682b7ab`, and passed exact-head and
+post-merge CI and policy runs 50/51. Formal closure evidence requires separate
+exact-head acceptance and does not relax any existing security boundary.

@@ -118,3 +118,7 @@ The gate was accepted at exact PR #22 head
 proposed vector verifier and `docs/P6_8_EXPERIMENTAL_CONFORMANCE_EVIDENCE.md`
 exercise existing public candidate APIs and canonical bytes without modifying
 candidate behavior, adding production semantics, or changing dependencies.
+The implementation was accepted at exact PR #23 head
+`d4b4b7826ebbeaeecf5a0ffc4303041f50b9a568`, merged as
+`980ac53493cbef3ba6fad958e5fa78525682b7ab`, and passed pre/post-merge
+runs 50/51. Formal closure awaits exact-head review of the closure record.
