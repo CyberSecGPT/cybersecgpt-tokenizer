@@ -133,6 +133,9 @@ normalization, whole-byte-sequence pretokenization, fixed ordinary/special ID
 regions, explicit special handling, UTF-8-safe truncation, canonical byte
 offsets, and exact fingerprint compatibility. Gate PR #26 was accepted and
 verified at exact head, merge, and post-merge main.
-`docs/P6_9_PRODUCTION_SEMANTICS_EVIDENCE.md`
-proposes the bounded runtime implementation for separate exact-head review; no
-corpus status, artifact promotion, or final selection changes.
+`docs/P6_9_PRODUCTION_SEMANTICS_EVIDENCE.md` records the bounded runtime
+implementation accepted at PR #27 head
+`39c00f56654e20c998541f1269e61739db247a2a`, merged as
+`2b0776824713db0d47905bc2705a8b1d426d4856`, with green pre/post-merge
+runs 58/59. Formal P6.9 closure remains pending; no corpus status, artifact
+promotion, or final selection changes.

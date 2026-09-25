@@ -145,7 +145,9 @@ The initial allocation is deliberately small and model-neutral:
   dependency consistency, split-package imports, pytest at 100% tokenizer source
   coverage on Python 3.11–3.13, package build, and exact distribution checks.
 
-The gate acceptance permits only the separately reviewed implementation in
-`P6_9_PRODUCTION_SEMANTICS_EVIDENCE.md`. That implementation requires its own
-exact-head acceptance and verified merge. No production training or later P6
-work begins through this acceptance.
+The gate acceptance permitted only the separately reviewed implementation in
+`P6_9_PRODUCTION_SEMANTICS_EVIDENCE.md`. That implementation was accepted at PR
+#27 exact head `39c00f56654e20c998541f1269e61739db247a2a`, squash-merged as
+`2b0776824713db0d47905bc2705a8b1d426d4856`, and passed exact-head and
+post-merge runs 58/59. Formal P6.9 closure remains separately gated. No
+production training or later P6 work begins through these acceptances.
