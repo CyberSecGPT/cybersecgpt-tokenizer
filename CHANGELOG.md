@@ -51,5 +51,8 @@
 - Proposed the P6.8 experimental conformance-vector architecture/security gate
   with independent known-output and negative-case review; implementation awaits
   exact-head gate acceptance and verified merge.
+- Accepted the P6.8 gate at exact PR #22 head and verified post-merge runs 48/49;
+  proposed bounded offline known-vector fixture, independent replay verifier,
+  negative-case tests, and implementation evidence for separate review.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.

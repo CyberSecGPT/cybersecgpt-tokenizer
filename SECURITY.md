@@ -104,3 +104,11 @@ unknown roles, truncation, cancellation, deadlines, and fingerprint mismatch.
 It treats all fixtures and decoded output as untrusted data; conformance cannot
 grant authorization, relax any policy or resource boundary, approve a corpus,
 or select a production tokenizer. Implementation awaits exact-head gate review.
+
+P6.8 gate acceptance is bound to PR #22 head
+`773ef632bf1201d232a99fa100afa144a3828ee6`, merge
+`c863af96bfee43889b8c2be8d98e5d9c55868433`, and green exact-head/main
+runs 48/49. The proposed implementation's bounded, offline known-vector
+verifier fails on changed identities, fixture data, incorrect truncation, invalid
+UTF-8/IDs, cancelled or expired streams, and corrupted canonical artifact data.
+It remains unapproved until its own exact-head review and merge.
