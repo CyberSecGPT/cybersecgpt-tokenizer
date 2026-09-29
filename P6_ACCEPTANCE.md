@@ -169,6 +169,14 @@ post-merge runs 60/61. P6.9 is formally closed. Production corpus approval,
 training, artifact promotion, and final selection remain blocked by separate
 gates.
 
+The proposed P6.10 corpus provenance and licensing architecture/security gate is
+recorded in `docs/P6_10_CORPUS_PROVENANCE_LICENSE_GATE.md`. It requires an exact
+content-minimized manifest, per-source rights decisions, deterministic offline
+replay, sensitive-content exclusion, and separation between dataset governance,
+snapshot approval, training, artifact promotion, and final selection. No corpus,
+training, or later P6 work is authorized before exact-head acceptance, merge,
+and verified post-merge checks of this gate.
+
 ## Initial completion evidence
 
 P6 is complete only when the selected Tokenizer v1 implementation, artifacts,
