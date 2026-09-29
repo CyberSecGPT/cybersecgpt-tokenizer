@@ -79,3 +79,7 @@
   post-merge CI and agent-policy runs 60/61; remaining P6 gates stay open.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.
+- Proposed the P6.10 corpus provenance and licensing architecture/security gate
+  with exact manifest identity, per-source rights review, deterministic offline
+  replay, sensitive-content exclusion, and strict separation from training,
+  artifact promotion, final selection, and later P6 work.
