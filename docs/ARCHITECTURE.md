@@ -142,3 +142,10 @@ runs 58/59. Closure PR #28 was accepted at exact head
 `23ee8aedaa99b5341919a60aabc0b1191aa9e329`, and passed pre/post-merge runs
 60/61. P6.9 is formally closed without changing corpus status, artifact
 promotion, final selection, or later P6 authorization.
+
+`docs/P6_10_CORPUS_PROVENANCE_LICENSE_GATE.md` proposes the next boundary: this
+repository may verify and consume an exact tokenizer admission manifest, while
+`cybersecgpt-datasets` owns acquisition, source governance, processing, and
+reusable corpus publication. Unknown rights, sensitive data, executable inputs,
+implicit network access, or identity mismatch fail closed. No corpus, training,
+artifact, final selection, or later P6 work is approved.

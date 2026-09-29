@@ -133,3 +133,10 @@ squash merge, and post-merge review at PRs #26/#27 and runs 56–59. Closure PR
 #28 was accepted at exact head `30b5a78fb1dce5d539c5172efc1f27784b6fd850`,
 merged as `23ee8aedaa99b5341919a60aabc0b1191aa9e329`, and passed runs 60/61.
 P6.9 closure does not relax any security boundary.
+
+The proposed P6.10 corpus gate treats source records, manifests, licenses, raw
+samples, transformations, and review decisions as untrusted data. Unknown or
+incompatible rights, secrets, personal/confidential data, executable loaders,
+implicit network fetches, malformed containers, or digest mismatches fail the
+snapshot closed. Corpus evidence cannot grant authorization or approve training,
+artifact promotion, final selection, or later P6 work.
