@@ -118,6 +118,12 @@ pre/post-merge runs 58/59. Closure PR #28 was accepted at exact head
 60/61. P6.9 is formally closed; this does not approve a corpus, train an
 artifact, or finally select Tokenizer v1.
 
+The proposed [P6.10 corpus provenance and license gate](docs/P6_10_CORPUS_PROVENANCE_LICENSE_GATE.md)
+defines exact snapshot identity, per-source rights review, deterministic offline
+replay, sensitive-content exclusion, and repository boundaries. It approves no
+corpus and blocks manifest implementation, snapshot acceptance, training,
+artifact promotion, final selection, and later P6 work pending exact-head review.
+
 The proposed [P6.8 experimental conformance-vector gate](docs/P6_8_EXPERIMENTAL_CONFORMANCE_GATE.md)
 defines independent known vectors and failure evidence for the existing
 candidates, streaming behavior, and BPE artifact. It awaits exact-head
