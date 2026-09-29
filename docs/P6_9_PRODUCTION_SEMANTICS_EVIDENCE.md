@@ -2,7 +2,7 @@
 
 ## Status
 
-**Implementation verified — formal P6.9 closure acceptance required.**
+**P6.9 formally closed — exact-head acceptance, merge, and main checks verified.**
 
 The accepted architecture/security gate is
 `P6_9_PRODUCTION_SEMANTICS_GATE.md`. It was accepted at PR #26 head
@@ -56,9 +56,10 @@ promotion, authorization, or execution authority. It does not approve a corpus
 or license, train or select an artifact, claim model compatibility, finally
 select Tokenizer v1, or begin a later P6 gate.
 
-P6.9 is not closed by this proposal. Closure requires exact-head owner
-acceptance, squash merge, successful post-merge `main` checks, a final complete
-diff/security review, and separately accepted closure evidence.
+P6.9 closure was accepted at PR #28 exact head
+`30b5a78fb1dce5d539c5172efc1f27784b6fd850`, squash-merged as
+`23ee8aedaa99b5341919a60aabc0b1191aa9e329`, and passed exact-head and
+post-merge CI and agent-policy runs 60/61.
 
 ## Verified implementation
 
@@ -75,7 +76,8 @@ documentation. It introduced no network or provider dependency, executable
 artifact behavior, authorization path, corpus, training data, trained artifact,
 or later P6 implementation.
 
-Formal P6.9 closure remains pending exact-head acceptance and verified merge of
-this evidence revision. That closure cannot approve a production corpus or
-license, train or promote an artifact, finally select Tokenizer v1, or begin a
-later P6 gate.
+The accepted gate, accepted implementation, complete diff/security review,
+closure evidence, exact-head checks, squash merges, and post-merge checks are
+verified. P6.9 is formally closed only for the Tokenizer v1 semantic-profile and
+compatibility slice. It does not approve a production corpus or license, train
+or promote an artifact, finally select Tokenizer v1, or approve a later P6 gate.

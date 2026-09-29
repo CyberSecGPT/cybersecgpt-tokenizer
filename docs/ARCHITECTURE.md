@@ -137,5 +137,8 @@ verified at exact head, merge, and post-merge main.
 implementation accepted at PR #27 head
 `39c00f56654e20c998541f1269e61739db247a2a`, merged as
 `2b0776824713db0d47905bc2705a8b1d426d4856`, with green pre/post-merge
-runs 58/59. Formal P6.9 closure remains pending; no corpus status, artifact
-promotion, or final selection changes.
+runs 58/59. Closure PR #28 was accepted at exact head
+`30b5a78fb1dce5d539c5172efc1f27784b6fd850`, merged as
+`23ee8aedaa99b5341919a60aabc0b1191aa9e329`, and passed pre/post-merge runs
+60/61. P6.9 is formally closed without changing corpus status, artifact
+promotion, final selection, or later P6 authorization.

@@ -112,8 +112,11 @@ pretokenization, offset, truncation, special-token, fingerprint, and exact
 compatibility rules. Its [implementation evidence](docs/P6_9_PRODUCTION_SEMANTICS_EVIDENCE.md)
 was accepted at PR #27 head `39c00f56654e20c998541f1269e61739db247a2a`,
 squash-merged as `2b0776824713db0d47905bc2705a8b1d426d4856`, and passed
-pre/post-merge runs 58/59. Formal P6.9 closure remains separately gated. This
-does not approve a corpus, train an artifact, or finally select Tokenizer v1.
+pre/post-merge runs 58/59. Closure PR #28 was accepted at exact head
+`30b5a78fb1dce5d539c5172efc1f27784b6fd850`, squash-merged as
+`23ee8aedaa99b5341919a60aabc0b1191aa9e329`, and passed pre/post-merge runs
+60/61. P6.9 is formally closed; this does not approve a corpus, train an
+artifact, or finally select Tokenizer v1.
 
 The proposed [P6.8 experimental conformance-vector gate](docs/P6_8_EXPERIMENTAL_CONFORMANCE_GATE.md)
 defines independent known vectors and failure evidence for the existing
