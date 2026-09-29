@@ -162,8 +162,12 @@ post-merge runs 56/57. `docs/P6_9_PRODUCTION_SEMANTICS_EVIDENCE.md` records the
 implementation accepted at PR #27 exact head
 `39c00f56654e20c998541f1269e61739db247a2a`, squash-merged as
 `2b0776824713db0d47905bc2705a8b1d426d4856`, and verified by exact-head and
-post-merge runs 58/59. Formal P6.9 closure and production training remain
-blocked pending their separate gates.
+post-merge runs 58/59. Formal closure PR #28 was accepted at exact head
+`30b5a78fb1dce5d539c5172efc1f27784b6fd850`, squash-merged as
+`23ee8aedaa99b5341919a60aabc0b1191aa9e329`, and passed exact-head and
+post-merge runs 60/61. P6.9 is formally closed. Production corpus approval,
+training, artifact promotion, and final selection remain blocked by separate
+gates.
 
 ## Initial completion evidence
 

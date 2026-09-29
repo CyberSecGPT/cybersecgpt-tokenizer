@@ -73,5 +73,9 @@
   `39c00f56654e20c998541f1269e61739db247a2a`, squash merge
   `2b0776824713db0d47905bc2705a8b1d426d4856`, and successful exact-head and
   post-merge runs 58/59; formal P6.9 closure remains separately gated.
+- Verified formal P6.9 closure at accepted PR #28 head
+  `30b5a78fb1dce5d539c5172efc1f27784b6fd850`, squash merge
+  `23ee8aedaa99b5341919a60aabc0b1191aa9e329`, and successful exact-head and
+  post-merge CI and agent-policy runs 60/61; remaining P6 gates stay open.
 - Python 3.11–3.13 validation, strict typing, 100% source coverage, and exact
   distribution-boundary gates.

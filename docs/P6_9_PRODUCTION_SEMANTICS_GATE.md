@@ -149,5 +149,8 @@ The gate acceptance permitted only the separately reviewed implementation in
 `P6_9_PRODUCTION_SEMANTICS_EVIDENCE.md`. That implementation was accepted at PR
 #27 exact head `39c00f56654e20c998541f1269e61739db247a2a`, squash-merged as
 `2b0776824713db0d47905bc2705a8b1d426d4856`, and passed exact-head and
-post-merge runs 58/59. Formal P6.9 closure remains separately gated. No
-production training or later P6 work begins through these acceptances.
+post-merge runs 58/59. Closure PR #28 was accepted at exact head
+`30b5a78fb1dce5d539c5172efc1f27784b6fd850`, squash-merged as
+`23ee8aedaa99b5341919a60aabc0b1191aa9e329`, and passed exact-head and
+post-merge runs 60/61. P6.9 is formally closed. No production training or later
+P6 work begins through these acceptances.

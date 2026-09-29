@@ -129,5 +129,7 @@ explicit. Invalid UTF-8/IDs, incompatible fingerprints, malformed artifacts,
 limits, cancellation, and deadlines fail closed. The proposal grants no
 authorization, corpus/license approval, model compatibility, or production
 selection. The gate and implementation passed separate exact-head acceptance,
-squash merge, and post-merge review at PRs #26/#27 and runs 56–59. Formal P6.9
-closure remains separately gated and cannot relax any security boundary.
+squash merge, and post-merge review at PRs #26/#27 and runs 56–59. Closure PR
+#28 was accepted at exact head `30b5a78fb1dce5d539c5172efc1f27784b6fd850`,
+merged as `23ee8aedaa99b5341919a60aabc0b1191aa9e329`, and passed runs 60/61.
+P6.9 closure does not relax any security boundary.
