@@ -177,6 +177,13 @@ snapshot approval, training, artifact promotion, and final selection. No corpus,
 training, or later P6 work is authorized before exact-head acceptance, merge,
 and verified post-merge checks of this gate.
 
+The P6.10 gate was accepted at PR #30 head
+`bcbfd04b8a3c6439c07567f365ba91010822ce32`, squash-merged as
+`f69b22b88a8c053a360cb26c57a9ddd311a7ec43`, and passed exact-head and
+post-merge runs 64/65. `docs/P6_10_CORPUS_MANIFEST_EVIDENCE.md` proposes the
+separately reviewed bounded offline manifest/admission verifier. It contains no
+production corpus and cannot close snapshot approval or authorize training.
+
 ## Initial completion evidence
 
 P6 is complete only when the selected Tokenizer v1 implementation, artifacts,
