@@ -140,3 +140,10 @@ incompatible rights, secrets, personal/confidential data, executable loaders,
 implicit network fetches, malformed containers, or digest mismatches fail the
 snapshot closed. Corpus evidence cannot grant authorization or approve training,
 artifact promotion, final selection, or later P6 work.
+
+P6.10 gate acceptance is bound to PR #30 head
+`bcbfd04b8a3c6439c07567f365ba91010822ce32`, merge
+`f69b22b88a8c053a360cb26c57a9ddd311a7ec43`, and green runs 64/65. The
+proposed verifier admits only exact local `bytes`, validates canonical identities,
+rights/safety decisions, permissions, order, sizes and digests, and returns no raw
+content. It adds no I/O, networking, execution, corpus approval or training.
