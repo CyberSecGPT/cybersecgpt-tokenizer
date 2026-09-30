@@ -83,3 +83,7 @@
   with exact manifest identity, per-source rights review, deterministic offline
   replay, sensitive-content exclusion, and strict separation from training,
   artifact promotion, final selection, and later P6 work.
+- Verified P6.10 gate acceptance at PR #30 exact head, squash merge, and green
+  pre/post-merge runs 64/65; proposed canonical bounded corpus-manifest identity
+  and exact offline admission verification without approving a snapshot or
+  authorizing training.

@@ -12,6 +12,7 @@ EXPECTED_SOURCE_MEMBERS = frozenset(
         "cybersecgpt/tokenizer/byte_bpe.py",
         "cybersecgpt/tokenizer/benchmark.py",
         "cybersecgpt/tokenizer/contracts.py",
+        "cybersecgpt/tokenizer/corpus_manifest.py",
         "cybersecgpt/tokenizer/evaluation.py",
         "cybersecgpt/tokenizer/py.typed",
         "cybersecgpt/tokenizer/reference.py",

@@ -2,7 +2,12 @@
 
 ## Status and decision boundary
 
-**Proposed — exact-head architecture/security acceptance required.**
+**Accepted — corpus snapshot and implementation evidence remain separately gated.**
+
+The project owner accepted this architecture/security/license gate at PR #30
+head `bcbfd04b8a3c6439c07567f365ba91010822ce32`. It was squash-merged as
+`f69b22b88a8c053a360cb26c57a9ddd311a7ec43`; exact-head and post-merge
+Python 3.11–3.13 CI/build/distribution and agent-policy runs 64 and 65 passed.
 
 P6.9 closed the prospective Tokenizer v1 semantic profile. This gate defines
 the evidence that an exact, immutable tokenizer-training corpus snapshot must
