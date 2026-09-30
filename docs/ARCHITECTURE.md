@@ -149,3 +149,9 @@ repository may verify and consume an exact tokenizer admission manifest, while
 reusable corpus publication. Unknown rights, sensitive data, executable inputs,
 implicit network access, or identity mismatch fail closed. No corpus, training,
 artifact, final selection, or later P6 work is approved.
+
+The P6.10 gate was accepted at exact PR #30 head and verified through post-merge
+run 65. The proposed `corpus_manifest` module implements only canonical bounded
+manifest identity and exact local byte admission. It performs no acquisition,
+storage, legal review, I/O, networking or training and returns content-minimized
+evidence. A real snapshot remains owned and gated outside this implementation.
