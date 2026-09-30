@@ -124,6 +124,14 @@ replay, sensitive-content exclusion, and repository boundaries. It approves no
 corpus and blocks manifest implementation, snapshot acceptance, training,
 artifact promotion, final selection, and later P6 work pending exact-head review.
 
+The gate was accepted at PR #30 exact head
+`bcbfd04b8a3c6439c07567f365ba91010822ce32`, merged as
+`f69b22b88a8c053a360cb26c57a9ddd311a7ec43`, and passed runs 64/65. The
+proposed [manifest-verifier evidence](docs/P6_10_CORPUS_MANIFEST_EVIDENCE.md)
+adds canonical provenance/rights records and exact offline byte admission without
+including or approving a real corpus. Snapshot approval and training remain
+blocked.
+
 The proposed [P6.8 experimental conformance-vector gate](docs/P6_8_EXPERIMENTAL_CONFORMANCE_GATE.md)
 defines independent known vectors and failure evidence for the existing
 candidates, streaming behavior, and BPE artifact. It awaits exact-head
