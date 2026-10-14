@@ -151,7 +151,25 @@ implicit network access, or identity mismatch fail closed. No corpus, training,
 artifact, final selection, or later P6 work is approved.
 
 The P6.10 gate was accepted at exact PR #30 head and verified through post-merge
-run 65. The proposed `corpus_manifest` module implements only canonical bounded
-manifest identity and exact local byte admission. It performs no acquisition,
-storage, legal review, I/O, networking or training and returns content-minimized
-evidence. A real snapshot remains owned and gated outside this implementation.
+run 65. The `corpus_manifest` module implements only canonical bounded manifest
+identity and exact local byte admission. Its PR #31 implementation head
+`69d202f36010658a473fd99cff2f7186af53ab31` was owner-accepted, merged as
+`0d3b1bff2328392a5b385b0c5b2bd7d08177b792`, and passed exact-head and
+post-merge CI/policy runs 66/67.
+
+The dataset owner separately accepted the 1,024-sample first-party snapshot at
+datasets PR #8 head `0cadfd93a5d9ac528075fba4d836322630ca5557`, binding dataset
+manifest `374773d05a9aae380ad88f477210da75d40adc90cca1afac9ee8800a93656fef`
+and tokenizer admission manifest
+`a2f676b2717e86717d469b9274b91cb3c3bf48daf58e83efe97221e4d5a7151a`.
+It was merged as `a8573904fd944e9be26e911d768e7335e4bdf1e0` and passed
+pre/post-merge runs 14/15. Dataset acceptance permits only a separately reviewed
+training-run gate.
+
+`docs/P6_11_TOKENIZER_V1_TRAINING_RUN_GATE.md` proposes that next boundary. The
+tokenizer package would accept only the exact admitted in-memory bytes, construct
+one fixed 512-ordinary-ID byte-BPE candidate, and keep generation separate from
+digest-disjoint holdout evaluation. The package gains no dataset runtime
+dependency, I/O, network, provider, persistence, signing, promotion, model, or
+authorization role. Exact-head gate acceptance, merge, and post-merge checks are
+required before implementation or training.

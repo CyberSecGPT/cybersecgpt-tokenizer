@@ -2,7 +2,7 @@
 
 ## Status and decision boundary
 
-**Accepted — corpus snapshot and implementation evidence remain separately gated.**
+**Accepted — manifest implementation and exact snapshot prerequisite verified.**
 
 The project owner accepted this architecture/security/license gate at PR #30
 head `bcbfd04b8a3c6439c07567f365ba91010822ce32`. It was squash-merged as
@@ -108,3 +108,16 @@ Gate acceptance authorizes only a separately reviewed manifest/admission
 verifier. The snapshot must then be accepted at its own exact digest before
 production training. Training success remains insufficient for artifact
 promotion or final Tokenizer v1 selection.
+
+The verifier was accepted at PR #31 head
+`69d202f36010658a473fd99cff2f7186af53ab31`, squash-merged as
+`0d3b1bff2328392a5b385b0c5b2bd7d08177b792`, and passed exact-head and
+post-merge CI/policy runs 66/67. The dataset owner then accepted datasets PR #8
+head `0cadfd93a5d9ac528075fba4d836322630ca5557`, dataset manifest
+`374773d05a9aae380ad88f477210da75d40adc90cca1afac9ee8800a93656fef`,
+and tokenizer admission manifest
+`a2f676b2717e86717d469b9274b91cb3c3bf48daf58e83efe97221e4d5a7151a`.
+That snapshot was squash-merged as
+`a8573904fd944e9be26e911d768e7335e4bdf1e0` and passed exact-head and
+post-merge runs 14/15. These records verify the P6.10 prerequisite and authorize
+only proposal of the separately reviewed P6.11 training-run gate.
