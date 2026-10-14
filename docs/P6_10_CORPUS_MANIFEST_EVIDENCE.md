@@ -2,7 +2,12 @@
 
 ## Status
 
-**Proposed implementation — exact-head owner acceptance required.**
+**Accepted implementation; exact snapshot admission separately verified.**
+
+The project owner accepted PR #31 implementation head
+`69d202f36010658a473fd99cff2f7186af53ab31` in comment `5904865101`.
+It was squash-merged as `0d3b1bff2328392a5b385b0c5b2bd7d08177b792`;
+exact-head and post-merge CI/policy runs 66/67 passed.
 
 This evidence implements only the manifest/admission-verifier permission granted
 by the accepted P6.10 gate. It does not contain or approve a corpus snapshot,
@@ -49,15 +54,23 @@ provider/network, offline, deadline, budget or verification policy.
 
 The focused implementation suite covers canonical replay, identity sensitivity,
 immutability, every rights/safety state, permissions, ordering, count/digest
-binding, limits, cancellation/deadlines and content-minimizing output. The full
-unchanged Python 3.11–3.13 CI, build and exact distribution matrix remains
-required on the final review head.
+binding, limits, cancellation/deadlines and content-minimizing output. The final
+implementation head passed the unchanged Python 3.11–3.13 CI, 100% source
+coverage, build, exact distribution, and agent-policy matrix in run 66; merged
+`main` passed run 67.
 
-## Remaining blockers
+## Verified snapshot boundary
 
-P6.10 remains open after this implementation. A real corpus snapshot must be
-produced in the owning dataset-governance boundary and independently accepted at
-its exact manifest digest with provenance, license, safety, contamination and
-offline replay evidence. Only then may a separate production-training gate be
-proposed. Training success will still not approve artifact promotion or final
-Tokenizer v1 selection.
+The dataset owner later accepted datasets PR #8 head
+`0cadfd93a5d9ac528075fba4d836322630ca5557`, dataset manifest
+`374773d05a9aae380ad88f477210da75d40adc90cca1afac9ee8800a93656fef`,
+and tokenizer admission manifest
+`a2f676b2717e86717d469b9274b91cb3c3bf48daf58e83efe97221e4d5a7151a`
+in comment `6162064709`. The snapshot was squash-merged as
+`a8573904fd944e9be26e911d768e7335e4bdf1e0`; exact-head and post-merge
+CI runs 14/15 passed.
+
+This verifies P6.10's exact snapshot-admission prerequisite. It authorizes only
+the separately reviewed P6.11 training-run gate. It does not authorize training,
+artifact persistence, promotion or signing, final Tokenizer v1 selection, model
+work, P7, execution authority, or any policy widening.

@@ -87,3 +87,14 @@
   pre/post-merge runs 64/65; proposed canonical bounded corpus-manifest identity
   and exact offline admission verification without approving a snapshot or
   authorizing training.
+- Verified the P6.10 admission verifier at PR #31 head
+  `69d202f36010658a473fd99cff2f7186af53ab31`, squash merge
+  `0d3b1bff2328392a5b385b0c5b2bd7d08177b792`, and successful exact-head
+  and post-merge CI/policy runs 66/67.
+- Recorded the datasets PR #8 exact-head and exact-digest acceptance, squash
+  merge `a8573904fd944e9be26e911d768e7335e4bdf1e0`, and successful
+  pre/post-merge runs 14/15 for the bounded 1,024-sample first-party snapshot.
+- Proposed the P6.11 deterministic Tokenizer v1 training-run gate with exact
+  snapshot binding, fixed byte-BPE construction, separate digest-disjoint
+  holdout evaluation, repeated Python 3.11–3.13 replay, fail-closed lifecycle
+  controls, and no artifact-promotion or final-selection authority.

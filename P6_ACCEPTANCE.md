@@ -180,9 +180,30 @@ and verified post-merge checks of this gate.
 The P6.10 gate was accepted at PR #30 head
 `bcbfd04b8a3c6439c07567f365ba91010822ce32`, squash-merged as
 `f69b22b88a8c053a360cb26c57a9ddd311a7ec43`, and passed exact-head and
-post-merge runs 64/65. `docs/P6_10_CORPUS_MANIFEST_EVIDENCE.md` proposes the
-separately reviewed bounded offline manifest/admission verifier. It contains no
-production corpus and cannot close snapshot approval or authorize training.
+post-merge runs 64/65. The bounded offline manifest/admission verifier in
+`docs/P6_10_CORPUS_MANIFEST_EVIDENCE.md` was accepted at PR #31 head
+`69d202f36010658a473fd99cff2f7186af53ab31`, squash-merged as
+`0d3b1bff2328392a5b385b0c5b2bd7d08177b792`, and passed exact-head and
+post-merge CI/policy runs 66/67.
+
+The dataset owner separately accepted the exact first-party snapshot at datasets
+PR #8 head `0cadfd93a5d9ac528075fba4d836322630ca5557`, dataset manifest
+`374773d05a9aae380ad88f477210da75d40adc90cca1afac9ee8800a93656fef`,
+and tokenizer admission manifest
+`a2f676b2717e86717d469b9274b91cb3c3bf48daf58e83efe97221e4d5a7151a`.
+The snapshot was squash-merged as
+`a8573904fd944e9be26e911d768e7335e4bdf1e0` and passed exact-head and
+post-merge runs 14/15. P6.10's admission prerequisite is verified complete;
+these acceptances authorize only proposing the next training-run gate.
+
+The proposed P6.11 architecture/security/training gate is recorded in
+`docs/P6_11_TOKENIZER_V1_TRAINING_RUN_GATE.md`. It binds one deterministic
+512-ordinary-token byte-BPE run to the exact accepted snapshot, requires
+repeated Python 3.11–3.13 replay and a separate digest-disjoint fixed holdout,
+and prohibits persistence, signing, promotion, compatibility claims, final
+selection, model work, or P7. Implementation and training remain blocked until
+that exact gate revision is owner-accepted, squash-merged, and verified on
+`main`.
 
 ## Initial completion evidence
 

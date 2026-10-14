@@ -144,6 +144,28 @@ artifact promotion, final selection, or later P6 work.
 P6.10 gate acceptance is bound to PR #30 head
 `bcbfd04b8a3c6439c07567f365ba91010822ce32`, merge
 `f69b22b88a8c053a360cb26c57a9ddd311a7ec43`, and green runs 64/65. The
-proposed verifier admits only exact local `bytes`, validates canonical identities,
+verifier admits only exact local `bytes`, validates canonical identities,
 rights/safety decisions, permissions, order, sizes and digests, and returns no raw
-content. It adds no I/O, networking, execution, corpus approval or training.
+content. Its PR #31 head `69d202f36010658a473fd99cff2f7186af53ab31`
+was accepted and merged as `0d3b1bff2328392a5b385b0c5b2bd7d08177b792`; runs
+66/67 passed. It adds no I/O, networking, execution, corpus approval or training.
+
+The separately governed first-party snapshot was accepted at datasets PR #8
+head `0cadfd93a5d9ac528075fba4d836322630ca5557` with dataset manifest
+`374773d05a9aae380ad88f477210da75d40adc90cca1afac9ee8800a93656fef`
+and tokenizer admission manifest
+`a2f676b2717e86717d469b9274b91cb3c3bf48daf58e83efe97221e4d5a7151a`.
+Acceptance authorizes proposing a training-run gate only.
+
+The proposed P6.11 gate requires admission before strict decoding or
+construction, fixes all BPE settings and limits, preserves sample boundaries,
+checks cancellation and monotonic deadlines throughout the lifecycle, and keeps
+the constructor separate from digest-disjoint holdout evaluation. Corpus bytes,
+learned token bytes, and decoded content remain memory-only and excluded from
+logs and evidence. Admission, training, evaluation, and evidence cannot grant
+authorization or weaken classification, scope, provider/network, offline,
+deadline, budget, or verification policy. Any identity, rights, integrity,
+UTF-8, cancellation, deadline, resource, construction, or verification failure
+is terminal and cannot be promoted, retried under weaker controls, or replaced
+by another algorithm. No implementation or training is authorized before exact-
+head acceptance and verified merge of the gate.

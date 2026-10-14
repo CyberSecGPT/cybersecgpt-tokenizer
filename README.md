@@ -118,19 +118,34 @@ pre/post-merge runs 58/59. Closure PR #28 was accepted at exact head
 60/61. P6.9 is formally closed; this does not approve a corpus, train an
 artifact, or finally select Tokenizer v1.
 
-The proposed [P6.10 corpus provenance and license gate](docs/P6_10_CORPUS_PROVENANCE_LICENSE_GATE.md)
+The accepted [P6.10 corpus provenance and license gate](docs/P6_10_CORPUS_PROVENANCE_LICENSE_GATE.md)
 defines exact snapshot identity, per-source rights review, deterministic offline
-replay, sensitive-content exclusion, and repository boundaries. It approves no
-corpus and blocks manifest implementation, snapshot acceptance, training,
-artifact promotion, final selection, and later P6 work pending exact-head review.
-
-The gate was accepted at PR #30 exact head
+replay, sensitive-content exclusion, and repository boundaries. The gate was
+accepted at PR #30 exact head
 `bcbfd04b8a3c6439c07567f365ba91010822ce32`, merged as
 `f69b22b88a8c053a360cb26c57a9ddd311a7ec43`, and passed runs 64/65. The
-proposed [manifest-verifier evidence](docs/P6_10_CORPUS_MANIFEST_EVIDENCE.md)
-adds canonical provenance/rights records and exact offline byte admission without
-including or approving a real corpus. Snapshot approval and training remain
-blocked.
+accepted [manifest-verifier evidence](docs/P6_10_CORPUS_MANIFEST_EVIDENCE.md)
+adds canonical provenance/rights records and exact offline byte admission. Its
+implementation was accepted at PR #31 head
+`69d202f36010658a473fd99cff2f7186af53ab31`, merged as
+`0d3b1bff2328392a5b385b0c5b2bd7d08177b792`, and passed runs 66/67.
+
+The dataset owner then accepted the exact first-party snapshot at datasets PR #8
+head `0cadfd93a5d9ac528075fba4d836322630ca5557`, dataset manifest
+`374773d05a9aae380ad88f477210da75d40adc90cca1afac9ee8800a93656fef`,
+and tokenizer admission manifest
+`a2f676b2717e86717d469b9274b91cb3c3bf48daf58e83efe97221e4d5a7151a`.
+It was merged as `a8573904fd944e9be26e911d768e7335e4bdf1e0` and passed
+pre/post-merge runs 14/15. This closes the P6.10 corpus-admission prerequisite
+only; it does not authorize training or artifact promotion.
+
+The proposed [P6.11 deterministic training-run gate](docs/P6_11_TOKENIZER_V1_TRAINING_RUN_GATE.md)
+binds the exact accepted snapshot to a fixed 512-ordinary-token byte-BPE run,
+separate digest-disjoint holdout evaluation, repeated Python 3.11–3.13 replay,
+bounded lifecycle controls, and content-minimized evidence. No training may
+begin until that exact gate head is accepted, merged, and verified on `main`.
+Training success will not approve persistence, signing, promotion, compatibility,
+final Tokenizer v1 selection, model work, or P7.
 
 The proposed [P6.8 experimental conformance-vector gate](docs/P6_8_EXPERIMENTAL_CONFORMANCE_GATE.md)
 defines independent known vectors and failure evidence for the existing
