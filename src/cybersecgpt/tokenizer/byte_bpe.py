@@ -6,6 +6,8 @@ from collections import Counter
 from dataclasses import dataclass
 from enum import StrEnum
 from hashlib import sha256
+from threading import Event
+from time import monotonic_ns
 from typing import Final
 
 from cybersecgpt.tokenizer.contracts import (
@@ -24,6 +26,7 @@ from cybersecgpt.tokenizer.evaluation import EvaluationManifest
 BYTE_ALPHABET_SIZE: Final = 256
 MAX_EXPERIMENTAL_BPE_MERGES: Final = 256
 MAX_EXPERIMENTAL_BPE_TRAINING_BYTES: Final = 1024 * 1024
+MAX_BPE_TRAINING_DEADLINE_NS: Final = (1 << 63) - 1
 _ALGORITHM_ID: Final = "experimental-byte-bpe-v1"
 
 
@@ -33,6 +36,40 @@ class BpeTrainingFinishStatus(StrEnum):
     VOCABULARY_LIMIT = "vocabulary_limit"
     NO_ELIGIBLE_PAIR = "no_eligible_pair"
     MERGE_BUDGET = "merge_budget"
+
+
+class BpeTrainingCancelledError(TokenizerContractError):
+    """Report cancellation at a bounded construction checkpoint."""
+
+
+class BpeTrainingDeadlineError(TokenizerContractError):
+    """Report deadline expiry at a bounded construction checkpoint."""
+
+
+@dataclass(frozen=True, slots=True)
+class BpeTrainingControl:
+    """Trusted cancellation and monotonic-deadline state for construction."""
+
+    cancellation: Event | None = None
+    deadline_ns: int | None = None
+
+    def __post_init__(self) -> None:
+        if self.cancellation is not None and type(self.cancellation) is not Event:
+            raise TokenizerContractError("cancellation must be a threading Event")
+        if self.deadline_ns is not None and (
+            isinstance(self.deadline_ns, bool)
+            or not isinstance(self.deadline_ns, int)
+            or not 0 <= self.deadline_ns <= MAX_BPE_TRAINING_DEADLINE_NS
+        ):
+            raise TokenizerContractError("deadline_ns is outside the supported range")
+
+    def check(self) -> None:
+        """Fail without weakening controls when cancellation or expiry is observed."""
+
+        if self.cancellation is not None and self.cancellation.is_set():
+            raise BpeTrainingCancelledError("byte-BPE construction cancelled")
+        if self.deadline_ns is not None and monotonic_ns() >= self.deadline_ns:
+            raise BpeTrainingDeadlineError("byte-BPE construction deadline expired")
 
 
 @dataclass(frozen=True, slots=True)
@@ -203,18 +240,33 @@ class ByteBpeTrainingResult:
 
 
 def train_byte_bpe_candidate(
-    manifest: EvaluationManifest, config: ByteBpeTrainingConfig
+    manifest: EvaluationManifest,
+    config: ByteBpeTrainingConfig,
+    *,
+    control: BpeTrainingControl | None = None,
 ) -> ByteBpeTrainingResult:
     """Construct a deterministic bounded in-memory byte-BPE candidate."""
 
+    if control is not None and type(control) is not BpeTrainingControl:
+        raise TokenizerContractError("control must be trusted BPE training control")
+    if control is not None:
+        control.check()
     total_bytes = sum(len(sample.text.encode("utf-8")) for sample in manifest.samples)
     if total_bytes > config.max_training_bytes:
         raise TokenizerContractError("training manifest exceeds max_training_bytes")
-    sequences = [list(sample.text.encode("utf-8")) for sample in manifest.samples]
+    sequences: list[list[int]] = []
+    for sample in manifest.samples:
+        if control is not None:
+            control.check()
+        sequences.append(list(sample.text.encode("utf-8")))
+        if control is not None:
+            control.check()
     tokens = [bytes((value,)) for value in range(BYTE_ALPHABET_SIZE)]
     merges: list[BpeMerge] = []
     finish_status = BpeTrainingFinishStatus.NO_ELIGIBLE_PAIR
     while len(tokens) < config.vocabulary_limit and len(merges) < config.merge_budget:
+        if control is not None:
+            control.check()
         counts: Counter[tuple[int, int]] = Counter()
         for sequence in sequences:
             counts.update(zip(sequence, sequence[1:], strict=False))
@@ -232,10 +284,14 @@ def train_byte_bpe_candidate(
         tokens.append(tokens[pair[0]] + tokens[pair[1]])
         merges.append(BpeMerge(pair[0], pair[1], token_id))
         sequences = [_merge_pair(sequence, pair, token_id) for sequence in sequences]
+        if control is not None:
+            control.check()
     if len(tokens) >= config.vocabulary_limit:
         finish_status = BpeTrainingFinishStatus.VOCABULARY_LIMIT
     elif len(merges) >= config.merge_budget:
         finish_status = BpeTrainingFinishStatus.MERGE_BUDGET
+    if control is not None:
+        control.check()
     candidate = ByteBpeCandidate(tuple(tokens), tuple(merges))
     return ByteBpeTrainingResult(
         candidate=candidate,

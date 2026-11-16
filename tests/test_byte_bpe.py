@@ -1,13 +1,18 @@
 """Tests for the deterministic experimental byte-BPE candidate."""
 
 from dataclasses import FrozenInstanceError
+from threading import Event
 
 import pytest
 
 import cybersecgpt.tokenizer.byte_bpe as byte_bpe
 from cybersecgpt.tokenizer import (
+    MAX_BPE_TRAINING_DEADLINE_NS,
     MAX_VOCABULARY_SIZE,
     BpeMerge,
+    BpeTrainingCancelledError,
+    BpeTrainingControl,
+    BpeTrainingDeadlineError,
     BpeTrainingFinishStatus,
     ByteBpeCandidate,
     ByteBpeTrainingConfig,
@@ -162,6 +167,55 @@ def test_training_enforces_content_limit_and_reports_bounded_stops() -> None:
         _manifest("abab"), ByteBpeTrainingConfig(300, merge_budget=1)
     )
     assert budget.finish_status is BpeTrainingFinishStatus.MERGE_BUDGET
+
+
+def test_training_control_propagates_cancellation_and_deadline(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    cancellation = Event()
+    control = BpeTrainingControl(cancellation, MAX_BPE_TRAINING_DEADLINE_NS)
+    control.check()
+    cancellation.set()
+    with pytest.raises(BpeTrainingCancelledError, match="cancelled"):
+        train_byte_bpe_candidate(
+            _manifest("abab"), ByteBpeTrainingConfig(257), control=control
+        )
+    deadline = BpeTrainingControl(deadline_ns=10)
+    monkeypatch.setattr(byte_bpe, "monotonic_ns", lambda: 10)
+    with pytest.raises(BpeTrainingDeadlineError, match="deadline"):
+        deadline.check()
+
+
+@pytest.mark.parametrize("control", [BpeTrainingControl(), None])
+def test_training_control_preserves_deterministic_result(
+    control: BpeTrainingControl | None,
+) -> None:
+    result = train_byte_bpe_candidate(
+        _manifest("abab", "ab"), ByteBpeTrainingConfig(258), control=control
+    )
+    assert result.finish_status is BpeTrainingFinishStatus.VOCABULARY_LIMIT
+
+
+@pytest.mark.parametrize(
+    ("values", "message"),
+    [
+        ({"cancellation": object()}, "threading Event"),
+        ({"deadline_ns": True}, "deadline_ns"),
+        ({"deadline_ns": "1"}, "deadline_ns"),
+        ({"deadline_ns": -1}, "deadline_ns"),
+        ({"deadline_ns": MAX_BPE_TRAINING_DEADLINE_NS + 1}, "deadline_ns"),
+    ],
+)
+def test_training_control_rejects_untrusted_or_invalid_state(
+    values: dict[str, object], message: str
+) -> None:
+    with pytest.raises(TokenizerContractError, match=message):
+        BpeTrainingControl(**values)  # type: ignore[arg-type]
+    if "cancellation" in values:
+        with pytest.raises(TokenizerContractError, match="trusted"):
+            train_byte_bpe_candidate(  # type: ignore[arg-type]
+                _manifest("ab"), ByteBpeTrainingConfig(257), control=object()
+            )
 
 
 def test_candidate_validation_rejects_malformed_in_memory_data() -> None:

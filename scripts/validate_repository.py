@@ -49,6 +49,7 @@ REQUIRED_FILES = frozenset(
         "src/cybersecgpt/tokenizer/reference.py",
         "src/cybersecgpt/tokenizer/streaming.py",
         "src/cybersecgpt/tokenizer/unigram.py",
+        "src/cybersecgpt/tokenizer/v1_training.py",
         "tests/__init__.py",
         "tests/test_artifact.py",
         "tests/test_byte_bpe.py",
@@ -61,6 +62,7 @@ REQUIRED_FILES = frozenset(
         "tests/test_reference.py",
         "tests/test_streaming.py",
         "tests/test_unigram.py",
+        "tests/test_v1_training.py",
         "tests/test_performance_runner.py",
     }
 )
