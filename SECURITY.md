@@ -157,7 +157,7 @@ and tokenizer admission manifest
 `a2f676b2717e86717d469b9274b91cb3c3bf48daf58e83efe97221e4d5a7151a`.
 Acceptance authorizes proposing a training-run gate only.
 
-The proposed P6.11 gate requires admission before strict decoding or
+The accepted P6.11 gate requires admission before strict decoding or
 construction, fixes all BPE settings and limits, preserves sample boundaries,
 checks cancellation and monotonic deadlines throughout the lifecycle, and keeps
 the constructor separate from digest-disjoint holdout evaluation. Corpus bytes,
@@ -167,5 +167,10 @@ authorization or weaken classification, scope, provider/network, offline,
 deadline, budget, or verification policy. Any identity, rights, integrity,
 UTF-8, cancellation, deadline, resource, construction, or verification failure
 is terminal and cannot be promoted, retried under weaker controls, or replaced
-by another algorithm. No implementation or training is authorized before exact-
-head acceptance and verified merge of the gate.
+by another algorithm. Gate PR #32 was accepted at exact head
+`7c7cabf453c856fd460c99e0693afb0da41128a6`, merged as
+`2e7cad0900ec2b1a065e5688f520e8f7c624bd69`, and passed runs 68/69.
+The implementation proposal preserves these controls, blocks socket creation in
+the exact cross-repository replay, emits only counts/digests/booleans, and has no
+artifact writer or promotion path. Its exact head still requires separate owner
+acceptance before merge.

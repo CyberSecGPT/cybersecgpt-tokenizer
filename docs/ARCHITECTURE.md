@@ -166,10 +166,15 @@ It was merged as `a8573904fd944e9be26e911d768e7335e4bdf1e0` and passed
 pre/post-merge runs 14/15. Dataset acceptance permits only a separately reviewed
 training-run gate.
 
-`docs/P6_11_TOKENIZER_V1_TRAINING_RUN_GATE.md` proposes that next boundary. The
-tokenizer package would accept only the exact admitted in-memory bytes, construct
-one fixed 512-ordinary-ID byte-BPE candidate, and keep generation separate from
+`docs/P6_11_TOKENIZER_V1_TRAINING_RUN_GATE.md` defines that accepted boundary.
+It was accepted at PR #32 exact head
+`7c7cabf453c856fd460c99e0693afb0da41128a6`, merged as
+`2e7cad0900ec2b1a065e5688f520e8f7c624bd69`, and passed exact-head and
+post-merge runs 68/69. The proposed implementation accepts only the exact
+admitted in-memory bytes, constructs one fixed 512-ordinary-ID byte-BPE
+candidate, and keeps generation separate from
 digest-disjoint holdout evaluation. The package gains no dataset runtime
 dependency, I/O, network, provider, persistence, signing, promotion, model, or
-authorization role. Exact-head gate acceptance, merge, and post-merge checks are
-required before implementation or training.
+authorization role. `docs/P6_11_TOKENIZER_V1_TRAINING_EVIDENCE.md` records the
+content-minimized candidate, evaluation, conformance, and replay identities;
+implementation acceptance remains separately required.

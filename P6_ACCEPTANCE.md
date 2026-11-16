@@ -196,14 +196,18 @@ The snapshot was squash-merged as
 post-merge runs 14/15. P6.10's admission prerequisite is verified complete;
 these acceptances authorize only proposing the next training-run gate.
 
-The proposed P6.11 architecture/security/training gate is recorded in
+The accepted P6.11 architecture/security/training gate is recorded in
 `docs/P6_11_TOKENIZER_V1_TRAINING_RUN_GATE.md`. It binds one deterministic
 512-ordinary-token byte-BPE run to the exact accepted snapshot, requires
 repeated Python 3.11–3.13 replay and a separate digest-disjoint fixed holdout,
 and prohibits persistence, signing, promotion, compatibility claims, final
-selection, model work, or P7. Implementation and training remain blocked until
-that exact gate revision is owner-accepted, squash-merged, and verified on
-`main`.
+selection, model work, or P7. Gate PR #32 was accepted at exact head
+`7c7cabf453c856fd460c99e0693afb0da41128a6`, squash-merged as
+`2e7cad0900ec2b1a065e5688f520e8f7c624bd69`, and passed exact-head and
+post-merge runs 68/69. `docs/P6_11_TOKENIZER_V1_TRAINING_EVIDENCE.md` proposes
+the separately reviewed implementation and exact in-memory run. Artifact
+promotion/signing and final selection remain blocked even if that proposal is
+accepted.
 
 ## Initial completion evidence
 

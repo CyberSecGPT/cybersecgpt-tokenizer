@@ -2,8 +2,15 @@
 
 ## Status and decision boundary
 
-**Proposed — exact-head project-owner architecture/security/training acceptance
-is required before implementation or training.**
+**Accepted — implementation and training evidence remain independently gated.**
+
+The project owner accepted PR #32 at exact head
+`7c7cabf453c856fd460c99e0693afb0da41128a6` in comment `6162346557`.
+The gate was squash-merged as
+`2e7cad0900ec2b1a065e5688f520e8f7c624bd69`; exact-head and
+post-merge Python 3.11–3.13 CI/build/distribution and agent-policy runs 68/69
+passed. Acceptance authorized only the separately reviewed implementation and
+training-evidence proposal described below.
 
 P6.10 established a bounded manifest verifier and the dataset owner has now
 accepted one exact first-party snapshot. This gate proposes the smallest next

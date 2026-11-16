@@ -98,3 +98,11 @@
   snapshot binding, fixed byte-BPE construction, separate digest-disjoint
   holdout evaluation, repeated Python 3.11–3.13 replay, fail-closed lifecycle
   controls, and no artifact-promotion or final-selection authority.
+- Verified P6.11 gate acceptance at PR #32 head
+  `7c7cabf453c856fd460c99e0693afb0da41128a6`, squash merge
+  `2e7cad0900ec2b1a065e5688f520e8f7c624bd69`, and green exact-head and
+  post-merge runs 68/69.
+- Proposed the deterministic exact-snapshot training implementation and
+  content-minimized evidence: 512 ordinary IDs, 256 merges, separate
+  digest-disjoint holdout evaluation, byte-split streaming equivalence,
+  identity-bound conformance, and no artifact persistence or promotion path.
