@@ -139,13 +139,16 @@ It was merged as `a8573904fd944e9be26e911d768e7335e4bdf1e0` and passed
 pre/post-merge runs 14/15. This closes the P6.10 corpus-admission prerequisite
 only; it does not authorize training or artifact promotion.
 
-The proposed [P6.11 deterministic training-run gate](docs/P6_11_TOKENIZER_V1_TRAINING_RUN_GATE.md)
+The accepted [P6.11 deterministic training-run gate](docs/P6_11_TOKENIZER_V1_TRAINING_RUN_GATE.md)
 binds the exact accepted snapshot to a fixed 512-ordinary-token byte-BPE run,
 separate digest-disjoint holdout evaluation, repeated Python 3.11–3.13 replay,
-bounded lifecycle controls, and content-minimized evidence. No training may
-begin until that exact gate head is accepted, merged, and verified on `main`.
-Training success will not approve persistence, signing, promotion, compatibility,
-final Tokenizer v1 selection, model work, or P7.
+bounded lifecycle controls, and content-minimized evidence. Gate PR #32 was
+accepted at exact head `7c7cabf453c856fd460c99e0693afb0da41128a6`, merged as
+`2e7cad0900ec2b1a065e5688f520e8f7c624bd69`, and passed runs 68/69.
+The proposed [training evidence](docs/P6_11_TOKENIZER_V1_TRAINING_EVIDENCE.md)
+constructs and independently verifies the exact in-memory candidate without
+persisting an artifact. Success does not approve signing, promotion,
+compatibility, final Tokenizer v1 selection, model work, or P7.
 
 The proposed [P6.8 experimental conformance-vector gate](docs/P6_8_EXPERIMENTAL_CONFORMANCE_GATE.md)
 defines independent known vectors and failure evidence for the existing

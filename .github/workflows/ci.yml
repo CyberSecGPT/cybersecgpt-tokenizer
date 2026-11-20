@@ -58,6 +58,19 @@ jobs:
           --cov-report=term-missing
           --cov-fail-under=100
 
+      - name: Check out exact accepted dataset snapshot
+        run: |
+          mkdir -p .evidence/cybersecgpt-datasets
+          git -C .evidence/cybersecgpt-datasets init
+          git -C .evidence/cybersecgpt-datasets remote add origin https://github.com/CyberSecGPT/cybersecgpt-datasets.git
+          git -C .evidence/cybersecgpt-datasets fetch --depth=1 origin a8573904fd944e9be26e911d768e7335e4bdf1e0
+          git -C .evidence/cybersecgpt-datasets checkout --detach FETCH_HEAD
+
+      - name: Replay exact P6.11 training evidence offline
+        env:
+          PYTHONPATH: src:.:.evidence/cybersecgpt-datasets/src
+        run: python scripts/verify_p6_11_training_run.py
+
   build:
     name: Build distributions
     needs: validate

@@ -19,6 +19,7 @@ EXPECTED_SOURCE_MEMBERS = frozenset(
         "cybersecgpt/tokenizer/streaming.py",
         "cybersecgpt/tokenizer/unigram.py",
         "cybersecgpt/tokenizer/v1_semantics.py",
+        "cybersecgpt/tokenizer/v1_training.py",
     }
 )
 PROVIDER_MARKERS = (
