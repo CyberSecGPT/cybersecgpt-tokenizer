@@ -106,3 +106,12 @@
   content-minimized evidence: 512 ordinary IDs, 256 merges, separate
   digest-disjoint holdout evaluation, byte-split streaming equivalence,
   identity-bound conformance, and no artifact persistence or promotion path.
+- Verified P6.11 implementation acceptance at PR #33 exact head
+  `c0c4b52703b8df176af725b9c9446a0808cbe5e9`, squash merge
+  `9c2dd75e21c6eae0cfe3cc090963666f219cba19`, and successful exact-head and
+  post-merge CI and agent-policy runs 70/71.
+- Proposed the P6.12 artifact packaging, signing, and promotion architecture gate
+  with an unsigned deterministic tokenizer boundary, explicit tokenizer/
+  evaluation/governance/DevOps authority separation, and fail-closed canonical
+  prerequisites for signing technology, trust roots, licensing, publication,
+  promotion, rollback, final Tokenizer v1 selection, and P6 closure.

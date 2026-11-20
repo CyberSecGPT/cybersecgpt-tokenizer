@@ -2,15 +2,19 @@
 
 ## Status
 
-**Implementation and evidence proposed — exact-head project-owner acceptance is
-required.**
+**Verified complete — exact-head acceptance, merge, and post-merge checks
+passed.**
 
 The accepted P6.11 gate is
 `docs/P6_11_TOKENIZER_V1_TRAINING_RUN_GATE.md`. Gate PR #32 was accepted at
 head `7c7cabf453c856fd460c99e0693afb0da41128a6`, squash-merged as
 `2e7cad0900ec2b1a065e5688f520e8f7c624bd69`, and passed exact-head and
-post-merge runs 68/69. This proposal implements only that fixed run. It creates
-no persistent artifact and grants no promotion, signing, compatibility, final
+post-merge runs 68/69. Implementation PR #33 was accepted at exact head
+`c0c4b52703b8df176af725b9c9446a0808cbe5e9` in project-owner comment
+`7037061085`, squash-merged as
+`9c2dd75e21c6eae0cfe3cc090963666f219cba19`, and passed exact-head and
+post-merge CI and agent-policy runs 70/71. The implementation creates no
+persistent artifact and grants no promotion, signing, compatibility, final
 selection, model, execution, provider/network, or P7 authority.
 
 ## Exact implementation and inputs
@@ -81,8 +85,9 @@ conformance digest above.
 memory from the exact local dataset checkout, blocks socket creation during
 construction and evaluation, and performs two fresh runs. It requires exact
 token bytes, merge triples, candidate identity, semantic identity, structural
-metrics, and evidence digest equality. The unchanged CI matrix must reproduce
-that same result on Python 3.11, 3.12, and 3.13 before owner acceptance.
+metrics, and evidence digest equality. The unchanged CI matrix reproduced that
+same result on Python 3.11, 3.12, and 3.13 at the exact accepted head and again
+on the squash-merged `main` revision.
 
 The production package retains zero runtime dependencies and does not import the
 dataset package. CI obtains the public dataset repository at the exact accepted
@@ -93,13 +98,15 @@ the report and deterministic identity.
 
 ## Verification and remaining boundary
 
-Local Python 3.12 validation observed Ruff, Black, strict mypy,
-repository/security validation, dependency consistency, split-package import,
-311 tests with 100% source and branch coverage, package build, exact distribution
-verification, and two byte-identical full snapshot runs. The final GitHub
-Python 3.11–3.13 matrix remains required on the exact review head.
+The exact accepted head passed Ruff, Black, strict mypy, repository/security
+validation, dependency consistency, split-package import, 311 tests with 100%
+source and branch coverage on Python 3.11–3.13, package build, exact distribution
+verification, agent-policy validation, and two byte-identical full-snapshot runs.
+The squash-merged `main` commit passed the same post-merge matrix.
 
-Even after acceptance and merge, this evidence authorizes only proposing a
-separate artifact-promotion/signing gate. No artifact has been written, signed,
-published, promoted, installed, or declared Tokenizer v1. Final Tokenizer v1
-selection, model work, and P7 remain blocked.
+P6.11 is formally closed only for deterministic in-memory construction,
+evaluation, conformance, lifecycle, and content-minimized evidence. It authorizes
+only proposing the separate P6.12 artifact packaging, signing, and promotion
+gate. No artifact has been written, signed, published, promoted, installed, or
+declared Tokenizer v1. Final Tokenizer v1 selection, model work, and P7 remain
+blocked.

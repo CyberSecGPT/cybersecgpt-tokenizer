@@ -27,11 +27,12 @@ Compression ratios are omitted for incomplete encodes; decode failures remain
 explicit; and encode/decode fingerprint disagreement aborts evaluation. Reports
 contain digests and measurements, never raw sample content.
 
-This reference is benchmark infrastructure, not selection of the Tokenizer v1
-algorithm or its production invalid-input policy. BPE and Unigram candidates,
-normalization, pretokenization, offsets, artifact encoding, special-token
-allocation, streaming, corpus approval, and training remain gated by
-`P6_ACCEPTANCE.md` and `docs/P6_1_ALGORITHM_EVALUATION.md`.
+This reference remains benchmark infrastructure. Later accepted P6 slices now
+provide byte-BPE/Unigram comparison, a recommended byte-BPE candidate, bounded
+streaming, canonical non-executable payload bytes, performance and conformance
+evidence, production semantics, exact corpus admission, and deterministic
+in-memory training. None of those slices alone is signing, promotion, final
+selection, or production release authority.
 
 `docs/P6_2_BYTE_BPE_CANDIDATE.md` defines accepted evaluation-only semantics and
 deterministic training rules for byte-BPE. The implementation consumes a
@@ -170,11 +171,26 @@ training-run gate.
 It was accepted at PR #32 exact head
 `7c7cabf453c856fd460c99e0693afb0da41128a6`, merged as
 `2e7cad0900ec2b1a065e5688f520e8f7c624bd69`, and passed exact-head and
-post-merge runs 68/69. The proposed implementation accepts only the exact
+post-merge runs 68/69. The implementation accepts only the exact
 admitted in-memory bytes, constructs one fixed 512-ordinary-ID byte-BPE
 candidate, and keeps generation separate from
 digest-disjoint holdout evaluation. The package gains no dataset runtime
 dependency, I/O, network, provider, persistence, signing, promotion, model, or
 authorization role. `docs/P6_11_TOKENIZER_V1_TRAINING_EVIDENCE.md` records the
-content-minimized candidate, evaluation, conformance, and replay identities;
-implementation acceptance remains separately required.
+content-minimized candidate, evaluation, conformance, and replay identities.
+Implementation PR #33 was accepted at exact head
+`c0c4b52703b8df176af725b9c9446a0808cbe5e9`, squash-merged as
+`9c2dd75e21c6eae0cfe3cc090963666f219cba19`, and passed exact-head and
+post-merge CI/policy runs 70/71. P6.11 is formally closed within its in-memory,
+non-promoting boundary.
+
+`docs/P6_12_TOKENIZER_V1_ARTIFACT_PROMOTION_GATE.md` proposes the next boundary.
+The tokenizer repository may construct and validate deterministic inert unsigned
+bytes, but it cannot evaluate itself into approval, choose its own licence or
+trust root, sign itself, publish itself, or promote itself. Canonical architecture
+must first resolve signing authority, trust-root ownership, verification,
+revocation, and promotion-state semantics. Governance owns licence and approval
+policy, evaluation owns independent promotion evidence, and DevOps owns signing,
+publication, promotion, provenance, and rollback. Production code must not import
+those operational implementations. P6.12 and every follow-on remain blocked on
+separate exact-head acceptance and verified merge.

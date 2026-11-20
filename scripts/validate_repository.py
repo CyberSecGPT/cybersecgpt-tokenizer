@@ -34,6 +34,7 @@ REQUIRED_FILES = frozenset(
         "docs/P6_10_CORPUS_MANIFEST_EVIDENCE.md",
         "docs/P6_11_TOKENIZER_V1_TRAINING_RUN_GATE.md",
         "docs/P6_11_TOKENIZER_V1_TRAINING_EVIDENCE.md",
+        "docs/P6_12_TOKENIZER_V1_ARTIFACT_PROMOTION_GATE.md",
         "docs/evidence/P6_7_performance_observations.json",
         "pyproject.toml",
         "scripts/validate_repository.py",

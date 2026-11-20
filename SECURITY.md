@@ -170,7 +170,23 @@ is terminal and cannot be promoted, retried under weaker controls, or replaced
 by another algorithm. Gate PR #32 was accepted at exact head
 `7c7cabf453c856fd460c99e0693afb0da41128a6`, merged as
 `2e7cad0900ec2b1a065e5688f520e8f7c624bd69`, and passed runs 68/69.
-The implementation proposal preserves these controls, blocks socket creation in
-the exact cross-repository replay, emits only counts/digests/booleans, and has no
-artifact writer or promotion path. Its exact head still requires separate owner
-acceptance before merge.
+The implementation preserves these controls, blocks socket creation in the exact
+cross-repository replay, emits only counts/digests/booleans, and has no artifact
+writer or promotion path. PR #33 was accepted at exact head
+`c0c4b52703b8df176af725b9c9446a0808cbe5e9`, squash-merged as
+`9c2dd75e21c6eae0cfe3cc090963666f219cba19`, and passed exact-head and
+post-merge CI/policy runs 70/71. P6.11 closure grants no persistence, signing,
+publication, promotion, installation, final selection, model, or P7 authority.
+
+The proposed P6.12 gate permits only an ordered architecture and evidence path
+toward an unsigned deterministic release candidate. Tokenizer owns inert payload
+bytes, behavior identity, and compatibility; evaluation owns independent
+promotion evidence; governance owns licence and approval policy; and DevOps owns
+provenance, signing integration, publication, promotion, and rollback. Concrete
+signing technology and trust-root ownership remain unresolved and therefore fail
+closed. No key, credential, registry, path, network, provider, signature,
+publication, installer, or automatic loader may enter the tokenizer package.
+Artifact, evaluation, signature, policy, and promotion output remain untrusted
+data and never authorization. Missing, contradictory, stale, cancelled,
+over-limit, incompatible, unlicensed, unsigned, revoked, or unverifiable evidence
+cannot be promoted or silently downgraded.
