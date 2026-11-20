@@ -2,11 +2,13 @@
 
 ## Status
 
-**In progress — architecture and repository bootstrap**
+**In progress — deterministic candidate training verified; artifact release and
+final selection remain gated**
 
-This plan begins P6 after verified P5 closure. It does not select a tokenizer
-algorithm, vocabulary, normalization profile, artifact encoding, or training
-corpus, and it does not claim a trained or production-ready tokenizer.
+This plan governs P6 after verified P5 closure. Accepted slices now bind the
+recommended byte-BPE algorithm, semantic profile, exact corpus snapshot, and one
+deterministic in-memory candidate. They do not yet constitute a signed, promoted,
+finally selected, or production-ready Tokenizer v1 release.
 
 ## Governing scope
 
@@ -204,10 +206,22 @@ and prohibits persistence, signing, promotion, compatibility claims, final
 selection, model work, or P7. Gate PR #32 was accepted at exact head
 `7c7cabf453c856fd460c99e0693afb0da41128a6`, squash-merged as
 `2e7cad0900ec2b1a065e5688f520e8f7c624bd69`, and passed exact-head and
-post-merge runs 68/69. `docs/P6_11_TOKENIZER_V1_TRAINING_EVIDENCE.md` proposes
-the separately reviewed implementation and exact in-memory run. Artifact
-promotion/signing and final selection remain blocked even if that proposal is
-accepted.
+post-merge runs 68/69. `docs/P6_11_TOKENIZER_V1_TRAINING_EVIDENCE.md` records
+the implementation accepted at PR #33 exact head
+`c0c4b52703b8df176af725b9c9446a0808cbe5e9`, squash-merged as
+`9c2dd75e21c6eae0cfe3cc090963666f219cba19`, and verified by exact-head and
+post-merge runs 70/71. P6.11 is formally closed only for deterministic in-memory
+training and evidence.
+
+The proposed P6.12 artifact packaging, signing, and promotion boundary is
+recorded in `docs/P6_12_TOKENIZER_V1_ARTIFACT_PROMOTION_GATE.md`. It permits no
+implementation before exact-head gate acceptance and verified merge. It keeps
+tokenizer byte construction separate from independent evaluation, governance
+licence/approval policy, DevOps signing/publication/promotion, and consumer
+admission. Because signing technology and trust-root ownership remain unresolved
+in canonical architecture, actual signing and promotion fail closed until a
+separate canonical decision and every owning-repository prerequisite are
+accepted. Final Tokenizer v1 selection and P7 remain blocked.
 
 ## Initial completion evidence
 

@@ -4,9 +4,10 @@ Authoritative repository for first-party CyberSecGPT tokenizer training,
 execution, vocabulary and special-token management, artifacts, manifests, and
 conformance vectors.
 
-This repository is entering roadmap milestone **P6 — CyberSecGPT Tokenizer v1**.
-No tokenizer algorithm, vocabulary, trained artifact, or production-ready
-implementation is claimed by this bootstrap commit.
+This repository is implementing roadmap milestone **P6 — CyberSecGPT Tokenizer
+v1**. Deterministic in-memory candidate training and evidence are verified, but
+no signed or promoted Tokenizer v1 artifact or production-ready release is
+claimed.
 
 Canonical architecture and contract:
 [CyberSecGPT tokenizer contract](https://github.com/CyberSecGPT/cybersecgpt-docs/blob/main/docs/specifications/tokenizer-contract.md).
@@ -22,10 +23,10 @@ evaluation reports. Reports bind the manifest identity, candidate algorithm and
 fingerprint, token limit, sample digests, exact reduced count ratios, completion
 status, decode success, and reversibility without retaining raw sample text or
 recording nondeterministic timing.
-The reference exists only to establish a reproducible comparison baseline; it is
-not the selected Tokenizer v1 algorithm, vocabulary, invalid-input policy, or
-production tokenizer. Canonical artifact loading, production training, and final
-semantic decisions remain unimplemented.
+The reference exists only to establish a reproducible comparison baseline. The
+accepted byte-BPE candidate, semantic profile, corpus admission, and deterministic
+training evidence still do not constitute a signed, promoted, or finally selected
+production tokenizer.
 
 An experimental deterministic byte-BPE candidate is available for measured
 comparison with the byte reference. It uses guaranteed byte fallback, immutable
@@ -145,18 +146,22 @@ separate digest-disjoint holdout evaluation, repeated Python 3.11–3.13 replay,
 bounded lifecycle controls, and content-minimized evidence. Gate PR #32 was
 accepted at exact head `7c7cabf453c856fd460c99e0693afb0da41128a6`, merged as
 `2e7cad0900ec2b1a065e5688f520e8f7c624bd69`, and passed runs 68/69.
-The proposed [training evidence](docs/P6_11_TOKENIZER_V1_TRAINING_EVIDENCE.md)
-constructs and independently verifies the exact in-memory candidate without
-persisting an artifact. Success does not approve signing, promotion,
-compatibility, final Tokenizer v1 selection, model work, or P7.
+The [training evidence](docs/P6_11_TOKENIZER_V1_TRAINING_EVIDENCE.md) was
+accepted at PR #33 exact head
+`c0c4b52703b8df176af725b9c9446a0808cbe5e9` in comment `7037061085`,
+squash-merged as `9c2dd75e21c6eae0cfe3cc090963666f219cba19`, and passed
+exact-head/post-merge runs 70/71. P6.11 is closed only for the deterministic
+in-memory candidate and evidence; it does not approve persistence, signing,
+promotion, final Tokenizer v1 selection, model work, or P7.
 
-The proposed [P6.8 experimental conformance-vector gate](docs/P6_8_EXPERIMENTAL_CONFORMANCE_GATE.md)
-defines independent known vectors and failure evidence for the existing
-candidates, streaming behavior, and BPE artifact. It awaits exact-head
-architecture/security acceptance before implementation; it does not approve
-production semantics or a training corpus.
+The proposed [P6.12 artifact packaging, signing, and promotion gate](docs/P6_12_TOKENIZER_V1_ARTIFACT_PROMOTION_GATE.md)
+defines the unsigned deterministic release-candidate boundary and preserves
+separate tokenizer, evaluation, governance, DevOps, and consumer authority. It
+deliberately leaves concrete signing technology and trust-root ownership blocked
+on a canonical architecture decision. No artifact or later P6 work is authorized
+before exact-head gate acceptance, squash merge, and verified post-merge checks.
 
-The proposed [P6.8 conformance evidence](docs/P6_8_EXPERIMENTAL_CONFORMANCE_EVIDENCE.md)
+The verified [P6.8 conformance evidence](docs/P6_8_EXPERIMENTAL_CONFORMANCE_EVIDENCE.md)
 replays 20 pinned generated vectors with exact IDs, byte-split BPE streaming,
 artifact identity, and fail-closed negative cases. The implementation was
 accepted at PR #23 head `d4b4b7826ebbeaeecf5a0ffc4303041f50b9a568`,
