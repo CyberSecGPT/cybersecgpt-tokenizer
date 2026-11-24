@@ -1,5 +1,49 @@
 # P6.12 — Tokenizer v1 Artifact Packaging, Signing, and Promotion Gate
 
+## Proposed amendment — ADR-0012 alignment
+
+This amendment does not take effect until separately reviewed, accepted at its
+exact head, squash-merged, and verified on main. The original approval did not
+accept this amendment.
+
+[ADR-0012](https://github.com/CyberSecGPT/cybersecgpt-docs/blob/8faa2f801eb87b6b8fb62e81976f33a5c6974b98/docs/decisions/ADR-0012-artifact-signing-and-promotion-trust.md)
+is accepted and merged. It resolves the architecture prerequisite; older
+statements below calling the signing profile and trust-root ownership unresolved
+are retained as historical context, not current authority. Operational readiness
+is still unverified and all release gates remain fail closed.
+
+The following sequence supersedes the ordered proposal sequence below:
+
+1. Governance approves the documented source-rights basis and policy for
+   constructing and independently evaluating an inert unsigned candidate. This
+   grants no distribution permission.
+2. A separately reviewed tokenizer implementation constructs and validates the
+   candidate under that policy. Freeze the exact payload and manifest digests,
+   byte counts, source revision, and pre-construction policy identity.
+3. Independent evaluation produces detached evidence bound to that exact unsigned
+   candidate. Governance then separately approves distribution of the exact
+   unsigned candidate and evaluation evidence, including licence, notices,
+   audience, restrictions, expiry, and revocation. Missing or conflicting
+   evidence blocks progression. A changed candidate requires renewed evaluation
+   and approval.
+4. DevOps may sign only after current approval and all ADR-0012 trust-root,
+   provenance, and operational controls are independently verified. The signed
+   release identity first exists after signing and references the frozen unsigned
+   identity. Publication and promotion records reference the signed release,
+   never the reverse. Verify offline admission, revocation and rollback before
+   recording P6 closure.
+
+For the unsigned manifest requirements below, bind only pre-existing evidence,
+including the P6.11 evaluation identity and pre-construction rights/policy
+identity. Do not embed a self-digest, the later independent evaluation of the
+packaged candidate, exact-candidate distribution approval, detached signature,
+or publication/promotion records. These are separate downstream records. An
+unsigned candidate is not authorized for distribution or promotion.
+
+No candidate construction, release, key material, signing, network access,
+dependency, or implementation change is authorized by this amendment alone.
+Every later gate still requires its own separate review and approval.
+
 ## Status and decision boundary
 
 **Proposed — exact-head project-owner architecture/security/release/licence
